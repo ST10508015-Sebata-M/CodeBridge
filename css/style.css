@@ -1,0 +1,8 @@
+/* style.css
+   placeholder stylesheet -- full styling is built in part 2.
+   kept here now so the <link> tag in every page resolves without a 404. */
+
+/* css reset (minimal) */
+* {
+  box-sizing: border-box;
+}
