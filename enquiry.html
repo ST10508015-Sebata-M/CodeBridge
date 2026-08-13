@@ -1,84 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeBridge | Apply / Volunteer / Sponsor</title>
-  <link rel="stylesheet" href="css/style.css">
+
+    <!--***** MY DOCUMENT SETUP *****-->
+    <!-- Same setup as every other page: HTML5 doctype, UTF-8 charset, responsive
+     viewport, and a descriptive title. The shared stylesheet keeps this page's
+     branding consistent with the rest of the site, and the favicon matches
+     the logo used throughout CodeBridge's site. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeBridge | Apply / Volunteer / Sponsor</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--***** Favicon ***** -->
+    <link rel="icon" type="image/png" href="images/CodeBridge.png">
+
 </head>
 <body>
 
-  <header>
-    <div class="logo">CodeBridge</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="programmes.html">Programmes</a></li>
-        <li><a href="enquiry.html">Apply / Volunteer</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ***** header ***** -->
+    <!-- Identical header/nav markup to every other page so the logo and
+     navigation menu stay consistent site-wide, helping visitors move between
+     the Enquiry page and the rest of CodeBridge's site without confusion. -->
+    <header>
 
-  <main>
-    <h1>Apply / Volunteer / Sponsor</h1>
-    <p>Select the enquiry type that applies to you and complete the form below.</p>
+        <div class="logo">
+            <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
+        </div>
 
-    <!-- single form covering all three npo enquiry types, per part 1 brief section 4.1
-         (learner application / volunteer sign-up / sponsor enquiry) -->
-    <form action="#" method="post">
+        <br>
 
-      <!-- enquiry type: full validation logic (required select) added in part 3 -->
-      <label for="enquiry-type">Enquiry type</label>
-      <select id="enquiry-type" name="enquiry-type" required>
-        <option value="">-- please choose --</option>
-        <option value="learner">Learner Application</option>
-        <option value="volunteer">Volunteer Sign-up</option>
-        <option value="sponsor">Sponsor Enquiry</option>
-      </select>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="enquiry.html">Apply / Volunteer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" name="full-name" required>
+    </header>
 
-      <label for="contact-number">Contact Number</label>
-      <input type="tel" id="contact-number" name="contact-number" required>
+    <hr>
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+    <!-- ***** main content area ***** -->
+    <!-- This page holds the single most important conversion point on the
+     site: the enquiry form. It directly supports CodeBridge's core goals of
+     increasing learner applications, volunteer sign-ups, and sponsor
+     enquiries by giving every type of visitor one clear, simple way to get
+     involved. -->
 
-      <!-- fields below only relevant for a learner application; shown/hidden dynamically via js in part 3 -->
-      <label for="centre">Preferred Centre</label>
-      <select id="centre" name="centre">
-        <option value="">-- please choose --</option>
-        <option value="alexandra">Alexandra Centre</option>
-        <option value="diepsloot">Diepsloot Centre</option>
-      </select>
+    <main>
 
-      <label for="programme">Programme of Interest</label>
-      <select id="programme" name="programme">
-        <option value="">-- please choose --</option>
-        <option value="web-dev">Intro to Web Development</option>
-        <option value="js-fundamentals">JavaScript Fundamentals</option>
-        <option value="digital-literacy">Digital Literacy Basics</option>
-      </select>
+        <!-- ***** page introduction ***** -->
+        <!-- Explains to the visitor, in plain language, what this page is for
+         and how the form below works, before they start filling it in. -->
 
-      <label for="motivation">Short Motivation</label>
-      <textarea id="motivation" name="motivation" rows="4"></textarea>
+        <section>
 
-      <button type="submit">Submit</button>
-    </form>
-  </main>
+            <h1>Apply / Volunteer / Sponsor</h1>
 
-  <footer>
-    <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
-    <ul>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="#"><!-- social link placeholder --></a></li>
-      <li><a href="#">Donate</a></li>
-    </ul>
-  </footer>
+            <p>
+                Whether you want to join one of our programmes as a learner, give your time as a
+                volunteer, or support CodeBridge as a sponsor, this page is your starting point.
+                Select the enquiry type that applies to you and complete the form below, and a
+                member of the CodeBridge team will be in touch.
+            </p>
 
-  <script src="js/main.js"></script>
+        </section>
+
+        <hr>
+
+        <!-- ***** enquiry form section ***** -->
+        <!-- A single form covers all three NPO enquiry types (learner
+         application / volunteer sign-up / sponsor enquiry), per the Part 1
+         brief. Using one form instead of three separate pages keeps the
+         process short and reduces drop-off, which supports the goal of
+         increasing applications, sign-ups, and enquiries.
+         -Fields are grouped with <fieldset> and <legend> so screen readers
+         and sighted users alike can tell which questions belong together.
+         -The learner-specific fields (centre, programme, motivation) are
+         only truly relevant to learner applications; full show/hide logic
+         based on the enquiry type selected will be added with JavaScript in
+         Part 3. -->
+
+        <section>
+
+            <form action="#" method="post">
+
+                <!-- Enquiry type -->
+                <!-- Full validation logic (required select) will be extended
+                 in Part 3, but the required attribute already prevents an
+                 empty submission at the HTML level. -->
+
+                <fieldset>
+
+                    <legend>Enquiry Type</legend>
+
+                    <label for="enquiry-type">What are you enquiring about?</label>
+                    <br>
+                    <select id="enquiry-type" name="enquiry-type" required>
+                        <option value="">-- please choose --</option>
+                        <option value="learner">Learner Application</option>
+                        <option value="volunteer">Volunteer Sign-up</option>
+                        <option value="sponsor">Sponsor Enquiry</option>
+                    </select>
+
+                </fieldset>
+
+                <br>
+
+                <!-- Personal details -->
+                <!-- Required for every enquiry type, since CodeBridge needs
+                 to be able to contact the person regardless of whether they
+                 are applying, volunteering, or sponsoring. -->
+
+                <fieldset>
+
+                    <legend>Your Details</legend>
+
+                    <label for="full-name">Full Name</label>
+                    <br>
+                    <input type="text" id="full-name" name="full-name" required>
+
+                    <br><br>
+
+                    <label for="contact-number">Contact Number</label>
+                    <br>
+                    <input type="tel" id="contact-number" name="contact-number" required>
+
+                    <br><br>
+
+                    <label for="email">Email Address</label>
+                    <br>
+                    <input type="email" id="email" name="email" required>
+
+                </fieldset>
+
+                <br>
+
+                <!-- Learner-specific details -->
+                <!-- Only relevant to a Learner Application; these fields will
+                 be shown/hidden dynamically based on the enquiry type once
+                 JavaScript is added in Part 3. -->
+
+                <fieldset>
+
+                    <legend>Learner Application Details</legend>
+
+                    <label for="centre">Preferred Centre</label>
+                    <br>
+                    <select id="centre" name="centre">
+                        <option value="">-- please choose --</option>
+                        <option value="alexandra">Alexandra Centre</option>
+                        <option value="diepsloot">Diepsloot Centre</option>
+                    </select>
+
+                    <br><br>
+
+                    <label for="programme">Programme of Interest</label>
+                    <br>
+                    <select id="programme" name="programme">
+                        <option value="">-- please choose --</option>
+                        <option value="web-dev">Intro to Web Development</option>
+                        <option value="js-fundamentals">Java Programming Fundamentals</option>
+                        <option value="digital-literacy">Digital Literacy  & Career Skills Basics</option>
+                    </select>
+
+                    <br><br>
+
+                    <label for="motivation">Short Motivation</label>
+                    <br>
+                    <textarea id="motivation" name="motivation" rows="4"></textarea>
+
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ***** footer section ***** -->
+    <!-- Same footer structure as every other page: Contact, Donate, then
+     Privacy Policy, so navigation and calls to action stay identical across
+     the whole site. -->
+
+    <footer>
+
+        <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
+
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+
+    </footer>
+
+    <!-- ***** shared script ***** -->
+    <script src="js/main.js"></script>
+
 </body>
 </html>
