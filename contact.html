@@ -1,64 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeBridge | Contact</title>
-  <link rel="stylesheet" href="css/style.css">
+
+    <!-- Basic document information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeBridge | Contact</title>
+
+    <!-- External stylesheet (Part 2) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Website favicon -->
+    <link rel="icon" type="image/png" href="images/CodeBridge.png">
+
 </head>
 <body>
 
-  <header>
-    <div class="logo">CodeBridge</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="programmes.html">Programmes</a></li>
-        <li><a href="enquiry.html">Apply / Volunteer</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ================= HEADER ================= -->
+    <header>
 
-  <main>
-    <h1>Contact Us</h1>
+        <div class="logo">
+            <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
+        </div>
 
-    <!-- simple contact form -->
-    <form action="#" method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="enquiry.html">Apply / Volunteer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+    </header>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <hr>
 
-      <button type="submit">Send</button>
-    </form>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
 
-    <!-- brief requires the contact page to show more than one location -->
-    <section class="locations">
-      <h2>Our Locations</h2>
-      <!-- placeholder: replace with an embedded google map (iframe) once addresses are finalised -->
-      <div class="map-placeholder">[ map goes here ]</div>
-      <ul>
-        <li>Alexandra Centre &mdash; <!-- placeholder address --></li>
-        <li>Diepsloot Centre &mdash; <!-- placeholder address --></li>
-      </ul>
-    </section>
-  </main>
+        <!-- Page introduction -->
+        <section>
 
-  <footer>
-    <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
-    <ul>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="#"><!-- social link placeholder --></a></li>
-      <li><a href="#">Donate</a></li>
-    </ul>
-  </footer>
+            <h1>Contact Us</h1>
 
-  <script src="js/main.js"></script>
+            <p>
+                Have a question that isn't covered on our Programmes or Apply/Volunteer pages?
+                Send us a message below, or visit us in person at either of our two community
+                centres. We aim to respond to every enquiry within two working days.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- ============ Contact Form ============ -->
+        <section>
+
+            <h2>Send Us a Message</h2>
+
+            <!-- Simple contact form. Full client-side validation (required-field
+                 checks, correct email/number format) will be implemented in Part 3. -->
+            <form action="#" method="post">
+
+                <fieldset>
+
+                    <legend>Your Message</legend>
+
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" id="name" name="name" required>
+
+                    <br><br>
+
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" id="email" name="email" required>
+
+                    <br><br>
+
+                    <label for="message">Message</label>
+                    <br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Send</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <!-- ============ Locations ============ -->
+        <!-- The brief requires the Contact page to show more than one location,
+             since CodeBridge operates from two community centres. -->
+        <section class="locations">
+
+            <h2>Our Locations</h2>
+
+            <article>
+
+                <h3>Alexandra Centre</h3>
+
+                <figure>
+                    <img src="images/map-alexandra.png" alt="Map showing the Alexandra Centre location" width="500">
+                    <figcaption>
+                        Alexandra Centre — 14 Roosevelt Street, Alexandra, Johannesburg, 2090
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Home of our Web Development Bootcamp and Digital Literacy &amp; Career Skills
+                    programme. Open Saturdays, 08:30–13:30.
+                </p>
+
+            </article>
+
+            <hr>
+
+            <article>
+
+                <h3>Diepsloot Centre</h3>
+
+                <figure>
+                    <img src="images/map-diepsloot.png" alt="Map showing the Diepsloot Centre location" width="500">
+                    <figcaption>
+                        Diepsloot Centre — Extension 1, Diepsloot, Johannesburg, 2189
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Home of our Java Programming Fundamentals evening classes. Open Tuesdays and
+                    Thursdays, 16:30–19:30.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
+
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+
+    </footer>
+
+    <!-- External JavaScript (Part 3) -->
+    <script src="js/main.js"></script>
+
 </body>
 </html>
