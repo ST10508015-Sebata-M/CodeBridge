@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic document information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeBridge | Donate</title>
+
+    <!-- External stylesheet (Part 2) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Website favicon -->
+    <link rel="icon" type="image/png" href="images/CodeBridge.png">
+
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+
+        <div class="logo">
+            <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="enquiry.html">Apply / Volunteer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- Page introduction -->
+        <section>
+
+            <h1>Support CodeBridge</h1>
+
+            <p>
+                Youth unemployment in Johannesburg remains one of the biggest barriers young
+                people face in building a future for themselves. Your donation goes directly
+                towards course materials, laptop access, and instructor time — helping more
+                learners complete a programme and walk away with real, job-ready skills.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- ============ Impact breakdown ============ -->
+        <section>
+
+            <h2>How Your Donation Helps</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R100</td>
+                        <td>Covers course materials for one learner for a full week</td>
+                    </tr>
+                    <tr>
+                        <td>R250</td>
+                        <td>Covers laptop access for one learner for a month</td>
+                    </tr>
+                    <tr>
+                        <td>R500</td>
+                        <td>Sponsors one learner's full Digital Literacy &amp; Career Skills programme</td>
+                    </tr>
+                    <tr>
+                        <td>R1000+</td>
+                        <td>Helps fund a full seat on the Web Development Bootcamp</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <hr>
+
+        <!-- ============ Donation form ============ -->
+        <!-- Interface only for Part 1: this form is built to accommodate a future
+             payment gateway integration (e.g. PayFast or SnapScan) in Part 3.
+             No live payment processing takes place yet. -->
+        <section>
+
+            <h2>Make a Donation</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+
+                    <legend>Choose an Amount</legend>
+
+                    <input type="radio" id="amount-100" name="amount" value="100">
+                    <label for="amount-100">R100</label>
+                    <br>
+
+                    <input type="radio" id="amount-250" name="amount" value="250">
+                    <label for="amount-250">R250</label>
+                    <br>
+
+                    <input type="radio" id="amount-500" name="amount" value="500">
+                    <label for="amount-500">R500</label>
+                    <br>
+
+                    <input type="radio" id="amount-1000" name="amount" value="1000">
+                    <label for="amount-1000">R1000</label>
+                    <br>
+
+                    <input type="radio" id="amount-other" name="amount" value="other">
+                    <label for="amount-other">Other amount:</label>
+                    <input type="number" id="other-amount" name="other-amount" min="10" placeholder="R">
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+
+                    <legend>Your Details</legend>
+
+                    <label for="donor-name">Full Name</label>
+                    <br>
+                    <input type="text" id="donor-name" name="donor-name" required>
+
+                    <br><br>
+
+                    <label for="donor-email">Email Address</label>
+                    <br>
+                    <input type="email" id="donor-email" name="donor-email" required>
+
+                </fieldset>
+
+                <br>
+
+                <p>
+                    You will be redirected to a secure payment provider (e.g. PayFast or
+                    SnapScan) to complete your donation. Online payment processing will be
+                    integrated in Part 3.
+                </p>
+
+                <button type="submit">Donate Now</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
+
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+
+    </footer>
+
+    <!-- External JavaScript (Part 3) -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
