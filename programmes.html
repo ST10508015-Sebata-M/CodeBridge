@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- ***** document setup ***** -->
+<!-- The page begins with the standard HTML5 document structure to ensure
+     consistent rendering across modern web browsers.
+     -The <head> section contains important information including the character
+      encoding, responsive viewport settings, page title, stylesheet, and favicon.
+     -Keeping this setup consistent across every page improves accessibility,
+      maintainability, and provides a professional browsing experience. -->
+   
 <head>
 
-    <!-- Basic document information -->
-    <meta charset="UTF-8">
+    <!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
+   <meta charset="UTF-8">
+    <!-- ***** responsive viewport ***** -->
+<!-- The viewport meta tag ensures that the webpage automatically scales to fit
+     different screen sizes, including desktops, tablets, and smartphones.
+     -This improves readability, accessibility, and the overall user experience
+      on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Programmes</title>
 
-    <!-- External stylesheet (Part 2) -->
+   <!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the visual appearance of the Programmes page.
+     -Using one shared CSS file keeps the branding, typography, colours,
+      and layout consistent across the entire website.
+     -A shared stylesheet also makes future updates easier while maintaining
+      a professional and user-friendly design. -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Website favicon -->
+    <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo in the browser tab,
+     helping visitors easily identify the website when multiple tabs
+     are open.
+     -Using the same favicon throughout the website strengthens the
+      organisation's branding and creates a more professional appearance. -->   
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
-
-    <!-- ================= HEADER ================= -->
-    <header>
-
+<!-- ***** header ***** -->
+<!-- The header contains the organisation's logo and the primary navigation menu.
+     -It appears consistently across every page to strengthen CodeBridge's branding
+      and provide visitors with a familiar browsing experience.
+     -Using the same header throughout the website improves usability and allows
+      users to navigate between pages without confusion. -->
+<header>
+<!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
-
+<!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to the website's
+     core pages including Home, About Us, Programmes, Apply / Volunteer,
+     and Contact.
+     -Keeping the navigation consistent throughout the website improves
+      usability and makes it easier for visitors to locate information.
+     -This supports the project's objective of increasing programme applications,
+      volunteer registrations, and general enquiries. -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -38,10 +85,22 @@
 
     <hr>
 
-    <!-- ================= MAIN CONTENT ================= -->
+<!-- ***** main content area ***** -->
+<!-- The <main> element contains the unique content found on the Programmes page.
+     -Separating the primary content from the shared header and footer improves
+      accessibility and helps assistive technologies identify the page's
+      most important information.
+     -This page introduces visitors to CodeBridge's available training
+      programmes, allowing learners to compare opportunities before applying. -->
     <main>
 
-        <!-- Page introduction -->
+        <!-- ***** programmes introduction ***** -->
+<!-- This introductory section provides visitors with an overview of the
+     training opportunities offered by CodeBridge.
+     -It explains the purpose of the programmes and highlights the practical,
+      career-focused learning experience available to learners.
+     -The introduction also encourages visitors to explore the detailed
+      curriculum before submitting an application. -->
         <section>
 
             <h1>Our Programmes</h1>
@@ -62,12 +121,23 @@
         </section>
 
         <hr>
-
-        <!-- ============ Programme 1 ============ -->
+<!-- ***** web development bootcamp ***** -->
+<!-- This section introduces CodeBridge's beginner-friendly Web Development
+     Bootcamp.
+     -It explains what learners will study, who the programme is designed for,
+      and the practical skills they will develop.
+     -Providing detailed programme information helps prospective learners
+      determine whether the course matches their interests and career goals. -->
         <article>
 
             <h2>Web Development Bootcamp</h2>
-
+            <!-- ***** programme image ***** -->
+<!-- The programme image provides a visual representation of learners
+     participating in the Web Development Bootcamp.
+     -The descriptive alternative text improves accessibility while the
+      caption provides additional context for the displayed image.
+     -Visual content makes the programme more engaging and encourages
+      prospective learners to explore the course further. -->
             <figure>
                 <img src="images/web-dev-bootcamp.png"
                     alt="Learners coding during the Web Development Bootcamp"
@@ -82,7 +152,12 @@
                 of web development. Students learn how websites are created while building
                 responsive web pages and interactive features.
             </p>
-
+     <!-- ***** programme details ***** -->
+<!-- This section provides essential information about the programme,
+     including the required skill level, duration, prerequisites,
+     schedule, and certification.
+     -Presenting these details helps visitors quickly determine whether
+      the programme suits their availability and learning needs. -->
             <section>
 
                 <h3>Programme Details</h3>
@@ -96,14 +171,31 @@
                 </ul>
 
             </section>
-
-            <!-- Native HTML5 disclosure widget: no CSS/JS required for the
-                 expand/collapse behaviour, browser-native accessibility included. -->
+<!-- ***** curriculum overview ***** -->
+<!-- The HTML5 <details> element allows visitors to expand and collapse
+     the complete course curriculum without requiring additional CSS or
+     JavaScript.
+     -Using this built-in feature improves accessibility while keeping
+      the page organised and easy to navigate.
+     -Displaying the full weekly curriculum helps learners understand
+      exactly what they will study before applying. -->
             <details>
-
+    <!-- ***** curriculum breakdown ***** -->
+<!-- The HTML5 <details> element allows visitors to expand and collapse
+     the complete weekly curriculum.
+     -This built-in HTML feature improves accessibility while keeping
+      the page organised and easy to navigate.
+     -Displaying the full curriculum helps learners understand exactly
+      what will be covered throughout the programme. -->
                 <summary>View Full Curriculum</summary>
 
                 <ol>
+                    <!-- ***** weekly learning outcomes ***** -->
+<!-- Each week introduces learners to new concepts that gradually build
+     upon previously acquired knowledge.
+     -Organising the curriculum into weekly milestones allows visitors
+      to clearly understand the progression of the programme from
+      beginner concepts to practical projects. -->
                     <li><strong>Week 1:</strong> Introduction to the Web &amp; How Websites Work</li>
                     <li><strong>Week 2:</strong> HTML Fundamentals — structure, tags, semantic elements</li>
                     <li><strong>Week 3:</strong> HTML Forms &amp; Tables</li>
@@ -119,18 +211,32 @@
             <br>
 
             <p>
+                <!-- ***** programme application link ***** -->
+<!-- This call-to-action directs visitors to the application page,
+     allowing interested learners to apply for the programme.
+     -Providing an application link after each programme makes it
+      simple for users to take immediate action after reviewing
+      the course information. -->
                 <a href="enquiry.html">Apply for this Programme</a>
             </p>
 
         </article>
 
         <hr>
-
-        <!-- ============ Programme 2 ============ -->
+  <!-- ***** java programming fundamentals ***** -->
+<!-- This section introduces the Java Programming Fundamentals course.
+     -It explains the practical programming knowledge learners will gain,
+      including object-oriented programming and software development skills.
+     -Detailed course information helps learners decide whether they are
+      ready for an intermediate-level programme. -->
         <article>
 
             <h2>Java Programming Fundamentals</h2>
-
+<!-- ***** programme image ***** -->
+<!-- This image represents learners developing Java programming skills
+     through practical coding activities.
+     -Alternative text improves accessibility while the caption provides
+      additional context about the learning experience. -->
             <figure>
                 <img src="images/java-fundamentals.png"
                     alt="Learners working through Java programming exercises"
@@ -139,13 +245,24 @@
                     Students solving programming challenges using Java.
                 </figcaption>
             </figure>
-
+<!-- ***** programme overview ***** -->
+<!-- This paragraph provides an overview of the Java Programming
+     Fundamentals course and explains the practical knowledge learners
+     will gain throughout the programme.
+     -Summarising the course helps visitors quickly understand its
+      purpose before reviewing the detailed programme information. -->
             <p>
+
                 This intermediate programme develops problem-solving skills through Java.
                 Learners explore object-oriented programming, write applications, and gain
                 practical coding experience for future software development careers.
             </p>
-
+<!-- ***** programme details ***** -->
+<!-- This section presents important information about the programme,
+     including the required skill level, duration, prerequisites,
+     recommended prior knowledge, schedule, and certification.
+     -Providing these details helps learners determine whether the
+      programme matches their experience level and availability. -->
             <section>
 
                 <h3>Programme Details</h3>
@@ -160,11 +277,24 @@
                 </ul>
 
             </section>
-
+<!-- ***** curriculum breakdown ***** -->
+<!-- The HTML5 <details> element allows visitors to expand and collapse
+     the complete weekly curriculum without requiring additional CSS or
+     JavaScript.
+     -Using this built-in feature improves accessibility while keeping
+      the page organised and easy to navigate.
+     -Displaying the full curriculum helps learners understand exactly
+      what will be covered throughout the programme before applying. -->
             <details>
 
                 <summary>View Full Curriculum</summary>
-
+<!-- ***** weekly learning outcomes ***** -->
+<!-- The curriculum is organised into weekly learning outcomes that
+     gradually build learners' programming knowledge and practical
+     problem-solving skills.
+     -Breaking the programme into weekly milestones helps visitors
+      understand the learning journey from basic Java concepts to
+      developing a complete application. -->
                 <ol>
                     <li><strong>Week 1:</strong> Introduction to Java &amp; Setting Up the Development Environment</li>
                     <li><strong>Week 2:</strong> Variables, Data Types &amp; Operators</li>
@@ -181,7 +311,12 @@
             </details>
 
             <br>
-
+   <!-- ***** programme application link ***** -->
+<!-- This call-to-action directs visitors to the application page,
+     allowing interested learners to apply for the programme.
+     -Providing an application link after each programme makes it
+      simple for users to take immediate action after reviewing
+      the course information. -->
             <p>
                 <a href="enquiry.html">Apply for this Programme</a>
             </p>
@@ -190,11 +325,21 @@
 
         <hr>
 
-        <!-- ============ Programme 3 ============ -->
+        <!-- ***** digital literacy and career skills ***** -->
+<!-- This section introduces the Digital Literacy & Career Skills programme.
+     -The course focuses on developing essential workplace and computer
+      skills for learners who are new to technology.
+     -Providing clear programme information encourages broader community
+      participation and supports CodeBridge's goal of improving digital
+      inclusion. -->
         <article>
 
             <h2>Digital Literacy &amp; Career Skills</h2>
-
+<!-- ***** programme image ***** -->
+<!-- This image highlights participants developing practical digital
+     and workplace skills in a supportive learning environment.
+     -The descriptive alternative text improves accessibility while the
+      caption provides additional context about the programme. -->
             <figure>
                 <img src="images/digital-literacy.png"
                     alt="Participants learning digital literacy skills"
@@ -203,13 +348,23 @@
                     Community members developing essential digital and workplace skills.
                 </figcaption>
             </figure>
-
+<!-- ***** programme overview ***** -->
+<!-- This paragraph introduces the Digital Literacy & Career Skills
+     programme and explains the practical knowledge learners will
+     develop throughout the course.
+     -Providing an overview allows visitors to quickly understand the
+      programme's purpose before reviewing the detailed information. -->
             <p>
                 This short programme introduces learners to essential computer skills,
                 internet safety, professional communication, email usage, CV writing,
                 and interview preparation.
             </p>
-
+<!-- ***** programme details ***** -->
+<!-- This section provides important information about the programme,
+     including the required skill level, duration, prerequisites,
+     schedule, and certification.
+     -Presenting these details helps visitors determine whether the
+      programme suits their learning needs and availability. -->
             <section>
 
                 <h3>Programme Details</h3>
@@ -223,11 +378,22 @@
                 </ul>
 
             </section>
-
+<!-- ***** curriculum breakdown ***** -->
+<!-- The HTML5 <details> element allows visitors to expand and collapse
+     the complete weekly curriculum while keeping the page organised.
+     -This built-in HTML feature improves accessibility and allows
+      learners to view additional information only when needed.
+     -Displaying the full curriculum helps visitors understand exactly
+      what they will learn before applying. --> 
             <details>
 
                 <summary>View Full Curriculum</summary>
-
+<!-- ***** weekly learning outcomes ***** -->
+<!-- The curriculum is organised into weekly learning outcomes that
+     gradually develop learners' confidence and practical digital
+     workplace skills.
+     -Each week introduces new concepts that prepare participants
+      for employment and everyday use of technology. -->
                 <ol>
                     <li><strong>Week 1:</strong> Computer &amp; Internet Basics</li>
                     <li><strong>Week 2:</strong> Email, Online Safety &amp; Digital Communication</li>
@@ -238,7 +404,12 @@
             </details>
 
             <br>
-
+ <!-- ***** programme application link ***** -->
+<!-- This call-to-action directs visitors to the application page,
+     allowing interested learners to apply for the programme.
+     -Providing an application link after each programme makes it
+      simple for users to take immediate action after reviewing
+      the course information. -->
             <p>
                 <a href="enquiry.html">Apply for this Programme</a>
             </p>
@@ -247,22 +418,43 @@
 
     </main>
 
-    <hr>
-
-    <!-- ================= FOOTER ================= -->
+<!-- ***** footer ***** -->
+<!-- The footer provides consistent information that appears across every page.
+     -It includes copyright information together with quick navigation links
+      that help visitors access important pages from anywhere on the website.
+     -Keeping the footer consistent improves usability, reinforces the
+      website's structure, and contributes to a professional appearance. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
 
+         <!-- ***** Footer Navigation Links ***** -->
+        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
 
+            <!-- ***** Contact Link ***** -->
+            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
+            <li><a href="contact.html">Contact</a></li>
+
+            <!-- ***** Donate Link ****** -->
+            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
+            <li><a href="donate.html">Donate</a></li>
+
+            <!--***** Privacy Policy Link ***** -->
+            <!-- Placeholder link for CodeBridge’s privacy policy page. 
+                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <li><a href="privacy.html">Privacy Policy</a></li>
+
+        </ul>
     </footer>
 
-    <!-- External JavaScript (Part 3) -->
+<!-- ***** shared script ***** -->
+<!-- The main JavaScript file is linked at the bottom of the page so the HTML
+     content loads before any interactive features are processed.
+     -Placing the script here improves loading performance and creates a
+      smoother browsing experience.
+     -Additional interactive functionality will be implemented during the
+      JavaScript phase of the project using this shared script. -->
     <script src="js/main.js"></script>
 
 </body>

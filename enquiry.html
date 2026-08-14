@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+    
     <!--***** MY DOCUMENT SETUP *****-->
     <!-- Same setup as every other page: HTML5 doctype, UTF-8 charset, responsive
      viewport, and a descriptive title. The shared stylesheet keeps this page's
      branding consistent with the rest of the site, and the favicon matches
      the logo used throughout CodeBridge's site. -->
+<head>
+
+        <!-- ***** character encoding ***** -->
+<!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
+
+      <!-- ***** responsive viewport ***** -->
+<!-- The viewport meta tag ensures that the webpage automatically scales to fit
+     different screen sizes, including desktops, tablets, and smartphones.
+     -This improves readability, accessibility, and the overall user experience
+      on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Apply / Volunteer / Sponsor</title>
-
+<!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the appearance of the entire website.
+     -Using one CSS file keeps the branding, typography, colours,
+      spacing, and layouts consistent across every page.
+     -Maintaining a shared stylesheet also simplifies future updates
+      and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!--***** Favicon ***** -->
+    <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo inside the browser tab,
+     making the website easier to recognise.
+     -Using the same favicon throughout the website strengthens
+      CodeBridge's branding and provides a professional appearance. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
-
-    <!-- ***** header ***** -->
-    <!-- Identical header/nav markup to every other page so the logo and
-     navigation menu stay consistent site-wide, helping visitors move between
-     the Enquiry page and the rest of CodeBridge's site without confusion. -->
-    <header>
-
+<!-- ***** header ***** -->
+<!-- The header contains the organisation's logo together with the
+     primary navigation menu.
+     -It appears consistently across every page to strengthen
+      CodeBridge's branding and provide visitors with a familiar
+      browsing experience.
+     -Keeping the header consistent improves navigation and overall
+      usability. -->
+   <header>
+<!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
 
         <br>
-
+<!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to every
+     major page within the CodeBridge website.
+     -Using the same navigation structure across every page creates
+      consistency and makes it easier for visitors to browse the site.
+     -This supports the organisation's goal of increasing programme
+      applications, volunteer registrations, and community engagement. -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -91,17 +129,32 @@
 
             <form action="#" method="post">
 
-                <!-- Enquiry type -->
-                <!-- Full validation logic (required select) will be extended
-                 in Part 3, but the required attribute already prevents an
-                 empty submission at the HTML level. -->
+           <!-- ***** enquiry type selection ***** -->
+<!-- This field allows visitors to identify the purpose of their enquiry
+     before completing the remainder of the form.
+     -Selecting an enquiry type helps CodeBridge distinguish between
+      learner applications, volunteer registrations, and sponsor
+      enquiries, allowing submissions to be processed more efficiently.
+     -Additional JavaScript functionality in Part 3 will customise the
+      form based on the selected option. -->
 
+      <!-- ***** enquiry category ***** -->
+<!-- The fieldset groups together the enquiry type controls into a
+     single logical section.
+     -Using a fieldset together with a legend improves accessibility by
+      helping screen readers understand that these inputs belong to the
+      same category. -->
                 <fieldset>
 
                     <legend>Enquiry Type</legend>
 
                     <label for="enquiry-type">What are you enquiring about?</label>
                     <br>
+                    <!-- ***** enquiry type dropdown ***** -->
+<!-- The dropdown menu allows visitors to select the type of enquiry
+     they wish to submit.
+     -Providing predefined options reduces input errors and ensures that
+      enquiries are categorised consistently before submission. -->
                     <select id="enquiry-type" name="enquiry-type" required>
                         <option value="">-- please choose --</option>
                         <option value="learner">Learner Application</option>
@@ -113,27 +166,41 @@
 
                 <br>
 
-                <!-- Personal details -->
-                <!-- Required for every enquiry type, since CodeBridge needs
-                 to be able to contact the person regardless of whether they
-                 are applying, volunteering, or sponsoring. -->
+              <!-- ***** personal information ***** -->
+<!-- This section collects the visitor's essential contact information.
+     -Regardless of the enquiry type, CodeBridge requires these details
+      in order to communicate with the individual and respond
+      appropriately to their request. -->
 
-                <fieldset>
+<!-- ***** contact information ***** -->
+<!-- This fieldset groups together all personal contact details,
+     making the form easier to understand and complete.
+     -Organising related inputs into logical sections improves
+      accessibility and overall usability. -->
+               
+      <fieldset>
 
                     <legend>Your Details</legend>
-
+<!-- ***** full name ***** -->
+<!-- Collects the visitor's full name so that CodeBridge can identify
+     who submitted the enquiry and personalise future communication. -->
                     <label for="full-name">Full Name</label>
                     <br>
                     <input type="text" id="full-name" name="full-name" required>
 
                     <br><br>
-
+<!-- ***** contact number ***** -->
+<!-- Collects a telephone number in case CodeBridge needs to contact
+     the visitor directly regarding their application or enquiry. -->
                     <label for="contact-number">Contact Number</label>
                     <br>
                     <input type="tel" id="contact-number" name="contact-number" required>
 
                     <br><br>
-
+<!-- ***** email address ***** -->
+<!-- Collects the visitor's email address for official communication.
+     -Using the email input type provides basic browser validation to
+      help reduce incorrectly formatted email addresses. -->
                     <label for="email">Email Address</label>
                     <br>
                     <input type="email" id="email" name="email" required>
@@ -142,15 +209,28 @@
 
                 <br>
 
-                <!-- Learner-specific details -->
-                <!-- Only relevant to a Learner Application; these fields will
-                 be shown/hidden dynamically based on the enquiry type once
-                 JavaScript is added in Part 3. -->
+             <!-- ***** learner application details ***** -->
+<!-- This section collects additional information that is only required
+     from learner applicants.
+     -These questions help CodeBridge determine where applicants would
+      like to study, which programme they are interested in, and their
+      motivation for joining.
+     -Dynamic show-and-hide behaviour will be implemented during Part 3
+      using JavaScript. -->
 
-                <fieldset>
+            <!-- ***** learner information ***** -->
+<!-- The fieldset groups together all learner-specific questions into
+     one logical section.
+     -Grouping related inputs improves accessibility and makes the form
+      easier for applicants to complete. -->    
+      <fieldset>
 
                     <legend>Learner Application Details</legend>
-
+<!-- ***** preferred learning centre ***** -->
+<!-- Allows learner applicants to choose the community centre where
+     they would like to attend training.
+     -Providing multiple centre options supports CodeBridge's outreach
+      across different communities. -->
                     <label for="centre">Preferred Centre</label>
                     <br>
                     <select id="centre" name="centre">
@@ -160,7 +240,10 @@
                     </select>
 
                     <br><br>
-
+<!-- ***** programme selection ***** -->
+<!-- Allows applicants to select the programme they wish to enrol in.
+     -Capturing this information helps CodeBridge organise applications
+      and prepare learners for their chosen programme. -->
                     <label for="programme">Programme of Interest</label>
                     <br>
                     <select id="programme" name="programme">
@@ -171,7 +254,11 @@
                     </select>
 
                     <br><br>
-
+<!-- ***** applicant motivation ***** -->
+<!-- This text area allows applicants to briefly explain why they wish
+     to join the selected programme.
+     -Understanding each learner's motivation helps CodeBridge better
+      understand the needs and goals of prospective participants. -->
                     <label for="motivation">Short Motivation</label>
                     <br>
                     <textarea id="motivation" name="motivation" rows="4"></textarea>
@@ -179,7 +266,11 @@
                 </fieldset>
 
                 <br>
-
+<!-- ***** submit application ***** -->
+<!-- The submit button sends the completed enquiry form for processing.
+     -Placing the button after all required sections provides a logical
+      flow and encourages users to review their information before
+      submitting it. -->
                 <button type="submit">Submit</button>
 
             </form>
@@ -190,24 +281,45 @@
 
     <hr>
 
-    <!-- ***** footer section ***** -->
-    <!-- Same footer structure as every other page: Contact, Donate, then
-     Privacy Policy, so navigation and calls to action stay identical across
-     the whole site. -->
-
+   
+<!-- ***** footer ***** -->
+<!-- The footer appears consistently across every page and provides
+     copyright information together with quick navigation links.
+     -Maintaining a consistent footer improves usability, reinforces
+      the website structure, and allows visitors to quickly access
+      important pages from anywhere on the site. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
-
+ <!-- ***** Footer Navigation Links ***** -->
+        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
+
+            <!-- ***** Contact Link ***** -->
+            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+
+            <!-- ***** Donate Link ****** -->
+            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
+            <li><a href="donate.html">Donate</a></li>
+
+            <!--***** Privacy Policy Link ***** -->
+            <!-- Placeholder link for CodeBridge’s privacy policy page. 
+                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <li><a href="privacy.html">Privacy Policy</a></li>
+
         </ul>
 
     </footer>
-
-    <!-- ***** shared script ***** -->
+<!-- ***** shared script ***** -->
+<!-- The main JavaScript file is loaded after all HTML content has been
+     displayed.
+     -Loading the script at the bottom of the page improves page
+      performance because the webpage content is rendered before
+      interactive features are processed.
+     -During Part 3 this script will handle client-side validation,
+      dynamic form behaviour, and other interactive functionality
+      across the CodeBridge website. -->
     <script src="js/main.js"></script>
 
 </body>

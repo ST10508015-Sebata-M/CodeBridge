@@ -2,28 +2,67 @@
 <html lang="en">
 <head>
 
-    <!-- Basic document information -->
+        <!-- ***** character encoding ***** -->
+<!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
+       <!-- ***** responsive viewport ***** -->
+<!-- The viewport meta tag ensures that the webpage automatically scales to fit
+     different screen sizes, including desktops, tablets, and smartphones.
+     -This improves readability, accessibility, and the overall user experience
+      on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Donate</title>
 
-    <!-- External stylesheet (Part 2) -->
+   <!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the appearance of the entire website.
+     -Using one CSS file keeps the branding, typography, colours,
+      spacing, and layouts consistent across every page.
+     -Maintaining a shared stylesheet also simplifies future updates
+      and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Website favicon -->
+   <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo inside the browser tab,
+     making the website easier to recognise.
+     -Using the same favicon throughout the website strengthens
+      CodeBridge's branding and provides a professional appearance. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- ***** header ***** -->
+<!-- The header contains the organisation's logo together with the
+     primary navigation menu.
+     -It appears consistently across every page to strengthen
+      CodeBridge's branding and provide visitors with a familiar
+      browsing experience.
+     -Keeping the header consistent improves navigation and overall
+      usability. -->
     <header>
-
+<!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
-
+<!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to every
+     major page within the CodeBridge website.
+     -Using the same navigation structure across every page creates
+      consistency and makes it easier for visitors to browse the site.
+     -This supports the organisation's goal of increasing programme
+      applications, volunteer registrations, and community engagement. -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -37,11 +76,21 @@
     </header>
 
     <hr>
+<!-- ***** main content ***** -->
+<!-- The main element contains the unique content for the Donate page,
+     including information about CodeBridge's fundraising efforts,
+     donation impact, and the donation form.
+     -Using the main element improves semantic HTML by helping search
+      engines and assistive technologies identify the primary content
+      of the webpage. -->
+     <main>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main>
-
-        <!-- Page introduction -->
+        <!-- ***** page introduction ***** -->
+<!-- This introductory section explains why donations are important to
+     CodeBridge and how financial contributions support young people.
+     -Providing context before requesting a donation helps visitors
+      understand the organisation's mission and the positive impact
+      their contribution can make. -->
         <section>
 
             <h1>Support CodeBridge</h1>
@@ -57,18 +106,34 @@
 
         <hr>
 
-        <!-- ============ Impact breakdown ============ -->
+        <!-- ***** donation impact ***** -->
+<!-- This section explains how different donation amounts contribute
+     towards CodeBridge's programmes and resources.
+     -Showing the direct impact of each contribution encourages
+      transparency and helps donors understand how their support
+      benefits learners. -->
         <section>
 
             <h2>How Your Donation Helps</h2>
-
+<!-- ***** donation impact table ***** -->
+<!-- The table presents different donation amounts together with the
+     support each contribution provides.
+     -Displaying this information in a table allows visitors to compare
+      donation options quickly and easily. -->
             <table>
+                <!-- ***** table headings ***** -->
+<!-- The table headings identify each column, making it easier for
+     visitors to understand the donation amounts and their impact. -->
                 <thead>
                     <tr>
                         <th>Amount</th>
                         <th>Impact</th>
                     </tr>
                 </thead>
+                <!-- ***** donation examples ***** -->
+<!-- Each table row demonstrates how a specific donation amount helps
+     CodeBridge provide training opportunities and learning resources
+     for young people. -->
                 <tbody>
                     <tr>
                         <td>R100</td>
@@ -93,20 +158,28 @@
 
         <hr>
 
-        <!-- ============ Donation form ============ -->
-        <!-- Interface only for Part 1: this form is built to accommodate a future
-             payment gateway integration (e.g. PayFast or SnapScan) in Part 3.
-             No live payment processing takes place yet. -->
-        <section>
+        <!-- ***** donation form ***** -->
+<!-- This form allows supporters to choose a donation amount and
+     provide their contact information.
+     -For Part 1, the form demonstrates the website's structure only.
+     -A secure payment gateway such as PayFast or SnapScan will be
+      integrated during Part 3 using JavaScript and server-side
+      processing. -->
+       <section>
 
             <h2>Make a Donation</h2>
 
             <form action="#" method="post">
-
+ <!-- ***** donation amount ***** -->
+<!-- This fieldset groups together the available donation options.
+     -Using radio buttons ensures that donors select only one donation
+      amount before submitting the form. -->
                 <fieldset>
 
                     <legend>Choose an Amount</legend>
-
+<!-- ***** predefined donation options ***** -->
+<!-- These radio buttons provide commonly selected donation amounts,
+     allowing supporters to make a contribution quickly and easily. -->
                     <input type="radio" id="amount-100" name="amount" value="100">
                     <label for="amount-100">R100</label>
                     <br>
@@ -125,22 +198,36 @@
 
                     <input type="radio" id="amount-other" name="amount" value="other">
                     <label for="amount-other">Other amount:</label>
-                    <input type="number" id="other-amount" name="other-amount" min="10" placeholder="R">
+                    <!-- ***** custom donation amount ***** -->
+<!-- This input allows donors to enter a donation amount that is not
+     listed in the predefined options.
+     -The minimum value helps prevent invalid donation amounts from
+      being entered. -->
+                    <label for="other-amount">R</label>
+                 <input type="number" id="other-amount" name="other-amount" min="10">
 
                 </fieldset>
 
                 <br>
-
+<!-- ***** donor information ***** -->
+<!-- This fieldset collects the donor's personal details.
+     -Providing contact information allows CodeBridge to acknowledge
+      donations and communicate with supporters when necessary. -->
                 <fieldset>
 
                     <legend>Your Details</legend>
-
+<!-- ***** donor name ***** -->
+<!-- Collects the donor's full name for identification and future
+     communication regarding their contribution. -->
                     <label for="donor-name">Full Name</label>
                     <br>
                     <input type="text" id="donor-name" name="donor-name" required>
 
                     <br><br>
-
+<!-- ***** donor email ***** -->
+<!-- Collects the donor's email address for donation confirmations,
+     receipts, and future communication.
+     -Using the email input type provides basic browser validation. -->
                     <label for="donor-email">Email Address</label>
                     <br>
                     <input type="email" id="donor-email" name="donor-email" required>
@@ -148,13 +235,21 @@
                 </fieldset>
 
                 <br>
-
+<!-- ***** payment information ***** -->
+<!-- This message informs donors that online payment processing has
+     not yet been implemented.
+     -Future integration with a secure payment gateway will be
+      completed during Part 3 of the project. -->
                 <p>
                     You will be redirected to a secure payment provider (e.g. PayFast or
                     SnapScan) to complete your donation. Online payment processing will be
                     integrated in Part 3.
                 </p>
-
+<!-- ***** submit donation ***** -->
+<!-- The submit button sends the donation form for processing.
+     -Although payment functionality has not yet been implemented, the
+      button demonstrates the intended user interface for future
+      development. -->
                 <button type="submit">Donate Now</button>
 
             </form>
@@ -165,20 +260,45 @@
 
     <hr>
 
-    <!-- ================= FOOTER ================= -->
+  <!-- ***** footer ***** -->
+<!-- The footer appears consistently across every page and provides
+     copyright information together with quick navigation links.
+     -Maintaining a consistent footer improves usability, reinforces
+      the website structure, and allows visitors to quickly access
+      important pages from anywhere on the site. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
-
+ <!-- ***** Footer Navigation Links ***** -->
+        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
+
+            <!-- ***** Contact Link ***** -->
+            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
+
+            <!-- ***** Donate Link ****** -->
+            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
+
+            <!--***** Privacy Policy Link ***** -->
+            <!-- Placeholder link for CodeBridge’s privacy policy page. 
+                 This will be added in Part 2(css)to show compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
+
         </ul>
 
     </footer>
 
-    <!-- External JavaScript (Part 3) -->
+    <!-- ***** shared script ***** -->
+<!-- The main JavaScript file is loaded after all HTML content has been
+     displayed.
+     -Loading the script at the bottom of the page improves page
+      performance because the webpage content is rendered before
+      interactive features are processed.
+     -During Part 3 this script will handle client-side validation,
+      donation processing, and other interactive functionality across
+      the CodeBridge website. -->
     <script src="js/main.js"></script>
 
 </body>

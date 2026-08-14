@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- ***** document setup ***** -->
+<!-- The page begins with the standard HTML5 document structure to ensure
+     consistent rendering across modern web browsers.
+     -The <head> section stores important information such as the character encoding,
+      responsive viewport settings, page title, stylesheet, and favicon.
+     -Keeping this setup consistent across every page improves accessibility,
+      maintainability, and provides a professional user experience. -->
 <head>
+
+  <!-- ***** character encoding ***** -->
+<!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
   <title>CodeBridge | About Us</title>
+  <!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the appearance of the entire website.
+     -Using one CSS file keeps the branding, typography, colours,
+      spacing, and layouts consistent across every page.
+     -Maintaining a shared stylesheet also simplifies future updates
+      and improves website maintainability. -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo inside the browser tab,
+     making the website easier to recognise.
+     -Using the same favicon throughout the website strengthens
+      CodeBridge's branding and provides a professional appearance. -->
   <link rel="icon" type="image/png" href="images/CodeBridge.png">
 </head>
 <body>
-
+ 
+  <!-- ***** header ***** -->
+<!-- The header contains the organisation's logo and the primary navigation menu.
+     -It appears consistently across every page to strengthen CodeBridge's branding
+      and provide users with a familiar browsing experience.
+     -Displaying the same header throughout the website makes navigation simple,
+      reduces confusion, and improves overall usability. -->
   <header>
+    <!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
     <div class="logo">
       <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50" />
     </div>
 
-    <!-- nav kept identical to index.html so every page links to every other page -->
+    <!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to the website's
+     main pages including Home, About Us, Programmes, Apply / Volunteer, and Contact.
+     -Using the same navigation structure throughout the website creates consistency
+      and makes it easier for visitors to move between pages.
+     -The navigation also includes accessibility attributes to help screen readers
+      clearly identify the site's primary navigation area.
+     -This supports the project's objective of improving user experience while
+      encouraging applications, volunteer registrations, and enquiries. -->
     <nav role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -28,7 +76,13 @@
 
   <hr>
   <br>
-
+ <!-- ***** main content area ***** -->
+<!-- The <main> element contains the unique content found on the About Us page.
+     -Separating the primary content from the shared header and footer improves
+      accessibility and helps assistive technologies identify the most important
+      information on the page.
+     -This page introduces visitors to CodeBridge's background, mission, values,
+      and the people behind the organisation, helping establish trust and credibility. -->
   <main id="main-content">
     <section>
       <h1>About CodeBridge</h1>
@@ -38,9 +92,14 @@
     <br>
     <hr>
     <br>
-
-    <!-- History section: tells visitors the story behind CodeBridge and explains how the organisation was established.
-         Includes an illustrative image, accessible alt text, and clearly commented paragraphs for the rubric. -->
+    <!-- ***** organisation history section ***** -->
+<!-- This section introduces visitors to the background and development of CodeBridge.
+     -It explains how the organisation was founded, how it has grown over time,
+      and the impact it continues to make within Johannesburg communities.
+     -Supporting images and descriptive captions help make the content more engaging
+      while alternative text improves accessibility for visually impaired users.
+     -Sharing the organisation's story helps build credibility and encourages
+      learners, volunteers, and donors to become part of the mission. -->
     <section class="history">
       <h2>Our Story</h2>
 
@@ -68,10 +127,22 @@
     <hr>
     <br>
 
-    <!-- This section communicates the organisation's purpose and long-term goals. -->
+   <!-- ***** mission and vision section ***** -->
+<!-- This section explains CodeBridge's purpose and long-term aspirations.
+     -The mission statement describes what the organisation currently does to
+      empower young people through digital education.
+     -The vision statement outlines the future impact CodeBridge hopes to achieve
+      within Johannesburg and surrounding communities.
+     -Presenting both statements helps visitors understand the organisation's
+      direction, values, and long-term commitment to youth development. -->
     <section class="mission-vision">
       <h2>Mission &amp; Vision</h2>
-
+<!-- ***** mission statement ***** -->
+<!-- The mission statement explains CodeBridge's current purpose.
+     -It focuses on providing practical, job-ready digital skills that improve
+      confidence, employability, and future career opportunities for young people.
+     -Clearly defining the mission helps visitors understand how the organisation
+      creates value within the community. -->
       <article>
         <h3>Our Mission</h3>
         <p>
@@ -80,7 +151,13 @@
       </article>
 
       <br>
-
+<!-- ***** vision statement ***** -->
+<!-- The vision statement describes the long-term future that CodeBridge aims
+     to create.
+     -It emphasises equal access to quality technology education regardless of
+      financial background or personal circumstances.
+     -Sharing the organisation's vision inspires confidence and demonstrates
+      a commitment to lasting community impact. -->
       <article>
         <h3>Our Vision</h3>
         <p>
@@ -92,8 +169,13 @@
     <br>
     <hr>
     <br>
-
-    <!-- This section highlights the core values that guide everything CodeBridge does. -->
+<!-- ***** core values section ***** -->
+<!-- This section highlights the principles that guide every programme,
+     decision, and community initiative at CodeBridge.
+     -Each value represents the organisation's commitment to providing an
+      inclusive, supportive, and ethical learning environment.
+     -Displaying these values helps visitors understand the culture of the
+      organisation while building trust with learners, volunteers, and donors. -->
     <section class="values">
       <h2>Our Values</h2>
 
@@ -113,12 +195,24 @@
     <br>
     <hr>
     <br>
-
-    <!-- Team section: single-person team shown because CodeBridge is currently run by the founder -->
+<!-- ***** team section ***** -->
+<!-- This section introduces the individual responsible for leading CodeBridge.
+     -Presenting the founder helps personalise the organisation and strengthens
+      credibility by showing the people behind its mission.
+     -Including a professional image, descriptive biography, and role helps
+      visitors connect with the organisation on a more personal level.
+     -As CodeBridge grows, additional team members can easily be added to this
+      section while maintaining the same structure. -->
     <section class="team">
       <h2>Meet the Team</h2>
 
       <article class="team-member">
+        <!-- ***** founder profile image ***** -->
+<!-- The founder's image gives visitors a visual introduction to the person
+     leading the organisation.
+     -The descriptive alternative text improves accessibility while the caption
+      provides additional context about the founder's role within CodeBridge.
+     -Lazy loading improves performance by delaying image loading until needed. -->
         <figure>
           <img src="images/mapuru.jpg" alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop" width="320" loading="lazy" />
           <figcaption><small>Mapuru Sebata leading a community coding workshop.</small></figcaption>
@@ -138,31 +232,52 @@
     <hr>
     <br>
 
-    <!-- This section explains why learners, volunteers and supporters should choose CodeBridge. -->
-    <section class="why-codebridge">
+    <!-- ***** why choose codebridge section ***** -->
+<!-- This section explains the unique benefits of joining or supporting
+     CodeBridge.
+     -It highlights the organisation's practical teaching approach,
+      experienced mentors, and career-focused training.
+     -Presenting these advantages helps learners, volunteers, parents,
+      and potential sponsors understand the value offered by CodeBridge.
+     -This directly supports the project's goal of increasing programme
+      applications and community engagement. -->
+   <section class="why-codebridge">
       <h2>Why Choose CodeBridge?</h2>
 
       <figure>
+        <!-- ***** learning environment image ***** -->
+<!-- This image showcases learners actively participating in a coding workshop.
+     -Visual content helps visitors imagine the learning experience while
+      reinforcing the organisation's focus on practical education.
+     -The descriptive alternative text improves accessibility for users who
+      rely on screen readers. -->
         <img src="images/coding-class.png" alt="Students participating in a coding workshop" width="480" loading="lazy" />
         <figcaption><small>Students participating in a CodeBridge workshop.</small></figcaption>
       </figure>
 
       <br>
-
+<!-- ***** practical learning benefit ***** -->
+<!-- Highlights CodeBridge's project-based learning approach, showing that
+     learners gain real coding experience through practical activities rather
+     than relying only on theoretical knowledge. -->
       <article>
         <h3>Practical Learning</h3>
         <p>
           Our programmes focus on hands-on projects that help learners build practical coding experience instead of only learning theory.
         </p>
       </article>
-
+<!-- ***** experienced mentors benefit ***** -->
+<!-- Explains the value of learning from passionate volunteers who provide
+     guidance, encouragement, and real-world knowledge throughout each programme. -->
       <article>
         <h3>Experienced Mentors</h3>
         <p>
           Learners receive guidance from passionate volunteers who are committed to helping young people succeed in technology.
         </p>
       </article>
-
+<!-- ***** career preparation benefit ***** -->
+<!-- Demonstrates how CodeBridge prepares learners for future employment by
+     developing practical digital skills, confidence, and workplace readiness. -->
       <article>
         <h3>Career Preparation</h3>
         <p>
@@ -175,19 +290,43 @@
 
   <br>
   <hr>
-
+<!-- ***** footer ***** -->
+<!-- The footer provides consistent information that appears across every page.
+     -It includes copyright information together with quick navigation links
+      that help visitors access important pages from anywhere on the website.
+     -Keeping the footer consistent improves usability and contributes to a
+      professional website structure.
+     -Placeholder links for Donate and Privacy Policy will be fully implemented
+      during the CSS and JavaScript phases of the project. -->
   <footer>
     <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
     <nav>
-      <ul>
-        <li><a href="contact.html">Contact</a></li>
-        <!-- Donate and Privacy Policy are placeholders for Part 2 -->
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
+       <!-- ***** Footer Navigation Links ***** -->
+        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
+        <ul>
+
+            <!-- ***** Contact Link ***** -->
+            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
+            <li><a href="contact.html">Contact</a></li>
+
+            <!-- ***** Donate Link ****** -->
+            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
+            <li><a href="donate.html">Donate</a></li>
+
+            <!--***** Privacy Policy Link ***** -->
+            <!-- Placeholder link for CodeBridge’s privacy policy page. 
+                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <li><a href="privacy.html">Privacy Policy</a></li>
+
+        </ul>
     </nav>
   </footer>
-
+<!-- ***** shared script ***** -->
+<!-- The main JavaScript file is linked at the bottom of the page so the HTML
+     content loads before any interactive features are processed.
+     -This improves loading performance and creates a smoother user experience.
+     -Additional functionality such as form validation and interactive features
+      will be implemented in later parts of the project using this shared script. -->
   <script src="js/main.js"></script>
 </body>
 </html>

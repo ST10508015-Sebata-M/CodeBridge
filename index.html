@@ -1,9 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-    <!--***** MY DOCUMENT SETUP *****-->
+     <!--***** MY DOCUMENT SETUP *****-->
     <!--THE page starts with <!DOCTYPE html>, which tells browsers to use the HTML5 standard
      for better compatibility.
      In the <head> section, it includes important details like: 
@@ -11,19 +9,40 @@
       -a viewport setting so the site looks right on mobile devices
       -a page title, which helps the SEO and accessibility.
     -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
 
+   <!-- ***** character encoding ***** -->
+<!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
+    <meta charset="UTF-8">
+      <!-- ***** responsive viewport ***** -->
+<!-- The viewport meta tag ensures that the webpage automatically scales to fit
+     different screen sizes, including desktops, tablets, and smartphones.
+     -This improves readability, accessibility, and the overall user experience
+      on mobile devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Home</title>
 
-    <!-- This <link> tag connects the HTML page to the shared stylesheet (style.css).
-    -Using one CSS file across the whole site helps keep everything consistent—like the branding,
-     fonts, and color scheme. 
-    -It also makes the website easier to update and maintain over time.
-    -The CSS file is stored in the /css folder to match the required folder structure. -->
+    <!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the appearance of the entire website.
+     -Using one CSS file keeps the branding, typography, colours,
+      spacing, and layouts consistent across every page.
+     -Maintaining a shared stylesheet also simplifies future updates
+      and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!--***** Favicon ***** -->
+   <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo inside the browser tab,
+     making the website easier to recognise.
+     -Using the same favicon throughout the website strengthens
+      CodeBridge's branding and provides a professional appearance. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
@@ -36,7 +55,11 @@
      making it easier for visitors to find what they need.
      -Keeping the same menu across the site helps users quickly access important information without getting confused-->
     <header>
-
+<!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
@@ -75,15 +98,12 @@
      the goals of increasing applications, donations, and volunteer sign-ups. -->
 
     <main>
-
-        <!-- ***** hero section ***** -->
-        <!-- The hero is the first thing visitors see when they land on the site.
-         -It highlights CodeBridge’s mission in a clear headline and grabs attention right away.
-         -The call‑to‑action button (“Apply Now”) links straight to the enquiry form, 
-         making it easy for users to get involved.
-         -This design ensures high visibility and immediate engagement, 
-         directly supporting the goal of increasing programme applications. -->
-
+<!-- ***** hero section ***** -->
+<!-- The hero section is the first content visitors see when they
+     arrive on the CodeBridge website.
+     -It introduces the organisation's mission through a clear heading
+      and supporting description, immediately explaining the purpose of
+      the website.-->
         <section class="hero">
 
             <h1>Bridging the digital skills gap for Johannesburg's youth</h1>
@@ -101,7 +121,12 @@
             </p>
 
             <br>
-
+ <!-- The "Apply Now" call-to-action button directs visitors to the
+      application and volunteer page, encouraging immediate engagement.
+     -Presenting the organisation's mission prominently helps attract
+      prospective learners, volunteers, and supporters while supporting
+      CodeBridge's goal of expanding digital skills education within
+      Johannesburg. -->
             <a href="enquiry.html" class="cta-button">Apply Now</a>
 
         </section>
@@ -217,7 +242,7 @@
 
             <br>
 
-            <!-- Learner Testimonial -->
+            <!-- ***** Learner Testimonial ***** -->
             <!-- Highlights how CodeBridge empowered a youth with coding skills, 
                  showing direct programme success. -->
             <blockquote>
@@ -227,7 +252,7 @@
 
             <br>
 
-            <!-- Parent Testimonial -->
+            <!-- ***** Parent Testimonial ***** -->
             <!-- Shows parental trust in the programme, reassuring families 
                  that CodeBridge delivers real value. -->
             <blockquote>
@@ -237,7 +262,7 @@
 
             <br>
 
-            <!-- Digital Literacy Testimonial -->
+            <!-- ***** Digital Literacy Testimonial ***** -->
             <!-- Highlights the impact of the Digital Literacy & Career Skills programme, 
                  showing inclusivity and broader community benefit. -->
             <blockquote>
@@ -247,7 +272,7 @@
 
             <br>
 
-            <!-- Donor Testimonial -->
+            <!-- ***** Donor Testimonial ***** -->
             <!-- Demonstrates external support, building credibility with sponsors and donors. -->
             <blockquote>
                 "We support CodeBridge because it equips young people with practical skills 
@@ -271,22 +296,22 @@
 
         <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
 
-        <!-- Footer Navigation Links -->
+        <!-- ***** Footer Navigation Links ***** -->
         <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
 
-            <!-- Contact Link -->
+            <!-- ***** Contact Link ***** -->
             <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
 
-            <!-- Donate Link -->
+            <!-- ***** Donate Link ****** -->
             <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
-            <li><a href="#">Donate</a></li>
+            <li><a href="donate.html">Donate</a></li>
 
-            <!-- Privacy Policy Link -->
+            <!--***** Privacy Policy Link ***** -->
             <!-- Placeholder link for CodeBridge’s privacy policy page. 
                  This will be added in Part 2(css)to show compliance and professionalism. -->
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
 
@@ -304,4 +329,3 @@
 
 </body>
 </html>
-```

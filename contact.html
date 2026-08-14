@@ -2,28 +2,69 @@
 <html lang="en">
 <head>
 
-    <!-- Basic document information -->
+   <!-- ***** character encoding ***** -->
+<!-- UTF-8 character encoding allows the webpage to correctly display letters,
+     symbols, punctuation marks, and special characters.
+     -Using UTF-8 ensures that the website appears consistently across different
+      browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+      <!-- ***** responsive viewport ***** -->
+<!-- The viewport meta tag ensures that the webpage automatically scales to fit
+     different screen sizes, including desktops, tablets, and smartphones.
+     -This improves readability, accessibility, and the overall user experience
+      on mobile devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ***** page title ***** -->
+<!-- The page title appears in the browser tab and helps visitors identify
+     the current page.
+     -A meaningful title also improves search engine optimisation (SEO) and
+      makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Contact</title>
 
-    <!-- External stylesheet (Part 2) -->
+    <!-- ***** shared stylesheet ***** -->
+<!-- This stylesheet controls the appearance of the entire website.
+     -Using one CSS file keeps the branding, typography, colours,
+      spacing, and layouts consistent across every page.
+     -Maintaining a shared stylesheet also simplifies future updates
+      and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Website favicon -->
+    <!-- ***** favicon ***** -->
+<!-- The favicon displays the CodeBridge logo inside the browser tab,
+     making the website easier to recognise.
+     -Using the same favicon throughout the website strengthens
+      CodeBridge's branding and provides a professional appearance. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- ***** header ***** -->
+<!-- The header contains the organisation's logo together with the
+     primary navigation menu.
+     -It appears consistently across every page to strengthen
+      CodeBridge's branding and provide visitors with a familiar
+      browsing experience.
+     -Keeping the header consistent improves navigation and overall
+      usability. -->
     <header>
-
+<!-- ***** organisation logo ***** -->
+<!-- The CodeBridge logo provides a visual identity for the organisation.
+     -Displaying the logo on every page reinforces the brand and helps
+      visitors immediately recognise the website.
+     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
-
+ <!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to the
+     website's core pages including Home, About Us, Programmes,
+     Apply / Volunteer, and Contact.
+     -Keeping the navigation consistent across every page improves
+      usability and makes browsing the website straightforward.
+     -This supports the project's objective of increasing programme
+      applications, volunteer registrations, and enquiries. -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -38,10 +79,22 @@
 
     <hr>
 
-    <!-- ================= MAIN CONTENT ================= -->
+  <!-- ***** main content area ***** -->
+<!-- The <main> element contains the unique content of the Contact page.
+     -Separating the primary content from the shared header and footer
+      improves accessibility and helps assistive technologies identify
+      the page's most important information.
+     -This page provides visitors with multiple ways to communicate with
+      CodeBridge and access its community centres. -->
     <main>
 
-        <!-- Page introduction -->
+       <!-- ***** contact page introduction ***** -->
+<!-- This introductory section welcomes visitors and explains how they
+     can get in touch with CodeBridge.
+     -It encourages users to submit enquiries while also informing them
+      of the expected response time.
+     -Providing this information creates realistic expectations and helps
+      build trust with potential learners, volunteers, and donors. -->
         <section>
 
             <h1>Contact Us</h1>
@@ -56,31 +109,54 @@
 
         <hr>
 
-        <!-- ============ Contact Form ============ -->
+        <!-- ***** contact form section ***** -->
+<!-- This section provides visitors with an easy way to communicate
+     directly with CodeBridge.
+     -The contact form allows users to submit general enquiries that are
+      not covered elsewhere on the website.
+     -Providing an online contact form improves accessibility and
+      encourages communication between the organisation and the community. -->
         <section>
 
             <h2>Send Us a Message</h2>
-
-            <!-- Simple contact form. Full client-side validation (required-field
-                 checks, correct email/number format) will be implemented in Part 3. -->
+<!-- ***** contact form ***** -->
+<!-- This form collects essential information needed to respond to
+     visitor enquiries.
+     -Required fields help ensure that enough information is provided
+      before the form can be submitted.
+     -Client-side validation and enhanced interactivity will be
+      implemented during Part 3 using JavaScript. -->
             <form action="#" method="post">
-
+<!-- ***** enquiry information ***** -->
+<!-- The fieldset groups all contact-related input fields together,
+     making the form easier to understand and improving accessibility.
+     -The legend clearly identifies the purpose of this group of inputs
+      for both users and assistive technologies. -->
                 <fieldset>
 
                     <legend>Your Message</legend>
-
+<!-- ***** visitor name ***** -->
+<!-- Collects the visitor's name so CodeBridge can personalise
+     responses and identify who submitted the enquiry. -->
                     <label for="name">Name</label>
                     <br>
                     <input type="text" id="name" name="name" required>
 
                     <br><br>
-
+<!-- ***** visitor email ***** -->
+<!-- Collects the visitor's email address so the organisation can
+     respond to the enquiry.
+     -Using the email input type also provides basic browser validation
+      for correctly formatted email addresses. -->
                     <label for="email">Email</label>
                     <br>
                     <input type="email" id="email" name="email" required>
 
                     <br><br>
-
+<!-- ***** enquiry message ***** -->
+<!-- Allows visitors to describe their questions or concerns in detail.
+     -Providing a larger text area gives users enough space to explain
+      their enquiry clearly. -->
                     <label for="message">Message</label>
                     <br>
                     <textarea id="message" name="message" rows="5" required></textarea>
@@ -88,7 +164,10 @@
                 </fieldset>
 
                 <br>
-
+<!-- ***** submit button ***** -->
+<!-- The submit button sends the completed contact form for processing.
+     -Positioning the button below all required fields makes the form
+      simple and intuitive to complete. -->
                 <button type="submit">Send</button>
 
             </form>
@@ -97,24 +176,47 @@
 
         <hr>
 
-        <!-- ============ Locations ============ -->
-        <!-- The brief requires the Contact page to show more than one location,
-             since CodeBridge operates from two community centres. -->
-        <section class="locations">
+       <!-- ***** community centre locations ***** -->
+<!-- This section introduces the physical locations where CodeBridge
+     delivers its training programmes.
+     -Providing more than one location demonstrates the organisation's
+      community presence and helps visitors choose the most convenient
+      training centre.
+     -Including location information supports learners who may wish to
+      visit a centre before applying. -->
+
+<!-- The project brief requires the Contact page to display multiple
+     operating locations.
+     -Presenting both community centres improves accessibility and
+      provides learners with clear information about where programmes
+      are delivered. -->
+         <section class="locations">
 
             <h2>Our Locations</h2>
-
+<!-- ***** alexandra community centre ***** -->
+<!-- This article provides information about CodeBridge's Alexandra
+     training centre.
+     -It includes the centre's location, supporting image, and the
+      programmes delivered at this venue.
+     -Displaying this information helps visitors identify the most
+      suitable learning location. -->
             <article>
 
                 <h3>Alexandra Centre</h3>
-
+<!-- ***** location image ***** -->
+<!-- The map image provides visitors with a visual reference for the
+     Alexandra community centre.
+     -Alternative text improves accessibility while the caption
+      provides the complete physical address. -->
                 <figure>
                     <img src="images/map-alexandra.png" alt="Map showing the Alexandra Centre location" width="500">
                     <figcaption>
                         Alexandra Centre — 14 Roosevelt Street, Alexandra, Johannesburg, 2090
                     </figcaption>
                 </figure>
-
+<!-- ***** centre information ***** -->
+<!-- This paragraph summarises the programmes offered at the Alexandra
+     centre together with its operating days and opening hours. -->
                 <p>
                     Home of our Web Development Bootcamp and Digital Literacy &amp; Career Skills
                     programme. Open Saturdays, 08:30–13:30.
@@ -123,18 +225,29 @@
             </article>
 
             <hr>
-
+<!-- ***** diepsloot community centre ***** -->
+<!-- This article introduces CodeBridge's Diepsloot training centre.
+     -It provides location details together with information about
+      the programmes delivered at this venue.
+     -Displaying multiple centres demonstrates the organisation's
+      wider community reach. -->
             <article>
 
                 <h3>Diepsloot Centre</h3>
-
+<!-- ***** location image ***** -->
+<!-- The map image helps visitors identify the Diepsloot training
+     centre.
+     -The descriptive alternative text improves accessibility while
+      the caption displays the centre's full address. -->
                 <figure>
                     <img src="images/map-diepsloot.png" alt="Map showing the Diepsloot Centre location" width="500">
                     <figcaption>
                         Diepsloot Centre — Extension 1, Diepsloot, Johannesburg, 2189
                     </figcaption>
                 </figure>
-
+<!-- ***** centre information ***** -->
+<!-- This paragraph outlines the programmes available at the Diepsloot
+     centre together with its operating days and opening hours. -->
                 <p>
                     Home of our Java Programming Fundamentals evening classes. Open Tuesdays and
                     Thursdays, 16:30–19:30.
@@ -148,20 +261,45 @@
 
     <hr>
 
-    <!-- ================= FOOTER ================= -->
+   <!-- ***** footer ***** -->
+<!-- The footer provides consistent information that appears across
+     every page of the website.
+     -It includes copyright information together with quick navigation
+      links that allow visitors to easily access important pages.
+     -Maintaining a consistent footer improves usability and contributes
+      to a professional website structure. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
-
+ <!-- ***** Footer Navigation Links ***** -->
+        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
+
+            <!-- ***** Contact Link ***** -->
+            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
+
+            <!-- ***** Donate Link ****** -->
+            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
+
+            <!--***** Privacy Policy Link ***** -->
+            <!-- Placeholder link for CodeBridge’s privacy policy page. 
+                 This will be added in Part 2(css)to show compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
+
         </ul>
 
     </footer>
 
-    <!-- External JavaScript (Part 3) -->
+   <!-- ***** shared script ***** -->
+<!-- The main JavaScript file is loaded after all HTML content has been
+     displayed.
+     -Loading the script at the bottom of the page improves performance
+      because the webpage content is rendered before interactive features
+      are processed.
+     -This shared script will provide client-side validation and other
+      interactive functionality during Part 3 of the project. -->
     <script src="js/main.js"></script>
 
 </body>
