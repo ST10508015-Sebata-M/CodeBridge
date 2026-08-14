@@ -293,13 +293,15 @@
     </footer>
 
    <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is loaded after all HTML content has been
-     displayed.
-     -Loading the script at the bottom of the page improves performance
-      because the webpage content is rendered before interactive features
-      are processed.
-     -This shared script will provide client-side validation and other
-      interactive functionality during Part 3 of the project. -->
+<!-- The main JavaScript file is linked here and included on every page.
+     -It handles interactive features like form validation, navigation toggles,
+     and other dynamic behaviours that improve the website's usability.
+     -Keeping the JavaScript in an external file separates behaviour from
+     the HTML structure and makes the code easier to maintain.
+     -Placing the script near the bottom allows the HTML content to be
+     parsed before the script is executed, helping reduce interruptions
+     to page loading.
+     -This setup supports a user-friendly and maintainable website. -->
     <script src="js/main.js"></script>
 
 </body>
