@@ -59,7 +59,8 @@
 # 
 
 # Mapuru Sebata Student Number: ST10508015 GitHub: @ST10508015-Sebata-M
-
+## Changelog
+For full details, see [CHANGELOG.md](./CHANGELOG.md)
 
 
 # \## References
