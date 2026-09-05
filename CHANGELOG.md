@@ -20,3 +20,5 @@
 * I fixed my comments and tidy my code to improve readability, now I am left with updating my CHANGELOG.md file and my README.md file then I am submitting (commit 19f4666)
 * I fixed my comments and tidy my code to improve readablity, now I am left with updating my CHANGELOG.md file and my README.md file then I am submitting (commit 19f4666)
 
+## v1.0.2
+- Add CHANGELOG.md (commit c4c2004)
