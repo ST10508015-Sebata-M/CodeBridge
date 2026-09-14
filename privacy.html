@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-      <!-- ***** document setup ***** -->
-<!-- The page starts with the standard HTML5 document structure to ensure
-     consistent rendering across modern web browsers.
-     -The <head> section contains important information including the character
-      encoding, responsive viewport settings, page title, stylesheet, and favicon.
-     -Keeping this setup consistent across every page improves accessibility,
-      maintainability, and provides a professional browsing experience. -->
-    <!-- ***** character encoding ***** -->
 <head>
 
-  
+    <!-- ***** character encoding ***** -->
 <!-- UTF-8 character encoding allows the webpage to correctly display letters,
      symbols, punctuation marks, and special characters.
      -Using UTF-8 ensures that the website appears consistently across different
       browsers, operating systems, and devices. -->
-      <meta charset="UTF-8">
-        <!-- ***** responsive viewport ***** -->
+    <meta charset="UTF-8">
+
+      <!-- ***** responsive viewport ***** -->
 <!-- The viewport meta tag ensures that the webpage automatically scales to fit
      different screen sizes, including desktops, tablets, and smartphones.
      -This improves readability, accessibility, and the overall user experience
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
@@ -37,7 +31,7 @@
       supports a professional, user-friendly design. -->
     <link rel="stylesheet" href="css/style.css">
 
-   <!-- ***** favicon ***** -->
+    <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo in the browser tab,
      helping users easily identify the website when multiple tabs
      are open.
@@ -71,7 +65,7 @@
       experience and helps visitors quickly find the information they need.
      -This supports the project's objective of increasing programme applications,
       volunteer registrations, and general enquiries. -->
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -83,7 +77,6 @@
 
     </header>
 
-    <hr>
 <!-- ***** main content area ***** -->
 <!-- The <main> element contains the unique content of the Privacy Policy page.
      -Separating the main content from the shared header and footer improves
@@ -92,7 +85,7 @@
      -This page explains how CodeBridge collects, stores, protects, and uses
       personal information, helping build trust and demonstrate compliance
       with privacy legislation. -->
-    <main>
+    <main id="main-content">
 <!-- ***** privacy policy introduction ***** -->
 <!-- This introductory section explains the purpose of the Privacy Policy
      and informs visitors that CodeBridge processes personal information
@@ -111,8 +104,6 @@
             </p>
 
         </section>
-
-        <hr>
 
         <section>
             <!-- ***** information collection section ***** -->
@@ -134,8 +125,6 @@
             </ul>
         </section>
 
-        <hr>
-
         <section>
             <!-- ***** information usage section ***** -->
 <!-- This section explains how the information collected from visitors is used.
@@ -151,8 +140,6 @@
                 information for any purpose beyond what you submitted it for.
             </p>
         </section>
-
-        <hr>
 
         <section>
             <!-- ***** information sharing section ***** -->
@@ -171,8 +158,6 @@
             </p>
         </section>
 
-        <hr>
-
         <section>
             <!-- ***** data security section ***** -->
 <!-- This section outlines the measures used to protect personal information
@@ -190,8 +175,6 @@
             </p>
         </section>
 
-        <hr>
-
         <section>
             <!-- ***** user rights section ***** -->
 <!-- This section informs visitors of their rights under South Africa's
@@ -208,8 +191,6 @@
             </p>
         </section>
 
-        <hr>
-
         <section>
             <!-- ***** cookies section ***** -->
 <!-- This section explains the website's current use of cookies.
@@ -225,8 +206,6 @@
             </p>
         </section>
 
-        <hr>
-
         <section>
             <!-- ***** policy updates section ***** -->
 <!-- This section explains that the Privacy Policy may be updated whenever
@@ -241,8 +220,6 @@
                 be posted on this page with an updated revision date.
             </p>
         </section>
-
-        <hr>
 
         <section>
             <!-- ***** privacy contact section ***** -->
@@ -260,8 +237,6 @@
 
     </main>
 
-    <hr>
-
    <!-- ***** footer ***** -->
 <!-- The footer provides consistent information that appears across every page.
      -It includes copyright information together with quick navigation links
@@ -270,7 +245,7 @@
       website's structure, and contributes to a professional appearance. -->
     <footer>
 
-        <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
+        <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
 
          <!-- ***** Footer Navigation Links ***** -->
         <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
@@ -285,21 +260,21 @@
             <li><a href="donate.html">Donate</a></li>
 
             <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
     </footer>
+
 <!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here and included on every page.
      -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
+      and other dynamic behaviours that improve the website's usability.
      -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
+      the HTML structure and makes the code easier to maintain.
      -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
+      parsed before the script is executed, helping reduce interruptions
+      to page loading.
      -This setup supports a user-friendly and maintainable website. -->
   <script src="js/main.js"></script>
 
