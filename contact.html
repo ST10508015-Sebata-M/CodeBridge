@@ -65,19 +65,20 @@
       usability and makes browsing the website straightforward.
      -This supports the project's objective of increasing programme
       applications, volunteer registrations, and enquiries. -->
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="enquiry.html">Apply / Volunteer</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <!-- ***** active page indicator ***** -->
+<!-- The aria-current attribute clearly signals to screen readers and assistive tech 
+     which page the user is currently visiting within the main site navigation. -->
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
 
     </header>
-
-    <hr>
 
   <!-- ***** main content area ***** -->
 <!-- The <main> element contains the unique content of the Contact page.
@@ -86,7 +87,7 @@
       the page's most important information.
      -This page provides visitors with multiple ways to communicate with
       CodeBridge and access its community centres. -->
-    <main>
+    <main id="main-content">
 
        <!-- ***** contact page introduction ***** -->
 <!-- This introductory section welcomes visitors and explains how they
@@ -106,8 +107,6 @@
             </p>
 
         </section>
-
-        <hr>
 
         <!-- ***** contact form section ***** -->
 <!-- This section provides visitors with an easy way to communicate
@@ -139,31 +138,25 @@
 <!-- Collects the visitor's name so CodeBridge can personalise
      responses and identify who submitted the enquiry. -->
                     <label for="name">Name</label>
-                    <br>
                     <input type="text" id="name" name="name" required>
 
-                    <br><br>
 <!-- ***** visitor email ***** -->
 <!-- Collects the visitor's email address so the organisation can
      respond to the enquiry.
      -Using the email input type also provides basic browser validation
       for correctly formatted email addresses. -->
                     <label for="email">Email</label>
-                    <br>
                     <input type="email" id="email" name="email" required>
 
-                    <br><br>
 <!-- ***** enquiry message ***** -->
 <!-- Allows visitors to describe their questions or concerns in detail.
      -Providing a larger text area gives users enough space to explain
       their enquiry clearly. -->
                     <label for="message">Message</label>
-                    <br>
                     <textarea id="message" name="message" rows="5" required></textarea>
 
                 </fieldset>
 
-                <br>
 <!-- ***** submit button ***** -->
 <!-- The submit button sends the completed contact form for processing.
      -Positioning the button below all required fields makes the form
@@ -173,8 +166,6 @@
             </form>
 
         </section>
-
-        <hr>
 
        <!-- ***** community centre locations ***** -->
 <!-- This section introduces the physical locations where CodeBridge
@@ -206,10 +197,14 @@
 <!-- ***** location image ***** -->
 <!-- The map image provides visitors with a visual reference for the
      Alexandra community centre.
-     -Alternative text improves accessibility while the caption
-      provides the complete physical address. -->
+     -Using srcset and sizes enables responsive asset loading across mobile and desktop viewports. -->
                 <figure>
-                    <img src="images/map-alexandra.png" alt="Map showing the Alexandra Centre location" width="500">
+                    <img src="images/map-alexandra.png" 
+                         srcset="images/map-alexandra.png 800w, images/map-alexandra.png 400w" 
+                         sizes="(max-width: 600px) 100vw, 500px" 
+                         alt="Map showing the Alexandra Centre location" 
+                         width="500" 
+                         loading="lazy">
                     <figcaption>
                         Alexandra Centre — 14 Roosevelt Street, Alexandra, Johannesburg, 2090
                     </figcaption>
@@ -224,7 +219,6 @@
 
             </article>
 
-            <hr>
 <!-- ***** diepsloot community centre ***** -->
 <!-- This article introduces CodeBridge's Diepsloot training centre.
      -It provides location details together with information about
@@ -235,12 +229,15 @@
 
                 <h3>Diepsloot Centre</h3>
 <!-- ***** location image ***** -->
-<!-- The map image helps visitors identify the Diepsloot training
-     centre.
-     -The descriptive alternative text improves accessibility while
-      the caption displays the centre's full address. -->
+<!-- The map image helps visitors identify the Diepsloot training centre.
+     -Using srcset and sizes enables responsive asset loading across mobile and desktop viewports. -->
                 <figure>
-                    <img src="images/map-diepsloot.png" alt="Map showing the Diepsloot Centre location" width="500">
+                    <img src="images/map-diepsloot.png" 
+                         srcset="images/map-diepsloot.png 800w, images/map-diepsloot.png 400w" 
+                         sizes="(max-width: 600px) 100vw, 500px" 
+                         alt="Map showing the Diepsloot Centre location" 
+                         width="500" 
+                         loading="lazy">
                     <figcaption>
                         Diepsloot Centre — Extension 1, Diepsloot, Johannesburg, 2189
                     </figcaption>
@@ -258,8 +255,6 @@
         </section>
 
     </main>
-
-    <hr>
 
    <!-- ***** footer ***** -->
 <!-- The footer provides consistent information that appears across
@@ -284,8 +279,7 @@
             <li><a href="donate.html">Donate</a></li>
 
             <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
@@ -295,12 +289,12 @@
    <!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here and included on every page.
      -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
+      and other dynamic behaviours that improve the website's usability.
      -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
+      the HTML structure and makes the code easier to maintain.
      -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
+      parsed before the script is executed, helping reduce interruptions
+      to page loading.
      -This setup supports a user-friendly and maintainable website. -->
     <script src="js/main.js"></script>
 
