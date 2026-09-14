@@ -1,8 +1,719 @@
-/* style.css
-   placeholder stylesheet -- full styling is built in part 2.
-   kept here now so the <link> tag in every page resolves without a 404. */
+/* =====================================================================
+   style.css
+   CodeBridge — external stylesheet (Part 2)
+   Linked from every page via <link rel="stylesheet" href="css/style.css">
+   so all branding, typography, colour and layout stay consistent
+   site-wide from one file. Replaces the Part 1 placeholder reset.
+   ===================================================================== */
 
-/* css reset (minimal) */
-* {
-  box-sizing: border-box;
+
+/* =====================================================================
+   0. FONTS
+   Space Grotesk carries the headings — a geometric grotesk that reads
+   as "code/tech" without tipping into the generic SaaS sans-serif.
+   Lora carries body copy — a warm serif that reads as "human /
+   community story", deliberately contrasting with the headings to
+   reflect CodeBridge's own bridge between technology and community.
+   IBM Plex Mono is used only where the content is literally code-
+   adjacent (curriculum weeks, form legends, nav) — a monospace face
+   is thematically justified here rather than decorative.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+
+/* =====================================================================
+   1. BASE STYLE / CSS RESET
+   Default styles for the entire website: box model, colour scheme,
+   font family, margin/padding, so every page starts from the same
+   consistent baseline regardless of the browser's own defaults.
+   ===================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    /* ---- colour palette ----
+       Navy = night sky / terminal screen. Amber = Joburg sunset,
+       used as the single "call to action" colour. Teal = growth,
+       used sparingly for links and secondary accents. Paper = warm,
+       slightly grey off-white so it doesn't read as a stock cream. */
+    --color-ink: #1c1c22;
+    --color-ink-soft: #4a4a56;
+    --color-paper: #f1eee6;
+    --color-paper-alt: #e8e3d6;
+    --color-navy: #141a33;
+    --color-navy-light: #232b52;
+    --color-amber: #f2a93b;
+    --color-amber-dark: #c97f16;
+    --color-teal: #2e8b7a;
+    --color-teal-dark: #1f6459;
+    --color-border: #d9d4c6;
+    --color-border-dark: #3a416b;
+
+    /* ---- typography scale ----
+       A simple major-third-ish scale so headings stay harmonious
+       across every page without needing one-off font sizes. */
+    --font-head: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-body: "Lora", Georgia, serif;
+    --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+    --step--1: 0.875rem;
+    --step-0: 1rem;
+    --step-1: 1.25rem;
+    --step-2: 1.75rem;
+    --step-3: 2.5rem;
+    --step-4: 3.25rem;
+
+    /* ---- spacing + layout ---- */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.75rem;
+    --space-4: 2.75rem;
+    --space-5: 4.5rem;
+
+    --max-width: 71.25rem;   /* 1140px */
+    --radius: 3px;           /* small, architectural — not a rounded card */
+}
+
+html {
+    /* 1rem = 16px by default; every rem/em value below scales from this,
+       which is what lets the whole site resize cleanly at the
+       breakpoints in section 6 instead of needing separate rules. */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+}
+
+img {
+    /* Responsive images: every image scales down with its container
+       instead of overflowing on smaller screens. */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+hr {
+    /* Part 1 used <hr> as plain content dividers. CSS now owns the
+       spacing between sections, so hr is restyled as a quiet hairline
+       rather than removed — it still carries its semantic meaning. */
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-4) 0;
+}
+
+/* The Part 1 markup used <br> tags to force spacing before any CSS
+   existed. Layout is now handled by margins on real elements, so the
+   legacy line breaks are hidden rather than left doubling up spacing. */
+br {
+    display: none;
+}
+
+a {
+    color: var(--color-teal-dark);
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* =====================================================================
+   2. TYPOGRAPHY
+   ===================================================================== */
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--color-navy);
+}
+
+h1 {
+    font-size: var(--step-4);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--step-3);
+    margin-bottom: var(--space-3);
+    position: relative;
+    padding-bottom: var(--space-1);
+}
+
+/* An underline drawn from the content, not a decoration bolted on:
+   every h2 gets a short amber rule that echoes the CTA colour. */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.5rem;
+    height: 3px;
+    background-color: var(--color-amber);
+}
+
+h3 {
+    font-size: var(--step-1);
+    margin-bottom: var(--space-1);
+}
+
+p {
+    max-width: 65ch; /* keeps body copy inside a readable line length */
+    margin-bottom: var(--space-2);
+    color: var(--color-ink-soft);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+strong {
+    color: var(--color-ink);
+}
+
+small {
+    font-size: var(--step--1);
+}
+
+
+/* =====================================================================
+   3. LAYOUT STRUCTURE
+   ===================================================================== */
+
+main {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding: 0 var(--space-3);
+}
+
+main > section,
+main > article {
+    padding: var(--space-4) 0;
+}
+
+/* ---- header + nav ---- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    background-color: var(--color-navy);
+    padding: var(--space-2) var(--space-3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header + hr {
+    display: none; /* the header supplies its own visual edge */
+}
+
+.logo img {
+    filter: brightness(0) invert(1); /* logo reads as white on navy */
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+}
+
+nav a {
+    color: #f1eee6;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--color-amber);
+    border-bottom-color: var(--color-amber);
+}
+
+/* ---- footer ---- */
+footer {
+    background-color: var(--color-navy);
+    color: #cfd0da;
+    padding: var(--space-4) var(--space-3);
+    margin-top: var(--space-4);
+}
+
+footer hr {
+    display: none;
+}
+
+footer p {
+    color: #cfd0da;
+    max-width: none;
+}
+
+footer ul,
+footer nav ul {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+}
+
+footer a {
+    color: var(--color-amber);
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: underline;
+}
+
+
+/* =====================================================================
+   4. VISUAL STYLES — hero, cards, sections, pseudo-classes
+   ===================================================================== */
+
+/* ---- hero (home page) ---- */
+.hero {
+    background-color: var(--color-navy);
+    color: #f1eee6;
+    padding: var(--space-5) var(--space-3);
+    margin-inline: calc(-1 * var(--space-3));
+    /* a simple angled "skyline" edge instead of a straight box */
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 80% 100%, 55% 90%, 30% 100%, 0 94%);
+}
+
+.hero h1 {
+    color: #ffffff;
+    max-width: 20ch;
+}
+
+.hero p {
+    color: #cfd0da;
+    font-size: var(--step-1);
+    max-width: 55ch;
+}
+
+/* ---- call to action button ---- */
+.cta-button {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-weight: 600;
+    background-color: var(--color-amber);
+    color: var(--color-navy);
+    padding: 0.85em 1.75em;
+    border: 2px solid var(--color-amber);
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: transparent;
+    color: var(--color-amber);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+}
+
+/* ---- about snapshot, mission/vision, history, values, why-codebridge ---- */
+.about-snapshot,
+.mission-vision,
+.history,
+.values,
+.why-codebridge {
+    background-color: var(--color-paper-alt);
+    border-left: 4px solid var(--color-teal);
+    padding: var(--space-3);
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    border-left-color: var(--color-amber);
+}
+
+.values ul li {
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.values ul li:last-child {
+    border-bottom: none;
+}
+
+.why-codebridge {
+    border-left-color: var(--color-navy);
+}
+
+.why-codebridge article {
+    margin-top: var(--space-2);
+}
+
+/* ---- programme snapshot cards (home page) ---- */
+.programmes-snapshot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+}
+
+.programme-card {
+    background-color: #ffffff;
+    border-top: 4px solid var(--color-amber);
+    padding: var(--space-3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.programme-card:nth-of-type(2) {
+    border-top-color: var(--color-teal);
+}
+
+.programme-card:nth-of-type(3) {
+    border-top-color: var(--color-navy);
+}
+
+.programme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 0 0 var(--color-border);
+}
+
+/* ---- full programme listing (programmes.html) ---- */
+main > article {
+    border-bottom: 1px solid var(--color-border);
+}
+
+main > article:last-of-type {
+    border-bottom: none;
+}
+
+main > article section {
+    background-color: var(--color-paper-alt);
+    padding: var(--space-2) var(--space-3);
+    margin: var(--space-2) 0;
+    border-radius: var(--radius);
+}
+
+main > article ul li {
+    padding: 0.3em 0;
+}
+
+details {
+    border: 1px solid var(--color-border);
+    padding: var(--space-2);
+    border-radius: var(--radius);
+}
+
+details[open] {
+    border-color: var(--color-teal);
+}
+
+summary {
+    font-family: var(--font-head);
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-teal-dark);
+}
+
+summary:hover,
+summary:focus {
+    color: var(--color-amber-dark);
+}
+
+details ol {
+    margin-top: var(--space-2);
+    padding-left: 0;
+}
+
+details ol li {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    padding: 0.4em 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+
+/* ---- testimonials ---- */
+.testimonials {
+    background-color: var(--color-navy);
+    color: #f1eee6;
+    margin-inline: calc(-1 * var(--space-3));
+    padding: var(--space-4) var(--space-3);
+}
+
+.testimonials h2 {
+    color: #ffffff;
+}
+
+.testimonials blockquote {
+    position: relative;
+    background-color: var(--color-navy-light);
+    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+    margin-bottom: var(--space-2);
+    border-radius: var(--radius);
+}
+
+.testimonials blockquote::before {
+    content: "\201C";
+    font-family: var(--font-head);
+    font-size: 3rem;
+    color: var(--color-amber);
+    position: absolute;
+    left: 0.5rem;
+    top: 0.1rem;
+    line-height: 1;
+}
+
+/* ---- team ---- */
+.team-member {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.team-member figure {
+    flex: 0 0 12rem;
+}
+
+.team-member img {
+    border-radius: var(--radius);
+    border: 3px solid var(--color-amber);
+}
+
+.team-member div,
+.team-member h3,
+.team-member p {
+    flex: 1 1 20rem;
+}
+
+/* ---- locations (contact.html) ---- */
+.locations article {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: var(--space-3);
+    align-items: center;
+    padding: var(--space-2) 0;
+}
+
+.locations hr {
+    margin: 0;
+}
+
+
+/* =====================================================================
+   5. FORMS, TABLE — contact / enquiry / donate
+   ===================================================================== */
+
+form {
+    max-width: 40rem;
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+legend {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--color-teal-dark);
+    padding: 0 0.5em;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-top: var(--space-2);
+    margin-bottom: 0.3em;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: #ffffff;
+    color: var(--color-ink);
+}
+
+input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 0.4em;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--color-teal);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 1px;
+    border-color: var(--color-teal);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #c0392b;
+}
+
+button[type="submit"] {
+    font-family: var(--font-head);
+    font-weight: 600;
+    background-color: var(--color-navy);
+    color: #ffffff;
+    border: 2px solid var(--color-navy);
+    border-radius: var(--radius);
+    padding: 0.8em 2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--color-amber);
+    border-color: var(--color-amber);
+    color: var(--color-navy);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* ---- donation impact table (donate.html) ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.75em 1em;
+    border-bottom: 1px solid var(--color-border);
+}
+
+thead th {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--color-teal-dark);
+    border-bottom: 2px solid var(--color-teal);
+}
+
+tbody tr:hover {
+    background-color: var(--color-paper-alt);
+}
+
+
+/* =====================================================================
+   6. RESPONSIVE DESIGN
+   Desktop is the base layout above. These breakpoints scale it down
+   for tablet and mobile: multi-column grids collapse to a single
+   column, the nav restacks, and type sizes drop a step so headings
+   don't overwhelm a small viewport.
+   ===================================================================== */
+
+/* ---- tablet ---- */
+@media (max-width: 900px) {
+
+    :root {
+        --step-4: 2.5rem;
+        --step-3: 2rem;
+    }
+
+    .programmes-snapshot {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .locations article {
+        grid-template-columns: 14rem 1fr;
+    }
+}
+
+/* ---- mobile ---- */
+@media (max-width: 600px) {
+
+    :root {
+        --step-4: 2rem;
+        --step-3: 1.5rem;
+        --space-4: 1.75rem;
+        --space-5: 2.5rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        gap: var(--space-2);
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero {
+        clip-path: polygon(0 0, 100% 0, 100% 96%, 50% 100%, 0 96%);
+    }
+
+    .programmes-snapshot {
+        grid-template-columns: 1fr;
+    }
+
+    .why-codebridge figure,
+    .team-member figure {
+        flex-basis: 100%;
+    }
+
+    .locations article {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    footer ul,
+    footer nav ul {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
 }
