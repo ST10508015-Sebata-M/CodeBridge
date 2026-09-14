@@ -21,4 +21,9 @@
 * I fixed my comments and tidy my code to improve readablity, now I am left with updating my CHANGELOG.md file and my README.md file then I am submitting (commit 19f4666)
 
 ## v1.0.2
-- Add CHANGELOG.md (commit c4c2004)
+- Add CHANGELOG.md (commit c4c2004) 
+- Update about page responsive images and active nav state 
+- Add srcset and sizes attributes to all content images 
+- Add aria-current page attribute to active navigation link 
+- Remove redundant role navigation attribute from nav tag 
+- Clean up HTML comments across document 
