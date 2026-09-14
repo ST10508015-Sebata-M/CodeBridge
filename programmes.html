@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- ***** document setup ***** -->
+<!-- ***** document setup ***** -->
 <!-- The page begins with the standard HTML5 document structure to ensure
      consistent rendering across modern web browsers.
      -The <head> section contains important information including the character
@@ -15,13 +15,13 @@
      -Using UTF-8 ensures that the website appears consistently across different
       browsers, operating systems, and devices. -->
    <meta charset="UTF-8">
+
     <!-- ***** responsive viewport ***** -->
 <!-- The viewport meta tag ensures that the webpage automatically scales to fit
      different screen sizes, including desktops, tablets, and smartphones.
      -This improves readability, accessibility, and the overall user experience
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
@@ -71,19 +71,17 @@
       usability and makes it easier for visitors to locate information.
      -This supports the project's objective of increasing programme applications,
       volunteer registrations, and general enquiries. -->
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="programmes.html" aria-current="page">Programmes</a></li>
                 <li><a href="enquiry.html">Apply / Volunteer</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
     </header>
-
-    <hr>
 
 <!-- ***** main content area ***** -->
 <!-- The <main> element contains the unique content found on the Programmes page.
@@ -92,7 +90,7 @@
       most important information.
      -This page introduces visitors to CodeBridge's available training
       programmes, allowing learners to compare opportunities before applying. -->
-    <main>
+    <main id="main-content">
 
         <!-- ***** programmes introduction ***** -->
 <!-- This introductory section provides visitors with an overview of the
@@ -120,7 +118,6 @@
 
         </section>
 
-        <hr>
 <!-- ***** web development bootcamp ***** -->
 <!-- This section introduces CodeBridge's beginner-friendly Web Development
      Bootcamp.
@@ -208,8 +205,6 @@
 
             </details>
 
-            <br>
-
             <p>
                 <!-- ***** programme application link ***** -->
 <!-- This call-to-action directs visitors to the application page,
@@ -222,7 +217,6 @@
 
         </article>
 
-        <hr>
   <!-- ***** java programming fundamentals ***** -->
 <!-- This section introduces the Java Programming Fundamentals course.
      -It explains the practical programming knowledge learners will gain,
@@ -252,7 +246,6 @@
      -Summarising the course helps visitors quickly understand its
       purpose before reviewing the detailed programme information. -->
             <p>
-
                 This intermediate programme develops problem-solving skills through Java.
                 Learners explore object-oriented programming, write applications, and gain
                 practical coding experience for future software development careers.
@@ -310,7 +303,6 @@
 
             </details>
 
-            <br>
    <!-- ***** programme application link ***** -->
 <!-- This call-to-action directs visitors to the application page,
      allowing interested learners to apply for the programme.
@@ -322,8 +314,6 @@
             </p>
 
         </article>
-
-        <hr>
 
         <!-- ***** digital literacy and career skills ***** -->
 <!-- This section introduces the Digital Literacy & Career Skills programme.
@@ -403,7 +393,6 @@
 
             </details>
 
-            <br>
  <!-- ***** programme application link ***** -->
 <!-- This call-to-action directs visitors to the application page,
      allowing interested learners to apply for the programme.
@@ -441,21 +430,21 @@
             <li><a href="donate.html">Donate</a></li>
 
             <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
     </footer>
+
 <!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here and included on every page.
      -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
+      and other dynamic behaviours that improve the website's usability.
      -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
+      the HTML structure and makes the code easier to maintain.
      -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
+      parsed before the script is executed, helping reduce interruptions
+      to page loading.
      -This setup supports a user-friendly and maintainable website. -->
 <script src="js/main.js"></script>
 
