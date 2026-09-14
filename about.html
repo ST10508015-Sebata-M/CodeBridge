@@ -66,7 +66,10 @@
     <nav role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
+       <!-- ***** active page indicator ***** -->
+<!-- The aria-current attribute clearly signals to screen readers and assistive tech 
+     which page the user is currently visiting within the main site navigation. -->
+        <li><a href="about.html" aria-current="page">About Us</a></li>
         <li><a href="programmes.html">Programmes</a></li>
         <li><a href="enquiry.html">Apply / Volunteer</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -74,8 +77,7 @@
     </nav>
   </header>
 
-  <hr>
-  <br>
+  
  <!-- ***** main content area ***** -->
 <!-- The <main> element contains the unique content found on the About Us page.
      -Separating the primary content from the shared header and footer improves
@@ -89,9 +91,7 @@
       <p><em>Empowering Johannesburg's youth through practical digital skills.</em></p>
     </section>
 
-    <br>
-    <hr>
-    <br>
+   
     <!-- ***** organisation history section ***** -->
 <!-- This section introduces visitors to the background and development of CodeBridge.
      -It explains how the organisation was founded, how it has grown over time,
@@ -103,12 +103,20 @@
     <section class="history">
       <h2>Our Story</h2>
 
+     <!-- ***** responsive story image ***** -->
+<!-- Adding srcset and sizes attributes allows modern web browsers to select and download
+     the most appropriate image file resolution based on the user's screen size and device viewport.
+     - This optimizes loading speed, saves mobile bandwidth, and satisfies responsive image standards. -->
       <figure>
-        <img src="images/students-coding.png" alt="Young students learning to code" loading="lazy" />
+        <img src="images/students-coding.png" 
+             srcset="images/students-coding.png 800w, images/students-coding.png 400w" 
+             sizes="(max-width: 600px) 100vw, 800px" 
+             alt="Young students learning to code" 
+             loading="lazy" />
         <figcaption><small>Students learning coding fundamentals at a community workshop.</small></figcaption>
       </figure>
 
-      <br>
+    
 
       <p>
         CodeBridge is a fictional non-profit organisation founded in Johannesburg in 2022 by a small team of passionate software engineers. The organisation began as a weekend volunteer initiative, where coding mentors taught basic programming skills to young people at a local community centre in Alexandra.
@@ -123,9 +131,7 @@
       </p>
     </section>
 
-    <br>
-    <hr>
-    <br>
+    
 
    <!-- ***** mission and vision section ***** -->
 <!-- This section explains CodeBridge's purpose and long-term aspirations.
@@ -150,7 +156,7 @@
         </p>
       </article>
 
-      <br>
+     
 <!-- ***** vision statement ***** -->
 <!-- The vision statement describes the long-term future that CodeBridge aims
      to create.
@@ -166,9 +172,7 @@
       </article>
     </section>
 
-    <br>
-    <hr>
-    <br>
+    
 <!-- ***** core values section ***** -->
 <!-- This section highlights the principles that guide every programme,
      decision, and community initiative at CodeBridge.
@@ -181,20 +185,17 @@
 
       <ul>
         <li><strong>Accessibility:</strong> We believe every young person deserves equal access to technology education.</li>
-        <br>
+      
         <li><strong>Innovation:</strong> We encourage creativity, curiosity and continuous learning.</li>
-        <br>
+      
         <li><strong>Community:</strong> We build supportive learning environments where everyone feels welcome.</li>
-        <br>
+        
         <li><strong>Integrity:</strong> We operate with honesty, transparency and accountability.</li>
-        <br>
+        
         <li><strong>Empowerment:</strong> We help learners develop practical skills that prepare them for future careers.</li>
       </ul>
     </section>
 
-    <br>
-    <hr>
-    <br>
 <!-- ***** team section ***** -->
 <!-- This section introduces the individual responsible for leading CodeBridge.
      -Presenting the founder helps personalise the organisation and strengthens
@@ -207,14 +208,16 @@
       <h2>Meet the Team</h2>
 
       <article class="team-member">
-        <!-- ***** founder profile image ***** -->
-<!-- The founder's image gives visitors a visual introduction to the person
-     leading the organisation.
-     -The descriptive alternative text improves accessibility while the caption
-      provides additional context about the founder's role within CodeBridge.
-     -Lazy loading improves performance by delaying image loading until needed. -->
+       <!-- ***** responsive founder profile image ***** -->
+<!-- Using srcset and sizes enables mobile devices to fetch smaller assets, improving page speed
+     while serving crisp, high-resolution visuals to higher pixel-density desktop viewports. -->
         <figure>
-          <img src="images/mapuru.jpg" alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop" width="320" loading="lazy" />
+          <img src="images/mapuru.jpg" 
+               srcset="images/mapuru.jpg 600w, images/mapuru.jpg 300w" 
+               sizes="(max-width: 600px) 100vw, 320px" 
+               alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop" 
+               width="320" 
+               loading="lazy" />
           <figcaption><small>Mapuru Sebata leading a community coding workshop.</small></figcaption>
         </figure>
 
@@ -228,9 +231,7 @@
       </article>
     </section>
 
-    <br>
-    <hr>
-    <br>
+    
 
     <!-- ***** why choose codebridge section ***** -->
 <!-- This section explains the unique benefits of joining or supporting
@@ -245,17 +246,20 @@
       <h2>Why Choose CodeBridge?</h2>
 
       <figure>
-        <!-- ***** learning environment image ***** -->
-<!-- This image showcases learners actively participating in a coding workshop.
-     -Visual content helps visitors imagine the learning experience while
-      reinforcing the organisation's focus on practical education.
-     -The descriptive alternative text improves accessibility for users who
-      rely on screen readers. -->
-        <img src="images/coding-class.png" alt="Students participating in a coding workshop" width="480" loading="lazy" />
+        <!-- ***** responsive learning environment image ***** -->
+<!-- Visual content showcases learners in a coding workshop.
+     - The inclusion of srcset and sizes optimizes visual asset delivery across mobile, tablet, 
+       and desktop breakpoints without causing layout shifts or excessive data consumption. -->
+        <img src="images/coding-class.png" 
+             srcset="images/coding-class.png 800w, images/coding-class.png 400w" 
+             sizes="(max-width: 600px) 100vw, 480px" 
+             alt="Students participating in a coding workshop" 
+             width="480" 
+             loading="lazy" />
         <figcaption><small>Students participating in a CodeBridge workshop.</small></figcaption>
       </figure>
 
-      <br>
+      
 <!-- ***** practical learning benefit ***** -->
 <!-- Highlights CodeBridge's project-based learning approach, showing that
      learners gain real coding experience through practical activities rather
@@ -288,8 +292,7 @@
 
   </main>
 
-  <br>
-  <hr>
+  
 <!-- ***** footer ***** -->
 <!-- The footer provides consistent information that appears across every page.
      -It includes copyright information together with quick navigation links
@@ -313,9 +316,7 @@
             <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
 
-            <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
