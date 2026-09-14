@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
 
-        <!-- ***** character encoding ***** -->
+    <!-- ***** character encoding ***** -->
 <!-- UTF-8 character encoding allows the webpage to correctly display letters,
      symbols, punctuation marks, and special characters.
      -Using UTF-8 ensures that the website appears consistently across different
       browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
-       <!-- ***** responsive viewport ***** -->
+
+      <!-- ***** responsive viewport ***** -->
 <!-- The viewport meta tag ensures that the webpage automatically scales to fit
      different screen sizes, including desktops, tablets, and smartphones.
      -This improves readability, accessibility, and the overall user experience
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
@@ -21,7 +23,7 @@
       makes navigation easier when multiple browser tabs are open. -->
     <title>CodeBridge | Donate</title>
 
-   <!-- ***** shared stylesheet ***** -->
+    <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
      -Using one CSS file keeps the branding, typography, colours,
       spacing, and layouts consistent across every page.
@@ -29,7 +31,7 @@
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-   <!-- ***** favicon ***** -->
+    <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
      making the website easier to recognise.
      -Using the same favicon throughout the website strengthens
@@ -63,7 +65,7 @@
       consistency and makes it easier for visitors to browse the site.
      -This supports the organisation's goal of increasing programme
       applications, volunteer registrations, and community engagement. -->
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -75,7 +77,6 @@
 
     </header>
 
-    <hr>
 <!-- ***** main content ***** -->
 <!-- The main element contains the unique content for the Donate page,
      including information about CodeBridge's fundraising efforts,
@@ -83,7 +84,7 @@
      -Using the main element improves semantic HTML by helping search
       engines and assistive technologies identify the primary content
       of the webpage. -->
-     <main>
+    <main id="main-content">
 
         <!-- ***** page introduction ***** -->
 <!-- This introductory section explains why donations are important to
@@ -104,8 +105,6 @@
 
         </section>
 
-        <hr>
-
         <!-- ***** donation impact ***** -->
 <!-- This section explains how different donation amounts contribute
      towards CodeBridge's programmes and resources.
@@ -121,13 +120,14 @@
      -Displaying this information in a table allows visitors to compare
       donation options quickly and easily. -->
             <table>
+                <caption>Summary of donation amounts and their direct community impact</caption>
                 <!-- ***** table headings ***** -->
 <!-- The table headings identify each column, making it easier for
      visitors to understand the donation amounts and their impact. -->
                 <thead>
                     <tr>
-                        <th>Amount</th>
-                        <th>Impact</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Impact</th>
                     </tr>
                 </thead>
                 <!-- ***** donation examples ***** -->
@@ -156,16 +156,13 @@
 
         </section>
 
-        <hr>
-
         <!-- ***** donation form ***** -->
 <!-- This form allows supporters to choose a donation amount and
      provide their contact information.
-     -For Part 1, the form demonstrates the website's structure only.
      -A secure payment gateway such as PayFast or SnapScan will be
       integrated during Part 3 using JavaScript and server-side
       processing. -->
-       <section>
+        <section>
 
             <h2>Make a Donation</h2>
 
@@ -180,35 +177,40 @@
 <!-- ***** predefined donation options ***** -->
 <!-- These radio buttons provide commonly selected donation amounts,
      allowing supporters to make a contribution quickly and easily. -->
-                    <input type="radio" id="amount-100" name="amount" value="100">
-                    <label for="amount-100">R100</label>
-                    <br>
+                    <div>
+                        <input type="radio" id="amount-100" name="amount" value="100">
+                        <label for="amount-100">R100</label>
+                    </div>
 
-                    <input type="radio" id="amount-250" name="amount" value="250">
-                    <label for="amount-250">R250</label>
-                    <br>
+                    <div>
+                        <input type="radio" id="amount-250" name="amount" value="250">
+                        <label for="amount-250">R250</label>
+                    </div>
 
-                    <input type="radio" id="amount-500" name="amount" value="500">
-                    <label for="amount-500">R500</label>
-                    <br>
+                    <div>
+                        <input type="radio" id="amount-500" name="amount" value="500">
+                        <label for="amount-500">R500</label>
+                    </div>
 
-                    <input type="radio" id="amount-1000" name="amount" value="1000">
-                    <label for="amount-1000">R1000</label>
-                    <br>
+                    <div>
+                        <input type="radio" id="amount-1000" name="amount" value="1000">
+                        <label for="amount-1000">R1000</label>
+                    </div>
 
-                    <input type="radio" id="amount-other" name="amount" value="other">
-                    <label for="amount-other">Other amount:</label>
-                    <!-- ***** custom donation amount ***** -->
+                    <div>
+                        <input type="radio" id="amount-other" name="amount" value="other">
+                        <label for="amount-other">Other amount:</label>
+                        <!-- ***** custom donation amount ***** -->
 <!-- This input allows donors to enter a donation amount that is not
      listed in the predefined options.
      -The minimum value helps prevent invalid donation amounts from
       being entered. -->
-                    <label for="other-amount">R</label>
-                 <input type="number" id="other-amount" name="other-amount" min="10">
+                        <label for="other-amount">R</label>
+                        <input type="number" id="other-amount" name="other-amount" min="10">
+                    </div>
 
                 </fieldset>
 
-                <br>
 <!-- ***** donor information ***** -->
 <!-- This fieldset collects the donor's personal details.
      -Providing contact information allows CodeBridge to acknowledge
@@ -220,21 +222,17 @@
 <!-- Collects the donor's full name for identification and future
      communication regarding their contribution. -->
                     <label for="donor-name">Full Name</label>
-                    <br>
                     <input type="text" id="donor-name" name="donor-name" required>
 
-                    <br><br>
 <!-- ***** donor email ***** -->
 <!-- Collects the donor's email address for donation confirmations,
      receipts, and future communication.
      -Using the email input type provides basic browser validation. -->
                     <label for="donor-email">Email Address</label>
-                    <br>
                     <input type="email" id="donor-email" name="donor-email" required>
 
                 </fieldset>
 
-                <br>
 <!-- ***** payment information ***** -->
 <!-- This message informs donors that online payment processing has
      not yet been implemented.
@@ -258,8 +256,6 @@
 
     </main>
 
-    <hr>
-
   <!-- ***** footer ***** -->
 <!-- The footer appears consistently across every page and provides
      copyright information together with quick navigation links.
@@ -278,12 +274,11 @@
             <li><a href="contact.html">Contact</a></li>
 
             <!-- ***** Donate Link ****** -->
-            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
-            <li><a href="donate.html">Donate</a></li>
+            <!-- Directs visitors to the donation page to support CodeBridge's initiatives. -->
+            <li><a href="donate.html" aria-current="page">Donate</a></li>
 
             <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
@@ -293,12 +288,12 @@
   <!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here and included on every page.
      -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
+      and other dynamic behaviours that improve the website's usability.
      -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
+      the HTML structure and makes the code easier to maintain.
      -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
+      parsed before the script is executed, helping reduce interruptions
+      to page loading.
      -This setup supports a user-friendly and maintainable website. -->
     <script src="js/main.js"></script>
 
