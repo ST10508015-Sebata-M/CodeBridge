@@ -1,34 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
-     <!--***** MY DOCUMENT SETUP *****-->
-    <!--THE page starts with <!DOCTYPE html>, which tells browsers to use the HTML5 standard
-     for better compatibility.
-     In the <head> section, it includes important details like: 
-      - character encoding(charset)
-      -a viewport setting so the site looks right on mobile devices
-      -a page title, which helps the SEO and accessibility.
-    -->
 <head>
 
-   <!-- ***** character encoding ***** -->
+    <!-- ***** character encoding ***** -->
 <!-- UTF-8 character encoding allows the webpage to correctly display letters,
      symbols, punctuation marks, and special characters.
      -Using UTF-8 ensures that the website appears consistently across different
       browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
+
       <!-- ***** responsive viewport ***** -->
 <!-- The viewport meta tag ensures that the webpage automatically scales to fit
      different screen sizes, including desktops, tablets, and smartphones.
      -This improves readability, accessibility, and the overall user experience
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Home</title>
+    <title>CodeBridge | Apply / Volunteer / Sponsor</title>
 
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
@@ -38,7 +31,7 @@
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
-   <!-- ***** favicon ***** -->
+    <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
      making the website easier to recognise.
      -Using the same favicon throughout the website strengthens
@@ -49,11 +42,13 @@
 <body>
 
     <!-- ***** header ***** -->
-    <!-- The header includes the organisation’s logo and the main navigation menu.
-     -It appears on every page to keep the branding consistent and the user experience familiar.
-     -The navigation links match the site structure (Home, About, Programmes, Enquiry, Contact), 
-     making it easier for visitors to find what they need.
-     -Keeping the same menu across the site helps users quickly access important information without getting confused-->
+<!-- The header contains the organisation's logo together with the
+     primary navigation menu.
+     -It appears consistently across every page to strengthen
+      CodeBridge's branding and provide visitors with a familiar
+      browsing experience.
+     -Keeping the header consistent improves navigation and overall
+      usability. -->
     <header>
 <!-- ***** organisation logo ***** -->
 <!-- The CodeBridge logo provides a visual identity for the organisation.
@@ -64,239 +59,215 @@
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
 
-        <br>
-
-        <!-- ***** main navigation menu ***** -->
-        <!-- The navigation menu gives visitors quick access to the core pages 
-         (Home, About Us, Programmes, Enquiry, Contact).
-        -It’s the same on every page so the site feels consistent and easy to use.
-        -This setup makes it simple for users to move around without confusion, 
-        whether they’re applying, volunteering, or looking to donate.
-        -Keeping the menu site-wide improves the overall user experience and 
-         supports the project’s goal of boosting applications, sign-ups, and enquiries. -->
-
-        <nav>
+<!-- ***** main navigation menu ***** -->
+<!-- The navigation menu provides visitors with quick access to every
+     major page within the CodeBridge website.
+     -Using the same navigation structure across every page creates
+      consistency and makes it easier for visitors to browse the site.
+     -This supports the organisation's goal of increasing programme
+      applications, volunteer registrations, and community engagement. -->
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="programmes.html">Programmes</a></li>
-                <li><a href="enquiry.html">Apply / Volunteer</a></li>
+                <!-- ***** active page indicator ***** -->
+<!-- The aria-current attribute clearly signals to screen readers and assistive tech 
+     which page the user is currently visiting within the main site navigation. -->
+                <li><a href="enquiry.html" aria-current="page">Apply / Volunteer</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <hr>
-
     <!-- ***** main content area ***** -->
-    <!-- The <main> section holds the unique content of this page.
-     -It separates the core information from the repeated header and footer, 
-     making the site more accessible and easier for screen readers to follow.
-     -This is where visitors connect with CodeBridge’s mission, programmes, and testimonials.
-     -By focusing the main area on these elements, the site directly supports 
-     the goals of increasing applications, donations, and volunteer sign-ups. -->
+    <!-- This page holds the single most important conversion point on the
+     site: the enquiry form. It directly supports CodeBridge's core goals of
+     increasing learner applications, volunteer sign-ups, and sponsor
+     enquiries by giving every type of visitor one clear, simple way to get
+     involved. -->
 
-    <main>
-<!-- ***** hero section ***** -->
-<!-- The hero section is the first content visitors see when they
-     arrive on the CodeBridge website.
-     -It introduces the organisation's mission through a clear heading
-      and supporting description, immediately explaining the purpose of
-      the website.-->
-        <section class="hero">
+    <main id="main-content">
 
-            <h1>Bridging the digital skills gap for Johannesburg's youth</h1>
+        <!-- ***** page introduction ***** -->
+        <!-- Explains to the visitor, in plain language, what this page is for
+         and how the form below works, before they start filling it in. -->
 
-            <br>
+        <section>
+
+            <h1>Apply / Volunteer / Sponsor</h1>
 
             <p>
-                CodeBridge is a non-profit organisation dedicated to empowering Johannesburg’s youth with practical coding and digital skills. 
-                Through accessible bootcamps in HTML, CSS, and JavaScript, we help young people gain the knowledge needed to pursue employment 
-                and opportunities in the growing tech economy.
-            </p>
-
-            <p>
-                Note: CodeBridge is a fictional organisation created for the purposes of this assignment and is not affiliated with, nor based on, any existing organisation of a similar name.
-            </p>
-
-            <br>
- <!-- The "Apply Now" call-to-action button directs visitors to the
-      application and volunteer page, encouraging immediate engagement.
-     -Presenting the organisation's mission prominently helps attract
-      prospective learners, volunteers, and supporters while supporting
-      CodeBridge's goal of expanding digital skills education within
-      Johannesburg. -->
-            <a href="enquiry.html" class="cta-button">Apply Now</a>
-
-        </section>
-
-        <hr>
-
-        <!-- ***** about snapshot section ***** -->
-        <!-- This section gives visitors a quick overview of CodeBridge.
-         -It shares a short teaser about the organisation’s mission and background 
-         to help new visitors understand who CodeBridge is and what it stands for.
-         -The full story (mission, vision, team, and history) appears on about.html, 
-         but this snapshot builds trust and credibility right from the homepage.
-         -By giving users a clear sense of purpose, it supports the goal of 
-         increasing applications and donor confidence. -->
-
-        <section class="about-snapshot">
-
-            <h2>About CodeBridge</h2>
-
-            <br>
-
-            <!-- ***** mission snapshot ***** -->
-            <!-- This short paragraph summarises CodeBridge’s purpose.
-             -It helps visitors quickly understand what the organisation does and why it exists.
-             -By building trust and credibility, it encourages learners, donors, and volunteers 
-             to get involved and support the mission. -->
-
-            <p>
-                Founded in 2022, CodeBridge is a non-profit organisation committed to bridging the digital divide in Johannesburg. 
-                We provide accessible coding bootcamps and digital literacy training to empower unemployed youth with practical, job-ready skills. 
-                Our vision is to create opportunities for young people to thrive in the growing technology sector.
+                Whether you want to join one of our programmes as a learner, give your time as a
+                volunteer, or support CodeBridge as a sponsor, this page is your starting point.
+                Select the enquiry type that applies to you and complete the form below, and a
+                member of the CodeBridge team will be in touch.
             </p>
 
         </section>
 
-        <hr>
+        <!-- ***** enquiry form section ***** -->
+        <!-- A single form covers all three NPO enquiry types (learner
+         application / volunteer sign-up / sponsor enquiry), per the Part 1
+         brief. Using one form instead of three separate pages keeps the
+         process short and reduces drop-off, which supports the goal of
+         increasing applications, sign-ups, and enquiries.
+         -Fields are grouped with <fieldset> and <legend> so screen readers
+          and sighted users alike can tell which questions belong together.
+         -The learner-specific fields (centre, programme, motivation) are
+          only truly relevant to learner applications; full show/hide logic
+          based on the enquiry type selected will be added with JavaScript in
+          Part 3. -->
 
-        <!-- ***** programmes snapshot section ***** -->
-        <!-- This section gives visitors a quick look at CodeBridge’s training programmes.
-         -Each teaser card shows the programme name and a short description to spark interest.
-         -The full details (duration, prerequisites, and schedule) are available on programmes.html,
-         but this snapshot helps learners see what opportunities are offered right away.
-         -By showcasing the programmes clearly, it supports the goal of increasing applications 
-         and encouraging volunteer engagement. -->
+        <section>
 
-        <section class="programmes-snapshot">
+            <form action="#" method="post">
 
-            <h2>Our Programmes</h2>
+               <!-- ***** enquiry type selection ***** -->
+<!-- This field allows visitors to identify the purpose of their enquiry
+     before completing the remainder of the form.
+     -Selecting an enquiry type helps CodeBridge distinguish between
+      learner applications, volunteer registrations, and sponsor
+      enquiries, allowing submissions to be processed more efficiently.
+     -Additional JavaScript functionality in Part 3 will customise the
+      form based on the selected option. -->
 
-            <br>
+              <!-- ***** enquiry category ***** -->
+<!-- The fieldset groups together the enquiry type controls into a
+     single logical section.
+     -Using a fieldset together with a legend improves accessibility by
+      helping screen readers understand that these inputs belong to the
+      same category. -->
+                <fieldset>
 
-            <!-- ***** programme card: web development bootcamp ***** -->
-            <!-- This card introduces the beginner-friendly Web Development Bootcamp.
-             -It covers HTML, CSS, and JavaScript to help learners build responsive websites.
-             -It’s designed for those with little or no coding experience and links to programmes.html 
-             for full details about the course. -->
+                    <legend>Enquiry Type</legend>
 
-            <article class="programme-card">
-                <h3>Web Development Bootcamp</h3>
-                <p>
-                    A beginner-friendly course covering HTML, CSS, and JavaScript. 
-                    Learners build responsive websites and interactive features, 
-                    preparing them for entry-level web developer roles.
-                </p>
-            </article>
+                    <label for="enquiry-type">What are you enquiring about?</label>
+                    <!-- ***** enquiry type dropdown ***** -->
+<!-- The dropdown menu allows visitors to select the type of enquiry
+     they wish to submit.
+     -Providing predefined options reduces input errors and ensures that
+      enquiries are categorised consistently before submission. -->
+                    <select id="enquiry-type" name="enquiry-type" required>
+                        <option value="">-- please choose --</option>
+                        <option value="learner">Learner Application</option>
+                        <option value="volunteer">Volunteer Sign-up</option>
+                        <option value="sponsor">Sponsor Enquiry</option>
+                    </select>
 
-            <br>
+                </fieldset>
 
-            <!-- ***** programme card: java programming fundamentals ***** -->
-            <!-- This card highlights the Java Programming course.
-             -It focuses on Java syntax, object‑oriented programming, and problem‑solving skills.
-             -It’s aimed at learners interested in software development and links to programmes.html 
-             for more detailed information about the course. -->
+              <!-- ***** personal information ***** -->
+<!-- This section collects the visitor's essential contact information.
+     -Regardless of the enquiry type, CodeBridge requires these details
+      in order to communicate with the individual and respond
+      appropriately to their request. -->
 
-            <article class="programme-card">
-                <h3>Java Programming Fundamentals</h3>
-                <p>
-                    An intermediate course focusing on Java syntax, object-oriented programming, 
-                    and problem-solving. Learners gain skills to develop applications 
-                    and prepare for advanced software development pathways.
-                </p>
-            </article>
+<!-- ***** contact information ***** -->
+<!-- This fieldset groups together all personal contact details,
+     making the form easier to understand and complete.
+     -Organising related inputs into logical sections improves
+      accessibility and overall usability. -->
+                
+                <fieldset>
 
-            <br>
+                    <legend>Your Details</legend>
+<!-- ***** full name ***** -->
+<!-- Collects the visitor's full name so that CodeBridge can identify
+     who submitted the enquiry and personalise future communication. -->
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
 
-            <!-- ***** programme card: digital literacy & career skills ***** -->
-            <!-- This card introduces the Digital Literacy & Career Skills course.
-             -It covers essential computer skills, online safety, and CV preparation.
-             -It supports inclusivity by offering non‑coding skills that still prepare youth 
-             for tech‑related opportunities and future employment. -->
+<!-- ***** contact number ***** -->
+<!-- Collects a telephone number in case CodeBridge needs to contact
+     the visitor directly regarding their application or enquiry. -->
+                    <label for="contact-number">Contact Number</label>
+                    <input type="tel" id="contact-number" name="contact-number" required>
 
-            <article class="programme-card">
-                <h3>Digital Literacy & Career Skills</h3>
-                <p>
-                    A short course focusing on essential computer skills, online safety, 
-                    and preparing CVs for tech-related job opportunities.
-                </p>
-            </article>
+<!-- ***** email address ***** -->
+<!-- Collects the visitor's email address for official communication.
+     -Using the email input type provides basic browser validation to
+      help reduce incorrectly formatted email addresses. -->
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
 
-        </section>
+                </fieldset>
 
-        <hr>
+              <!-- ***** learner application details ***** -->
+<!-- This section collects additional information that is only required
+     from learner applicants.
+     -These questions help CodeBridge determine where applicants would
+      like to study, which programme they are interested in, and their
+      motivation for joining.
+     -Dynamic show-and-hide behaviour will be implemented during Part 3
+      using JavaScript. -->
 
-        <!-- ***** testimonials section ***** -->
-        <!-- This section builds trust with donors, parents, and potential learners.
-        -It features multiple quotes that show the positive impact of CodeBridge’s programmes.
-        -By sharing different perspectives, it provides social proof that helps attract funding 
-       and increase applications. -->
+            <!-- ***** learner information ***** -->
+<!-- The fieldset groups together all learner-specific questions into
+     one logical section.
+     -Grouping related inputs improves accessibility and makes the form
+      easier for applicants to complete. -->    
+                <fieldset id="learner-fields">
 
-        <section class="testimonials">
+                    <legend>Learner Application Details</legend>
+<!-- ***** preferred learning centre ***** -->
+<!-- Allows learner applicants to choose the community centre where
+     they would like to attend training.
+     -Providing multiple centre options supports CodeBridge's outreach
+      across different communities. -->
+                    <label for="centre">Preferred Centre</label>
+                    <select id="centre" name="centre">
+                        <option value="">-- please choose --</option>
+                        <option value="alexandra">Alexandra Centre</option>
+                        <option value="diepsloot">Diepsloot Centre</option>
+                    </select>
 
-            <h2>Impact / Testimonials</h2>
+<!-- ***** programme selection ***** -->
+<!-- Allows applicants to select the programme they wish to enrol in.
+     -Capturing this information helps CodeBridge organise applications
+      and prepare learners for their chosen programme. -->
+                    <label for="programme">Programme of Interest</label>
+                    <select id="programme" name="programme">
+                        <option value="">-- please choose --</option>
+                        <option value="web-dev">Intro to Web Development</option>
+                        <option value="js-fundamentals">Java Programming Fundamentals</option>
+                        <option value="digital-literacy">Digital Literacy &amp; Career Skills Basics</option>
+                    </select>
 
-            <br>
+<!-- ***** applicant motivation ***** -->
+<!-- This text area allows applicants to briefly explain why they wish
+     to join the selected programme.
+     -Understanding each learner's motivation helps CodeBridge better
+      understand the needs and goals of prospective participants. -->
+                    <label for="motivation">Short Motivation</label>
+                    <textarea id="motivation" name="motivation" rows="4"></textarea>
 
-            <!-- ***** Learner Testimonial ***** -->
-            <!-- Highlights how CodeBridge empowered a youth with coding skills, 
-                 showing direct programme success. -->
-            <blockquote>
-                "Joining CodeBridge gave me the confidence to code my first website. 
-                I never thought I could do this, but now I’m preparing for internships in tech." – Lerato, Graduate
-            </blockquote>
+                </fieldset>
 
-            <br>
+<!-- ***** submit application ***** -->
+<!-- The submit button sends the completed enquiry form for processing.
+     -Placing the button after all required sections provides a logical
+      flow and encourages users to review their information before
+      submitting it. -->
+                <button type="submit">Submit</button>
 
-            <!-- ***** Parent Testimonial ***** -->
-            <!-- Shows parental trust in the programme, reassuring families 
-                 that CodeBridge delivers real value. -->
-            <blockquote>
-                "I’ve seen my son grow in confidence and skills since joining CodeBridge. 
-                It’s inspiring to watch him prepare for a career in technology." – Mr. Mokoena, Parent
-            </blockquote>
-
-            <br>
-
-            <!-- ***** Digital Literacy Testimonial ***** -->
-            <!-- Highlights the impact of the Digital Literacy & Career Skills programme, 
-                 showing inclusivity and broader community benefit. -->
-            <blockquote>
-                "The digital literacy classes helped me learn how to use email, write my CV, 
-                and stay safe online. Now I feel ready to apply for jobs with confidence." – Thabo, Digital Literacy Participant
-            </blockquote>
-
-            <br>
-
-            <!-- ***** Donor Testimonial ***** -->
-            <!-- Demonstrates external support, building credibility with sponsors and donors. -->
-            <blockquote>
-                "We support CodeBridge because it equips young people with practical skills 
-                that open doors to employment. The impact on the community is clear and inspiring." – Ms. Naidoo, Local Business Sponsor
-            </blockquote>
+            </form>
 
         </section>
 
     </main>
 
-    <hr>
-
-    <!-- ***** footer section ***** -->
-    <!-- The footer appears on every page to keep navigation and contact details consistent. 
-        -It includes links to social media, contact information, and a donate option 
-        so visitors can easily reach out or support CodeBridge’s mission.
-        -By repeating this section site‑wide, it helps build trust and supports the goal 
-         of increasing applications, donations, and volunteer sign‑ups. -->
-
+<!-- ***** footer ***** -->
+<!-- The footer appears consistently across every page and provides
+     copyright information together with quick navigation links.
+     -Maintaining a consistent footer improves usability, reinforces
+      the website structure, and allows visitors to quickly access
+      important pages from anywhere on the site. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
-
-        <!-- ***** Footer Navigation Links ***** -->
+ <!-- ***** Footer Navigation Links ***** -->
         <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
 
@@ -309,23 +280,22 @@
             <li><a href="donate.html">Donate</a></li>
 
             <!--***** Privacy Policy Link ***** -->
-            <!-- Placeholder link for CodeBridge’s privacy policy page. 
-                 This will be added in Part 2(css)to show compliance and professionalism. -->
+            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
 
         </ul>
 
     </footer>
 
-   <!-- ***** shared script ***** -->
+<!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here and included on every page.
      -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
+      and other dynamic behaviours that improve the website's usability.
      -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
+      the HTML structure and makes the code easier to maintain.
      -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
+      parsed before the script is executed, helping reduce interruptions
+      to page loading.
      -This setup supports a user-friendly and maintainable website. -->
     <script src="js/main.js"></script>
 
