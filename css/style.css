@@ -221,14 +221,56 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    /* baseline shadow for browsers that don't support scroll-driven
+       animations below — the header still looks intentional, it
+       just won't condense as you scroll. */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ---- CSS-only scroll-driven header condense ----
+   No JavaScript: animation-timeline: scroll() ties this animation
+   directly to the page's scroll position instead of a JS scroll
+   listener. As you scroll through the first 220px of the page the
+   header shrinks its padding and deepens its shadow; scroll back up
+   and it reverses smoothly, because it's driven by position, not by
+   a toggled class. @supports keeps this an enhancement only — browsers
+   without support just keep the static baseline header above. */
+@supports (animation-timeline: scroll()) {
+    header {
+        animation: header-condense linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 220px;
+    }
+}
+
+@keyframes header-condense {
+    from {
+        padding-block: var(--space-3);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    to {
+        padding-block: var(--space-1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+    }
 }
 
 header + hr {
     display: none; /* the header supplies its own visual edge */
 }
 
+.logo {
+    /* a small "badge" box behind the logo so it reads clearly against
+       the dark header, regardless of what colours the artwork itself
+       uses — safer than inverting the image's colours with a filter */
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-paper);
+    padding: 0.4rem;
+    border-radius: var(--radius);
+}
+
 .logo img {
-    filter: brightness(0) invert(1); /* logo reads as white on navy */
+    display: block;
 }
 
 nav ul {
@@ -715,5 +757,66 @@ tbody tr:hover {
     footer nav ul {
         flex-direction: column;
         gap: var(--space-1);
+    }
+}
+
+
+/* =====================================================================
+   7. SCROLL-DRIVEN REVEAL ANIMATIONS (progressive enhancement)
+   Native CSS scroll-timelines — no JavaScript, no external library.
+   Each section fades and rises into place as it enters the viewport,
+   tied to the element's own position on the page rather than to
+   scroll speed, so it can't stutter or feel laggy on slow scrolls.
+
+   Wrapped in @supports so browsers that don't yet implement
+   animation-timeline (Safari, older Firefox) just show the content
+   normally, fully visible, with no animation and no layout impact —
+   this can never hide content from anyone.
+   ===================================================================== */
+
+@keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+
+    main > section,
+    main > article,
+    .testimonials blockquote,
+    .team-member,
+    .programme-card {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        /* animation plays out as the element crosses from just below
+           the viewport to about a third of the way up it, so it has
+           finished settling well before it reaches eye level */
+        animation-range: entry 0% cover 35%;
+    }
+
+    /* a small stagger across the three programme cards reads as one
+       deliberate sequence rather than three separate elements
+       animating in perfect, robotic unison */
+    .programme-card:nth-of-type(2) {
+        animation-range: entry 5% cover 40%;
+    }
+
+    .programme-card:nth-of-type(3) {
+        animation-range: entry 10% cover 45%;
+    }
+}
+
+/* accessibility: anyone with reduced-motion set at the OS level gets
+   the content immediately, with no animation at all */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        scroll-behavior: auto !important;
     }
 }
