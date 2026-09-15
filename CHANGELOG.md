@@ -87,3 +87,7 @@
 * ###### Update README with changelog section (commit 76d07cf)
 * ###### style: implement Part 2 external stylesheet with design tokens, base resets, flex/grid layouts, pseudo-classes, and responsive media queries (commit a563045)
 
+
+
+* ###### Enhanced my css folder and added animation, left with updating my README.md file then I am ready to submit(commit cf4a64d)
+
