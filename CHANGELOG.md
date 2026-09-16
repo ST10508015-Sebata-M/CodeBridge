@@ -1,93 +1,114 @@
-# **# Changelog**
+\# Changelog
 
 
 
-# **\*\*v1.0.0 - Initial Release\*\***
+\## \*\*v1.0.0 - Initial Release\*\*
 
-* ###### Initial commit (commit cd39c8c)
+\- Initial commit (commit cd39c8c)  
 
-###### 
+\- "This is my initial commit for this project which includes the basic structure of the website, with HTML, CSS, and JavaScript files." (commit 569fe0e)  
 
-* ###### "This is my initial commit for this project which includes the basic structure of the website, with HTML, CSS, and JavaScript files." 
+\- commit: finished index.html part 1 setup (commit 0910f07)  
 
-###### (commit 569fe0e)
+&#x20; - Finished index.html Part 1 setup. I added the hero section with the mission statement and apply button, wrote the about snapshot with background info, and included the programmes snapshot for Web Development, Java, and Digital Literacy.  
 
-###### 
+&#x20; - Added four testimonials (learner, parent, digital literacy participant, donor).  
 
-* ###### commit: finished index.html part 1 setup (commit 0910f07)
+&#x20; - Created apply/volunteer teaser section.  
 
-###### 
+&#x20; - Updated footer with contact, social media placeholder, donate, and privacy policy links.  
 
-* ###### Finished index.html Part 1 setup. I added the hero section with the mission statement and apply button, wrote the about snapshot with background info, and included the programmes snapshot for Web Development, Java, and Digital Literacy. I also added four testimonials from a learner, a parent, a digital literacy participant, and a donor to show different perspectives. Then I created the apply and volunteer teaser section, updated the footer with contact, social media placeholder, donate, and privacy policy links, and linked the main.js script at the bottom for performance. Every section is properly commented so the rubric gang can see the purpose clearly. (commit 2aa3a74)
+&#x20; - Linked `main.js` script at the bottom for performance.  
 
-###### 
+&#x20; - Every section is properly commented so the rubric gang can see the purpose clearly. (commit 2aa3a74)  
 
-* ###### I implemented homepage structure and branding by adding codingbridge logo and favicon (commit b23a350)
-* ###### 
-* ###### Finish about.html Part 1: tidy structure and accessibility — closed logo div, added nav role and main id, wrapped images in figure   with   figcaptions and lazy-loading, clarified single-person team, added clear section comments for the rubric, and flagged footer  Donate/Privacy as Part 2 placeholders; linked main.js. (commit 9af47a0)
+\- I implemented homepage structure and branding by adding codingbridge logo and favicon (commit b23a350)  
 
-###### 
+\- Finish about.html Part 1: tidy structure and accessibility (commit 9af47a0)  
 
-* ###### Completed the Programmes page by adding and organising all programme content, including images, descriptions, durations, prerequisites, schedules, and application links. Improved the overall HTML structure and visual presentation using HTML5 semantic elements, figures, captions, and section dividers to make the page cleaner, easier to navigate, and more visually appealing without relying on CSS. (commit 45d5945)
+&#x20; - Closed logo div, added nav role and main id.  
 
-###### 
+&#x20; - Wrapped images in figure with figcaptions and lazy-loading.  
 
-* ###### Implemented the enquiry page with a structured HTML5 form that supports learner applications volunteer sign-ups and sponsor enquiries, while maintaining consistent navigation and semantic page structure. The page was organised using fieldsets and clear sections to improve readability and prepare it for future CSS styling and JavaScript functionality. (commit c756700)
+&#x20; - Clarified single-person team.  
 
-###### 
+&#x20; - Added clear section comments for the rubric.  
 
-* ###### I just completed contact page with a structed HTML5 form that allows users to contact us if they have questions. Now looking to finish off my work I am left with adding three more pages updating my README and submitting my work (commit 9e18be3)
+&#x20; - Flagged footer Donate/Privacy as Part 2 placeholders.  
 
-###### 
+&#x20; - Linked `main.js`.  
 
-* ###### I updated my programmes file by adding details tag and summary tag curriculum breakdown per program. Its a native HTML5 disclosure widget (basically click to expand, No CSS or JS needed), which mimics that, expand a course syllabus , feel from CodeAcademy or W3Schools without your no CSS yet constraints (commit 288abf1)
+\- Completed the Programmes page (commit 45d5945)  
 
-###### 
+&#x20; - Added and organised programme content (images, descriptions, durations, prerequisites, schedules, application links).  
 
-* ###### I just added a new page named donate, to ensure all links on my website function (commit 14bf6cf)
+&#x20; - Improved HTML structure and visual presentation using semantic elements, figures, captions, and section dividers.  
 
-###### 
+\- Implemented the enquiry page (commit c756700)  
 
-* ###### I have just added my final page called privacy which explains Our Privacy Policies and How we use Your Information (commit 28a69ac)
+&#x20; - Structured HTML5 form for learner applications, volunteer sign-ups, sponsor enquiries.  
 
-###### 
+&#x20; - Organised with fieldsets and clear sections for readability.  
 
-# **\*\*v1.0.1 - Patch Release\*\***
+\- Completed contact page (commit 9e18be3)  
 
-* ###### I fixed my comments and tidy my code to improve readability, now I am left with updating my CHANGELOG.md file and my README.md file then I am submitting (commit 19f4666)
+&#x20; - Structured HTML5 form for user enquiries.  
 
-###### 
+\- Updated programmes file (commit 288abf1)  
 
-* ###### I fixed my comments and tidy my code to improve readablity, now I am left with updating my CHANGELOG.md file and my README.md file then I am submitting (commit 19f4666)
+&#x20; - Added `<details>` and `<summary>` tags for curriculum breakdown per program.  
 
+\- Added donate page (commit 14bf6cf)  
 
-
-# **\*\*v1.0.2\*\***
-
-* ###### &#x20;Add CHANGELOG.md (commit c4c2004)
-
-###### 
-
-* ###### &#x20;Update about page responsive images and active nav state (commit d654ed5)
-
-###### &#x20; • Add srcset and sizes attributes to all content images
-
-###### &#x20; • Add aria-current page attribute to active navigation link
-
-###### &#x20; • Remove redundant role navigation attribute from nav tag
-
-###### &#x20; • Clean up HTML comments across document
-
-###### 
-
-* ###### Update CHANGELOG with about page responsive images and nav state (commit 849527f)
-
-###### 
-
-* ###### Update README with changelog section (commit 76d07cf)
-* ###### style: implement Part 2 external stylesheet with design tokens, base resets, flex/grid layouts, pseudo-classes, and responsive media queries (commit a563045)
+\- Added privacy page (commit 28a69ac)  
 
 
 
-* ###### Enhanced my css folder and added animation, left with updating my README.md file then I am ready to submit(commit cf4a64d)
+\---
+
+
+
+\## \*\*v1.0.1 - Patch Release\*\*
+
+\- Fixed comments and tidied code to improve readability. (commit 19f4666)  
+
+\- Fixed comments and tidied code to improve readability. (duplicate commit 19f4666)  
+
+
+
+\---
+
+
+
+\## \*\*v1.0.2 - PART 2 Patch Release\*\*
+
+\- Add CHANGELOG.md (commit c4c2004)  
+
+\- Update about page responsive images and active nav state (commit d654ed5)  
+
+&#x20; - Added `srcset` and `sizes` attributes to content images.  
+
+&#x20; - Added `aria-current` page attribute to active navigation link.  
+
+&#x20; - Removed redundant role navigation attribute from nav tag.  
+
+&#x20; - Cleaned up HTML comments.  
+
+\- Update CHANGELOG with about page responsive images and nav state (commit 849527f)  
+
+\- Update README with changelog section (commit 76d07cf)  
+
+\- style: implement Part 2 external stylesheet (commit a563045)  
+
+&#x20; - Added design tokens, base resets, flex/grid layouts, pseudo-classes, responsive media queries.  
+
+\- Enhanced css folder and added animation (commit cf4a64d)  
+
+\- Restored index.html content (commit 58470d7)  
+
+\- Added new images for device testing proof (commit 1170f57)  
+
+\- Refactored README for clarity, added testing evidence, updated formatting for website pages, and added responsive design testing sections with screenshots. (commit 7755e25)  
+
+
 
