@@ -1,3 +1,10 @@
+## Part 1 Feedback & Revisions
+
+- **Lecturer Feedback:** "Excellent, ensure to include a changelog only."
+- **Part 1 Grade Received:** 81 / 100
+- **Action Taken:** 
+  - Created and structured `CHANGELOG.md` tracking all version history from `v1.0.0` (Part 1 HTML layout and forms) through `v1.0.2` (Part 2 CSS styling, design tokens, media queries, and responsiveness).
+  - Linked `CHANGELOG.md` in the main `README.md` documentation for reviewer visibility.
 \# Changelog
 
 
