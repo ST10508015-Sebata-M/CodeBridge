@@ -110,7 +110,7 @@ For full details, see [CHANGELOG.md](./CHANGELOG.md)
 --- 
 
 
-# \## References
+# References
  # CSS & Web Standards Documentation (Part 2 References)
  #
  # Google, n.d. Google Fonts. [online] Available at: https://fonts.google.com/ [Accessed 15 September 2026].
