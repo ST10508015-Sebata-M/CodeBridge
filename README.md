@@ -28,20 +28,20 @@
 # 5.Ensure Universal Accessibility & Responsiveness: Deliver a seamless visual and navigation experience across desktop computers, tablets, and mobile devices.
 
 #
-Website Pages
-# 1.index.html — Home page featuring the organisation hero, mission statement, programme highlights, and learner testimonials.
+# Website Pages
+ 1.index.html — Home page featuring the organisation hero, mission statement, programme highlights, and learner testimonials.
 
-# 2.about.html — Background history, core values, operational vision, and team structure.
+ 2.about.html — Background history, core values, operational vision, and team structure.
 
-# 3.programmes.html — Comprehensive course directory with expandable HTML5 details curriculum breakdowns.
+ 3.programmes.html — Comprehensive course directory with expandable HTML5 details curriculum breakdowns.
 
-# 4.donate.html — Sponsorship pathways and itemized donation impact table.
+ 4.donate.html — Sponsorship pathways and itemized donation impact table.
 
-# 5.contact.html — Multi-purpose enquiry/application form with South African phone number validation.
+ 5.contact.html — Multi-purpose enquiry/application form with South African phone number validation.
 
-# 6.privacy.html — Organizational privacy policy and data governance rules.
+ 6.privacy.html — Organizational privacy policy and data governance rules.
 
-# 7.enquiry.html - Apply / Volunteer page
+ 7.enquiry.html - Apply / Volunteer page
 
 #
  # Timeline & Implementation Milestones
@@ -90,18 +90,61 @@ Website Pages
 # Progressive Enhancement: Native CSS scroll-driven reveal animations (animation-timeline: view()) with automatic fallback for non-supporting browsers and @media (prefers-reduced-motion) accessibility support.
 
 # Sitemap
-# The visual architecture and site page layout map can be accessed below:
-# 
+ The visual architecture and site page layout map can be accessed below:
+ ![Site Map Screenshot](./images/SiteMap.png)
+
+ ## Responsive Design Testing & Screenshots (Part 2 Proof)
+ The website has been tested using browser developer tools across multiple standard screen sizes (Desktop, iPad Air Tablet, Samsung Galaxy S20 Ultra, and iPhone   SE). Below is the evidence of layout adaptability across all viewports:
+ ## Enquiry Page Layout Testing
+ ### Enquiry Page (Desktop)
+![Enquiry Desktop](./images/enquiry-desktop.png)
+
+### Enquiry Page (Mobile - Galaxy S20 Ultra)
+![Enquiry Mobile Galaxy S20 Ultra](./images/enquiry-mobile-galaxys20ultra.png)
+
+### Enquiry Page (Mobile - iPhone SE)
+![Enquiry Mobile iPhone SE](./images/enquiry-mobile-iphonese.png)
+
+### Enquiry Page (Tablet - iPad Air)
+![Enquiry Tablet iPad Air](./images/enquiry-tablet-ipadair.png)
+
+## Home Page Layout Testing
+### Home Page (Desktop)
+![Home Desktop](./images/home-desktop.png)
+
+### Home Page (Mobile - Galaxy S20 Ultra)
+![Home Mobile Galaxy S20 Ultra](./images/home-mobile-galaxys20ultra.png)
+
+### Home Page (Mobile - iPhone SE)
+![Home Mobile iPhone SE](./images/home-mobile-iphonese.png)
+
+### Home Page (Tablet - iPad Air)
+![Home Tablet iPad Air](./images/home-tablet-ipadair.png)
 
 ## Changelog
 For full details, see [CHANGELOG.md](./CHANGELOG.md)
 
 
 # \## References
+ # CSS & Web Standards Documentation (Part 2 References)
+ #
+ # Google, n.d. Google Fonts. [online] Available at: https://fonts.google.com/ [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. CSS flexible box layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. CSS Grid Layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. CSS scroll-driven animations. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations # [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. Responsive images. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. Using CSS custom properties (variables). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties [Accessed 15 September 2026].
+#
+# Mozilla Corporation, n.d. Using media queries. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries [Accessed 15 September 2026].
 
 # 
 
-# \### Websites
+# \### Websites & Web Development Context (Part 1 References)
 
 # 
 
