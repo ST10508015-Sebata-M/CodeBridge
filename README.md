@@ -1,64 +1,98 @@
+# CodeBridge Website Project
+# Student Information
+# Full Name: Mapuru Sebata
+# Student Number: ST10508015
+# GitHub Repository: @ST10508015-Sebata-M
+# Module: Web Development Proof of Evidence (PoE)
+#
+# Project Overview
+# CodeBridge is a fictional Non-Profit Organisation (NPO) based in Johannesburg, South Africa, created for the IIE Web Development Proof of Evidence (PoE) assignment. CodeBridge exists to teach coding and digital literacy skills to underserved youth in Johannesburg, providing them with access to hands-on tech education, mentorship, and career opportunities.
+
+# This repository contains the multi-page website built across the three PoE project milestones:
+
+# Part 1: Semantic HTML5 structure and content layout.
+
+# Part 2: CSS3 styling, design tokens, external stylesheet architecture, and multi-device responsive design.
+
+# Part 3: Client-side JavaScript interactivity, dynamic quizzes, and media functionality (Planned).
+# 
+# Website Goals and Objectives
+# 1.Promote Technical Education: Provide clear information regarding free coding bootcamps (Web Development, Java, and Digital Literacy).
+
+# 2.Drive Engagement & Applications: Enable prospective learners to submit online application forms for upcoming cohorts.
+
+# 3.Encourage Community Involvement: Offer paths for technical professionals to apply as volunteer mentors or tutors.
+
+# 4.Secure NPO Funding: Display transparent donation impact breakdowns and facilitate donor enquiries.
+
+# 5.Ensure Universal Accessibility & Responsiveness: Deliver a seamless visual and navigation experience across desktop computers, tablets, and mobile devices.
+
+#
+Website Pages
+# 1.index.html — Home page featuring the organisation hero, mission statement, programme highlights, and learner testimonials.
+
+# 2.about.html — Background history, core values, operational vision, and team structure.
+
+# 3.programmes.html — Comprehensive course directory with expandable HTML5 details curriculum breakdowns.
+
+# 4.donate.html — Sponsorship pathways and itemized donation impact table.
+
+# 5.contact.html — Multi-purpose enquiry/application form with South African phone number validation.
+
+# 6.privacy.html — Organizational privacy policy and data governance rules.
+
+# 7.enquiry.html - Apply / Volunteer page
+
+#
+ # Timeline & Implementation Milestones
+# Part 1: HTML Structure & Accessibility (Completed)
+# Developed semantic HTML5 page skeletons without inline layout styles.
+
+# Integrated South African regex phone validation (+27 / 0 prefix formats).
+
+# Structured interactive forms using fieldset, legend, and distinct input types.
+
+# Part 2: CSS Styling & Responsive Design (Completed)
+# Created a unified external stylesheet (css/style.css) linked across all HTML pages.
+
+# Defined standard design tokens (:root) for color palettes, typography scales, and spacing units.
+
+# Implemented modern CSS Flexbox and CSS Grid layout algorithms for desktop displays.
+
+# Added interactive UI pseudo-classes (:hover, :focus, :active) and focus indicators.
+
+# Built responsive @media query breakpoints (900px tablet, 600px mobile) to stack layouts and adjust typography.
+
+# Optimized images using responsive techniques and fluid sizing constraints (max-width: 100%).
+
+# Part 3: JavaScript Interactivity (Upcoming)
+# Integration of dynamic quiz engines, embedded video tutorials, and interactive form feedback mechanisms.
+
+#
+
+# Key Features & Technical Details
+# Part 1 Details: HTML5 Architecture
+# Semantic Elements: Built using <header>, <nav>, <main>, <article>, <section>, <figure>, <figcaption>, <fieldset>, and <footer>.
+
+# Native Widgets: Interactive curriculum disclosures built using HTML5 <details> and <summary> tags.
+
+# Form Validation: Input pattern checking enforced via native browser regular expressions.
+
+# Part 2 Details: CSS3 Visual Styling & Responsiveness
+# External Stylesheet: Consolidated site-wide presentation into css/style.css.
+
+# Custom Properties (CSS Variables): Defined theme variables for brand colors (Navy, Amber, Teal, Paper off-white) and modular typographic steps.
+
+# Flexible Layout Systems: 3-column CSS Grid layout for desktop programme cards collapsing dynamically to single-column layouts on mobile viewports.
+
+# UX Micro-Interactions: Subtle hover states and button elevation transitions using CSS transitions and transform properties.
+
+# Progressive Enhancement: Native CSS scroll-driven reveal animations (animation-timeline: view()) with automatic fallback for non-supporting browsers and @media (prefers-reduced-motion) accessibility support.
+
+# Sitemap
+# The visual architecture and site page layout map can be accessed below:
 # 
 
-# CodeBridge:
-
-# 
-
-# CodeBridge is a fictional youth coding NPO based in Johannesburg, created for the IIE Web Development Proof of Evidence (PoE) assignment. This repository contains the multi-page website built for the organisation across the three parts of the assignment: structure (HTML), styling (CSS), and interactivity (JavaScript).
-
-# 
-
-# About the Project:
-
-# 
-
-# CodeBridge exists to teach coding skills to underserved youth in Johannesburg, giving them access to the tools and mentorship needed to break into the tech industry. The website introduces the organisation, its programmes, and ways for the public to get involved or donate.
-
-
-
-# Pages:
-
-# index.html — Home page
-
-# about.html — About CodeBridge
-
-# programmes.html — Programmes / courses offered
-
-# donate.html — Donation page
-
-# contact.html — Contact form (includes SA phone number validation)
-
-# privacy.html — Privacy policy
-
-# Tech Stack:
-
-# HTML5 — semantic elements (fieldset, legend, figure, figcaption, details, summary)
-
-# CSS3 — styling (Part 2, in progress)
-
-# JavaScript — interactivity, tutorial videos, quizzes (Part 3, planned)
-
-# 
-
-# Features:
-
-# Semantic, accessible HTML5 markup throughout
-
-# South African phone number validation via HTML5 pattern attributes
-
-# Footer navigation linking to Donate, Privacy, and Contact pages
-
-# WCAG 2.2 contrast-ratio considerations carried through from the design proposal
-
-# Planned: tutorial videos and interactive quizzes inspired by Codecademy and W3Schools
-
-# 
-
-# Author
-
-# 
-
-# Mapuru Sebata Student Number: ST10508015 GitHub: @ST10508015-Sebata-M
 ## Changelog
 For full details, see [CHANGELOG.md](./CHANGELOG.md)
 
