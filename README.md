@@ -104,9 +104,12 @@ The website has been tested using browser developer tools across multiple standa
 
 ---
 
+
 # Changelog
 For full details, see [CHANGELOG.md](./CHANGELOG.md)
 --- 
+
+
 # \## References
  # CSS & Web Standards Documentation (Part 2 References)
  #
