@@ -82,25 +82,39 @@ This repository contains the multi-page website built across the three PoE proje
 ## Responsive Design Testing & Screenshots (Part 2 Proof)
 The website has been tested using browser developer tools across multiple standard screen sizes (Desktop, iPad Air Tablet, Samsung Galaxy S20 Ultra, and iPhone SE). Below is the evidence of layout adaptability across all viewports:
 
-### Enquiry Page Layout Testing
-- **Desktop**  
-  ![Enquiry Desktop](./images/enquiry-desktop.png)  
-- **Mobile – Galaxy S20 Ultra**  
-  ![Enquiry Mobile Galaxy S20 Ultra](./images/enquiry-mobile-galaxys20ultra.png)  
-- **Mobile – iPhone SE**  
-  ![Enquiry Mobile iPhone SE](./images/enquiry-mobile-iphonese.png)  
-- **Tablet – iPad Air**  
-  ![Enquiry Tablet iPad Air](./images/enquiry-tablet-ipadair.png)  
+<details>
+<summary><b>📸 Click to expand Enquiry Page Screenshots (Desktop, Tablet, Mobile)</b></summary>
 
-### Home Page Layout Testing
-- **Desktop**  
-  ![Home Desktop](./images/home-desktop.png)  
-- **Mobile – Galaxy S20 Ultra**  
-  ![Home Mobile Galaxy S20 Ultra](./images/home-mobile-galaxys20ultra.png)  
-- **Mobile – iPhone SE**  
-  ![Home Mobile iPhone SE](./images/home-mobile-iphonese.png)  
-- **Tablet – iPad Air**  
-  ![Home Tablet iPad Air](./images/home-tablet-ipadair.png)  
+#### Desktop
+![Enquiry Desktop](./images/enquiry-desktop.png)
+
+#### Mobile – Galaxy S20 Ultra
+![Enquiry Mobile Galaxy S20 Ultra](./images/enquiry-mobile-galaxys20ultra.png)
+
+#### Mobile – iPhone SE
+![Enquiry Mobile iPhone SE](./images/enquiry-mobile-iphonese.png)
+
+#### Tablet – iPad Air
+![Enquiry Tablet iPad Air](./images/enquiry-tablet-ipadair.png)
+
+</details>
+
+<details>
+<summary><b>📸 Click to expand Home Page Screenshots (Desktop, Tablet, Mobile)</b></summary>
+
+#### Desktop
+![Home Desktop](./images/home-desktop.png)
+
+#### Mobile – Galaxy S20 Ultra
+![Home Mobile Galaxy S20 Ultra](./images/home-mobile-galaxys20ultra.png)
+
+#### Mobile – iPhone SE
+![Home Mobile iPhone SE](./images/home-mobile-iphonese.png)
+
+#### Tablet – iPad Air
+![Home Tablet iPad Air](./images/home-tablet-ipadair.png)
+
+</details>
 
 ---
 
