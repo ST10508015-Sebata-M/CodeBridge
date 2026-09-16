@@ -1,129 +1,111 @@
 # CodeBridge Website Project
-# Student Information
-# Full Name: Mapuru Sebata
-# Student Number: ST10508015
-# GitHub Repository: @ST10508015-Sebata-M
-# Module: Web Development Proof of Evidence (PoE)
-#
-# Project Overview
-# CodeBridge is a fictional Non-Profit Organisation (NPO) based in Johannesburg, South Africa, created for the IIE Web Development Proof of Evidence (PoE) assignment. CodeBridge exists to teach coding and digital literacy skills to underserved youth in Johannesburg, providing them with access to hands-on tech education, mentorship, and career opportunities.
 
-# This repository contains the multi-page website built across the three PoE project milestones:
+## Student Information
+- **Full Name:** Mapuru Sebata  
+- **Student Number:** ST10508015  
+- **GitHub Repository:** @ST10508015-Sebata-M  
+- **Module:** Web Development Proof of Evidence (PoE)  
 
-# Part 1: Semantic HTML5 structure and content layout.
+---
 
-# Part 2: CSS3 styling, design tokens, external stylesheet architecture, and multi-device responsive design.
+## Project Overview
+CodeBridge is a fictional Non-Profit Organisation (NPO) based in Johannesburg, South Africa, created for the IIE Web Development Proof of Evidence (PoE) assignment.  
+CodeBridge exists to teach coding and digital literacy skills to underserved youth in Johannesburg, providing them with access to hands-on tech education, mentorship, and career opportunities.
 
-# Part 3: Client-side JavaScript interactivity, dynamic quizzes, and media functionality (Planned).
-# 
-# Website Goals and Objectives
-# 1.Promote Technical Education: Provide clear information regarding free coding bootcamps (Web Development, Java, and Digital Literacy).
+This repository contains the multi-page website built across the three PoE project milestones:
 
-# 2.Drive Engagement & Applications: Enable prospective learners to submit online application forms for upcoming cohorts.
+- **Part 1:** Semantic HTML5 structure and content layout.  
+- **Part 2:** CSS3 styling, design tokens, external stylesheet architecture, and multi-device responsive design.  
+- **Part 3:** Client-side JavaScript interactivity, dynamic quizzes, and media functionality (Planned).  
 
-# 3.Encourage Community Involvement: Offer paths for technical professionals to apply as volunteer mentors or tutors.
+---
 
-# 4.Secure NPO Funding: Display transparent donation impact breakdowns and facilitate donor enquiries.
+## Website Goals and Objectives
+1. **Promote Technical Education:** Provide clear information regarding free coding bootcamps (Web Development, Java, and Digital Literacy).  
+2. **Drive Engagement & Applications:** Enable prospective learners to submit online application forms for upcoming cohorts.  
+3. **Encourage Community Involvement:** Offer paths for technical professionals to apply as volunteer mentors or tutors.  
+4. **Secure NPO Funding:** Display transparent donation impact breakdowns and facilitate donor enquiries.  
+5. **Ensure Universal Accessibility & Responsiveness:** Deliver a seamless visual and navigation experience across desktop computers, tablets, and mobile devices.  
 
-# 5.Ensure Universal Accessibility & Responsiveness: Deliver a seamless visual and navigation experience across desktop computers, tablets, and mobile devices.
+---
 
-#
-# Website Pages
- 1.index.html — Home page featuring the organisation hero, mission statement, programme highlights, and learner testimonials.
+## Website Pages
+1. `index.html` — Home page featuring the organisation hero, mission statement, programme highlights, and learner testimonials.  
+2. `about.html` — Background history, core values, operational vision, and team structure.  
+3. `programmes.html` — Comprehensive course directory with expandable HTML5 details curriculum breakdowns.  
+4. `donate.html` — Sponsorship pathways and itemized donation impact table.  
+5. `contact.html` — Multi-purpose enquiry/application form with South African phone number validation.  
+6. `privacy.html` — Organisational privacy policy and data governance rules.  
+7. `enquiry.html` — Apply / Volunteer page.  
 
- 2.about.html — Background history, core values, operational vision, and team structure.
+---
 
- 3.programmes.html — Comprehensive course directory with expandable HTML5 details curriculum breakdowns.
+## Timeline & Implementation Milestones
+- **Part 1: HTML Structure & Accessibility (Completed)**  
+  - Developed semantic HTML5 page skeletons without inline layout styles.  
+  - Integrated South African regex phone validation (+27 / 0 prefix formats).  
+  - Structured interactive forms using fieldset, legend, and distinct input types.  
 
- 4.donate.html — Sponsorship pathways and itemized donation impact table.
+- **Part 2: CSS Styling & Responsive Design (Completed)**  
+  - Created a unified external stylesheet (`css/style.css`) linked across all HTML pages.  
+  - Defined standard design tokens (`:root`) for color palettes, typography scales, and spacing units.  
+  - Implemented modern CSS Flexbox and CSS Grid layout algorithms for desktop displays.  
+  - Added interactive UI pseudo-classes (`:hover`, `:focus`, `:active`) and focus indicators.  
+  - Built responsive `@media` query breakpoints (900px tablet, 600px mobile).  
+  - Optimized images using responsive techniques and fluid sizing constraints (`max-width: 100%`).  
 
- 5.contact.html — Multi-purpose enquiry/application form with South African phone number validation.
+- **Part 3: JavaScript Interactivity (Upcoming)**  
+  - Integration of dynamic quiz engines, embedded video tutorials, and interactive form feedback mechanisms.  
 
- 6.privacy.html — Organizational privacy policy and data governance rules.
+---
 
- 7.enquiry.html - Apply / Volunteer page
+## Key Features & Technical Details
+### Part 1 Details: HTML5 Architecture
+- Semantic Elements: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<figure>`, `<figcaption>`, `<fieldset>`, `<footer>`.  
+- Native Widgets: Interactive curriculum disclosures built using `<details>` and `<summary>`.  
+- Form Validation: Input pattern checking enforced via native browser regular expressions.  
 
-#
- # Timeline & Implementation Milestones
-# Part 1: HTML Structure & Accessibility (Completed)
-# Developed semantic HTML5 page skeletons without inline layout styles.
+### Part 2 Details: CSS3 Visual Styling & Responsiveness
+- External Stylesheet: Consolidated site-wide presentation into `css/style.css`.  
+- Custom Properties (CSS Variables): Defined theme variables for brand colors (Navy, Amber, Teal, Paper off-white).  
+- Flexible Layout Systems: 3-column CSS Grid layout for desktop programme cards collapsing dynamically to single-column layouts on mobile viewports.  
+- UX Micro-Interactions: Subtle hover states and button elevation transitions using CSS transitions and transform properties.  
+- Progressive Enhancement: Native CSS scroll-driven reveal animations (`animation-timeline: view()`) with accessibility fallbacks.  
 
-# Integrated South African regex phone validation (+27 / 0 prefix formats).
+---
 
-# Structured interactive forms using fieldset, legend, and distinct input types.
+## Sitemap
+![Site Map Screenshot](./images/SiteMap.png)
 
-# Part 2: CSS Styling & Responsive Design (Completed)
-# Created a unified external stylesheet (css/style.css) linked across all HTML pages.
+---
 
-# Defined standard design tokens (:root) for color palettes, typography scales, and spacing units.
+## Responsive Design Testing & Screenshots (Part 2 Proof)
+The website has been tested using browser developer tools across multiple standard screen sizes (Desktop, iPad Air Tablet, Samsung Galaxy S20 Ultra, and iPhone SE). Below is the evidence of layout adaptability across all viewports:
 
-# Implemented modern CSS Flexbox and CSS Grid layout algorithms for desktop displays.
+### Enquiry Page Layout Testing
+- **Desktop**  
+  ![Enquiry Desktop](./images/enquiry-desktop.png)  
+- **Mobile – Galaxy S20 Ultra**  
+  ![Enquiry Mobile Galaxy S20 Ultra](./images/enquiry-mobile-galaxys20ultra.png)  
+- **Mobile – iPhone SE**  
+  ![Enquiry Mobile iPhone SE](./images/enquiry-mobile-iphonese.png)  
+- **Tablet – iPad Air**  
+  ![Enquiry Tablet iPad Air](./images/enquiry-tablet-ipadair.png)  
 
-# Added interactive UI pseudo-classes (:hover, :focus, :active) and focus indicators.
+### Home Page Layout Testing
+- **Desktop**  
+  ![Home Desktop](./images/home-desktop.png)  
+- **Mobile – Galaxy S20 Ultra**  
+  ![Home Mobile Galaxy S20 Ultra](./images/home-mobile-galaxys20ultra.png)  
+- **Mobile – iPhone SE**  
+  ![Home Mobile iPhone SE](./images/home-mobile-iphonese.png)  
+- **Tablet – iPad Air**  
+  ![Home Tablet iPad Air](./images/home-tablet-ipadair.png)  
 
-# Built responsive @media query breakpoints (900px tablet, 600px mobile) to stack layouts and adjust typography.
-
-# Optimized images using responsive techniques and fluid sizing constraints (max-width: 100%).
-
-# Part 3: JavaScript Interactivity (Upcoming)
-# Integration of dynamic quiz engines, embedded video tutorials, and interactive form feedback mechanisms.
-
-#
-
-# Key Features & Technical Details
-# Part 1 Details: HTML5 Architecture
-# Semantic Elements: Built using <header>, <nav>, <main>, <article>, <section>, <figure>, <figcaption>, <fieldset>, and <footer>.
-
-# Native Widgets: Interactive curriculum disclosures built using HTML5 <details> and <summary> tags.
-
-# Form Validation: Input pattern checking enforced via native browser regular expressions.
-
-# Part 2 Details: CSS3 Visual Styling & Responsiveness
-# External Stylesheet: Consolidated site-wide presentation into css/style.css.
-
-# Custom Properties (CSS Variables): Defined theme variables for brand colors (Navy, Amber, Teal, Paper off-white) and modular typographic steps.
-
-# Flexible Layout Systems: 3-column CSS Grid layout for desktop programme cards collapsing dynamically to single-column layouts on mobile viewports.
-
-# UX Micro-Interactions: Subtle hover states and button elevation transitions using CSS transitions and transform properties.
-
-# Progressive Enhancement: Native CSS scroll-driven reveal animations (animation-timeline: view()) with automatic fallback for non-supporting browsers and @media (prefers-reduced-motion) accessibility support.
-
-# Sitemap
- The visual architecture and site page layout map can be accessed below:
- ![Site Map Screenshot](./images/SiteMap.png)
-
- ## Responsive Design Testing & Screenshots (Part 2 Proof)
- The website has been tested using browser developer tools across multiple standard screen sizes (Desktop, iPad Air Tablet, Samsung Galaxy S20 Ultra, and iPhone   SE). Below is the evidence of layout adaptability across all viewports:
- ## Enquiry Page Layout Testing
- ### Enquiry Page (Desktop)
-![Enquiry Desktop](./images/enquiry-desktop.png)
-
-### Enquiry Page (Mobile - Galaxy S20 Ultra)
-![Enquiry Mobile Galaxy S20 Ultra](./images/enquiry-mobile-galaxys20ultra.png)
-
-### Enquiry Page (Mobile - iPhone SE)
-![Enquiry Mobile iPhone SE](./images/enquiry-mobile-iphonese.png)
-
-### Enquiry Page (Tablet - iPad Air)
-![Enquiry Tablet iPad Air](./images/enquiry-tablet-ipadair.png)
-
-## Home Page Layout Testing
-### Home Page (Desktop)
-![Home Desktop](./images/home-desktop.png)
-
-### Home Page (Mobile - Galaxy S20 Ultra)
-![Home Mobile Galaxy S20 Ultra](./images/home-mobile-galaxys20ultra.png)
-
-### Home Page (Mobile - iPhone SE)
-![Home Mobile iPhone SE](./images/home-mobile-iphonese.png)
-
-### Home Page (Tablet - iPad Air)
-![Home Tablet iPad Air](./images/home-tablet-ipadair.png)
+---
 
 ## Changelog
 For full details, see [CHANGELOG.md](./CHANGELOG.md)
-
 
 # \## References
  # CSS & Web Standards Documentation (Part 2 References)
