@@ -17,21 +17,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from, which helps block injected-code attacks. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- ***** search engine optimisation (seo) meta tags ***** -->
   <!-- Meta description provides search engines with a concise summary of the page content,
-       improving click-through rates from search results pages. -->
-  <meta name="description" content="Discover the story behind CodeBridge, a Johannesburg-based NPO founded by Mapuru Sebata, empowering youth through practical digital skills and coding bootcamps.">
+       improving click-through rates from search results pages (kept under 160 characters). -->
+  <meta name="description" content="Meet CodeBridge, a Johannesburg NPO founded by Mapuru Sebata. Discover our story, mission, values and how we empower youth with practical coding skills.">
   
   <!-- Meta keywords target relevant search queries related to the organisation's mission,
        location, and educational programmes. -->
-  <meta name="keywords" content="CodeBridge, About CodeBridge, Mapuru Sebata, Johannesburg NPO, youth coding bootcamp, digital skills training, community programming">
+  <meta name="keywords" content="About CodeBridge, Mapuru Sebata, Johannesburg NPO, youth coding bootcamp, digital skills training, community programming, NPO mission and values">
+  <meta name="robots" content="index, follow">
+
+  <!-- ***** social media sharing tags (Open Graph) ***** -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CodeBridge NPO">
+  <meta property="og:title" content="About CodeBridge | Youth Coding NPO in Johannesburg">
+  <meta property="og:description" content="Our story, mission, values and the people behind CodeBridge.">
 
   <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-  <title>CodeBridge | About Us</title>
+  <title>About CodeBridge | Youth Coding NPO in Johannesburg</title>
 
   <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
@@ -41,6 +54,10 @@
       and improves website maintainability. -->
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for accordions, animations and other Part 3 features. -->
+  <link rel="stylesheet" href="css/part3.css">
+
   <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
      making the website easier to recognise.
@@ -49,6 +66,10 @@
   <link rel="icon" type="image/png" href="images/CodeBridge.png">
 </head>
 <body>
+
+  <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
  
   <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo and the primary navigation menu.
@@ -115,16 +136,18 @@
     <section class="history">
       <h2>Our Story</h2>
 
-     <!-- ***** responsive story image ***** -->
-<!-- Adding srcset and sizes attributes allows modern web browsers to select and download
-     the most appropriate image file resolution based on the user's screen size and device viewport.
-     - This optimizes loading speed, saves mobile bandwidth, and satisfies responsive image standards. -->
+     <!-- ***** story image ***** -->
+<!-- The image uses a descriptive file name (students-coding-workshop-johannesburg.png) and
+     descriptive alt text, which helps image search and screen-reader users.
+     -Width and height attributes reserve space so the page does not jump while loading,
+      and lazy loading speeds up the first page view. -->
       <figure>
-        <img src="images/students-coding.png" 
-             srcset="images/students-coding.png 800w, images/students-coding.png 400w" 
-             sizes="(max-width: 600px) 100vw, 800px" 
-             alt="Young students learning to code at a CodeBridge workshop" 
-             loading="lazy" />
+        <img src="images/students-coding-workshop-johannesburg.png" 
+             alt="Young students learning to code at a CodeBridge workshop in Johannesburg" 
+             width="800" 
+             height="450"
+             loading="lazy"
+             decoding="async" />
         <figcaption><small>Students learning coding fundamentals at a community workshop.</small></figcaption>
       </figure>
 
@@ -135,7 +158,7 @@
       </p>
 
       <p>
-        As interest in the programme continued to grow, the founders officially registered CodeBridge as a non-profit organisation in 2023. Since then, the organisation has expanded its reach by offering practical coding bootcamps in HTML, CSS, JavaScript fundamentals and basic computer literacy.
+        As interest in the programme continued to grow, the founders officially registered CodeBridge as a non-profit organisation in 2023. Since then, the organisation has expanded its reach by offering practical coding bootcamps in HTML, CSS, JavaScript fundamentals and basic computer literacy. Explore the full list on our <a href="programmes.html">Programmes page</a>.
       </p>
 
       <p>
@@ -188,8 +211,9 @@
 <!-- ***** core values section (Interactive Accordion Enhancement) ***** -->
 <!-- This section highlights the principles that guide every programme,
      decision, and community initiative at CodeBridge.
-     -Enhanced with interactive accordion elements controlled via JavaScript to 
-      improve user experience and satisfy Part 3 functionality requirements. -->
+     -Each value is an interactive accordion controlled by main.js.
+     -main.js also adds the aria-controls links, the region roles, keyboard support
+      and an "Expand all / Collapse all" toolbar above the list. -->
     <section class="values">
       <h2>Our Values</h2>
       <p><small>Click on any value below to learn more about our guiding principles.</small></p>
@@ -197,8 +221,8 @@
       <!-- ***** Interactive Accordion List ***** -->
       <div class="accordion">
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <strong>Accessibility:</strong> We believe every young person deserves equal access to technology education.
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span><strong>Accessibility:</strong> We believe every young person deserves equal access to technology education.</span>
           </button>
           <div class="accordion-content">
             <p>We actively remove barriers to entry by providing free or subsidized learning materials, flexible scheduling, and community-based workshops across Johannesburg.</p>
@@ -206,8 +230,8 @@
         </div>
       
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <strong>Innovation:</strong> We encourage creativity, curiosity and continuous learning.
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span><strong>Innovation:</strong> We encourage creativity, curiosity and continuous learning.</span>
           </button>
           <div class="accordion-content">
             <p>Technology evolves rapidly, and we foster a mindset of experimentation, teaching modern frameworks and problem-solving techniques that adapt to industry shifts.</p>
@@ -215,8 +239,8 @@
         </div>
       
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <strong>Community:</strong> We build supportive learning environments where everyone feels welcome.
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span><strong>Community:</strong> We build supportive learning environments where everyone feels welcome.</span>
           </button>
           <div class="accordion-content">
             <p>Peer collaboration and mentorship are at the core of CodeBridge, creating a safe, inclusive space for learners from diverse backgrounds to thrive together.</p>
@@ -224,8 +248,8 @@
         </div>
         
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <strong>Integrity:</strong> We operate with honesty, transparency and accountability.
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span><strong>Integrity:</strong> We operate with honesty, transparency and accountability.</span>
           </button>
           <div class="accordion-content">
             <p>We maintain strict ethical standards in how we manage donor funding, partner with community leaders, and support our student body.</p>
@@ -233,8 +257,8 @@
         </div>
         
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <strong>Empowerment:</strong> We help learners develop practical skills that prepare them for future careers.
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span><strong>Empowerment:</strong> We help learners develop practical skills that prepare them for future careers.</span>
           </button>
           <div class="accordion-content">
             <p>Our project-based curriculum ensures graduates leave with tangible portfolios and the workplace confidence required to secure employment or freelance opportunities.</p>
@@ -253,16 +277,15 @@
       <h2>Meet the Team</h2>
 
       <article class="team-member">
-       <!-- ***** responsive founder profile image ***** -->
-<!-- Using srcset and sizes enables mobile devices to fetch smaller assets, improving page speed
-     while serving crisp, high-resolution visuals to higher pixel-density desktop viewports. -->
+       <!-- ***** founder profile image ***** -->
+<!-- The file name (mapuru-sebata-codebridge-founder.jpg) and the alt text both describe
+     the image, which supports image SEO and accessibility. -->
         <figure>
-          <img src="images/mapuru.jpg" 
-               srcset="images/mapuru.jpg 600w, images/mapuru.jpg 300w" 
-               sizes="(max-width: 600px) 100vw, 320px" 
+          <img src="images/mapuru-sebata-codebridge-founder.jpg" 
                alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop" 
                width="320" 
-               loading="lazy" />
+               loading="lazy"
+               decoding="async" />
           <figcaption><small>Mapuru Sebata leading a community coding workshop.</small></figcaption>
         </figure>
 
@@ -284,13 +307,12 @@
       <h2>Why Choose CodeBridge?</h2>
 
       <figure>
-        <!-- ***** responsive learning environment image ***** -->
-        <img src="images/coding-class.png" 
-             srcset="images/coding-class.png 800w, images/coding-class.png 400w" 
-             sizes="(max-width: 600px) 100vw, 480px" 
+        <!-- ***** learning environment image ***** -->
+        <img src="images/codebridge-coding-class-students.png" 
              alt="Students participating in a coding workshop at CodeBridge" 
              width="480" 
-             loading="lazy" />
+             loading="lazy"
+             decoding="async" />
         <figcaption><small>Students participating in a CodeBridge workshop.</small></figcaption>
       </figure>
 
@@ -304,7 +326,7 @@
       <article>
         <h3>Experienced Mentors</h3>
         <p>
-          Learners receive guidance from passionate volunteers who are committed to helping young people succeed in technology.
+          Learners receive guidance from passionate volunteers who are committed to helping young people succeed in technology. Interested in mentoring? <a href="enquiry.html?type=volunteer">Sign up as a volunteer</a>.
         </p>
       </article>
 
@@ -316,6 +338,18 @@
       </article>
     </section>
 
+    <!-- ***** get involved section ***** -->
+<!-- Internal links at the end of the page guide visitors to the pages where they can take action,
+     which also strengthens the site's internal linking for SEO. -->
+    <section class="get-involved">
+      <h2>Get Involved</h2>
+      <p>
+        Ready to be part of the mission? <a href="enquiry.html?type=learner">Apply for a programme</a>,
+        <a href="donate.html">support our learners with a donation</a>, or
+        <a href="contact.html">get in touch</a> and visit one of our centres.
+      </p>
+    </section>
+
   </main>
 
  
@@ -323,7 +357,7 @@
 <!-- The footer provides consistent information that appears across every page. -->
   <footer>
     <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
-    <nav>
+    <nav aria-label="Footer navigation">
         <ul>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="donate.html">Donate</a></li>

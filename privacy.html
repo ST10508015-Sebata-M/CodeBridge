@@ -16,25 +16,42 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from, which helps block injected-code attacks. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
-    <!-- Meta description provides search engines with a summary of CodeBridge's privacy policy and POPIA compliance. -->
-    <meta name="description" content="Read the CodeBridge NPO Privacy Policy. Learn how we collect, protect, and handle your personal data under South Africa's POPIA legislation.">
+    <!-- Meta description provides search engines with a summary of CodeBridge's privacy policy and POPIA compliance (kept under 160 characters). -->
+    <meta name="description" content="Read the CodeBridge NPO privacy policy: what personal data we collect, how we protect it and your rights under South Africa's POPIA.">
     
     <!-- Meta keywords target privacy and legal compliance search queries to improve SEO. -->
-    <meta name="keywords" content="CodeBridge privacy policy, POPIA compliance South Africa, data protection NPO, personal information security, CodeBridge legal">
+    <meta name="keywords" content="CodeBridge privacy policy, POPIA compliance South Africa, data protection NPO, personal information security, your data rights, CodeBridge legal">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="Privacy Policy &amp; POPIA Compliance | CodeBridge">
+    <meta property="og:description" content="How CodeBridge collects, uses and protects your personal information.">
 
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Privacy Policy</title>
+    <title>Privacy Policy &amp; POPIA Compliance | CodeBridge</title>
 
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet provides the visual appearance of the Privacy Policy page.
      -Using one shared CSS file keeps the branding, colours, typography, and
       layout consistent across the entire website. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for the accordion and animations added in Part 3. -->
+    <link rel="stylesheet" href="css/part3.css">
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo in the browser tab,
@@ -43,6 +60,10 @@
 
 </head>
 <body>
+
+    <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo and the primary navigation menu.
@@ -76,88 +97,142 @@
             <h1>Privacy Policy</h1>
 
             <p>
-                Last updated: August 2026. This policy explains what personal information
+                Last updated: October 2026. This policy explains what personal information
                 CodeBridge collects through this website, how it is used, and your rights
                 under South Africa's Protection of Personal Information Act (POPIA).
+            </p>
+
+            <p>
+                <strong>Demonstration notice:</strong> CodeBridge is a fictional organisation created for a student
+                assignment. The website's forms are sent to a testing service, so no real application, donation or
+                message is processed.
             </p>
 
         </section>
 
         <!-- ***** interactive policy sections (Accordion Enhancement) ***** -->
+<!-- Each policy topic is an accordion panel controlled by main.js.
+     -The button sits inside the heading, which keeps the page structure correct for screen readers.
+     -main.js adds the aria-controls links, keyboard support and an "Expand all / Collapse all" toolbar. -->
         <section class="privacy-content">
 
-            <article class="privacy-item">
-                <h2>Information We Collect</h2>
-                <ul>
-                    <li>Full name and contact details (phone number and email address)</li>
-                    <li>Learner application details (preferred centre, programme of interest, motivation)</li>
-                    <li>Volunteer sign-up details (area of expertise, availability)</li>
-                    <li>Sponsor/donor enquiry details (organisation name, contribution type)</li>
-                    <li>Messages submitted through our Contact form</li>
-                    <li>Donor name and email address for donation receipts</li>
-                </ul>
-            </article>
+            <div class="accordion">
 
-            <article class="privacy-item">
-                <h2>How We Use Your Information</h2>
-                <p>
-                    We use the information you provide to process programme applications, respond
-                    to enquiries, coordinate volunteer involvement, issue donation receipts, and
-                    keep you informed about CodeBridge's programmes and impact. We do not use your
-                    information for any purpose beyond what you submitted it for.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Information We Collect</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Full name, phone number and email address (all forms)</li>
+                            <li>Learner application details: preferred centre, programme of interest and an optional motivation</li>
+                            <li>Volunteer sign-up details: area of mentoring, availability and hours per month</li>
+                            <li>Sponsor enquiry details: programme, number of learners and an optional organisation name</li>
+                            <li>Messages submitted through our Contact form</li>
+                            <li>Donor name, email address and chosen donation amount</li>
+                            <li>Your location, only if you choose to allow it when using the directions map</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Sharing of Information</h2>
-                <p>
-                    CodeBridge does not sell or rent personal information to third parties. Limited
-                    information may be shared with programme partners or sponsors strictly for
-                    reporting on programme outcomes, and only with your consent.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">How We Use Your Information</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            We use the information you provide to process programme applications, respond
+                            to enquiries, coordinate volunteer involvement, acknowledge donations, and
+                            keep you informed about CodeBridge's programmes and impact. We do not use your
+                            information for any purpose beyond what you submitted it for.
+                        </p>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Data Security</h2>
-                <p>
-                    All information submitted through this site is transmitted over a secure
-                    (HTTPS) connection. Form inputs are validated and sanitised to prevent
-                    malformed or malicious submissions.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Sharing of Information</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            CodeBridge does not sell or rent personal information to third parties. Limited
+                            information may be shared with programme partners or sponsors strictly for
+                            reporting on programme outcomes, and only with your consent.
+                        </p>
+                        <p>
+                            The directions map uses OpenStreetMap to display map tiles and the OSRM routing
+                            service to calculate routes. When you use it, the starting point and destination
+                            coordinates are sent to those services. Your location is only used if you allow
+                            your browser to share it.
+                        </p>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Your Rights Under POPIA</h2>
-                <p>
-                    You have the right to request access to, correction of, or deletion of the
-                    personal information we hold about you. To make such a request, please contact
-                    us using the details on our Contact page.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Data Security</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            When the website is hosted on HTTPS, information you submit is encrypted in transit.
+                            Form inputs are checked in your browser before they are sent, and anything you type is
+                            displayed back to you as plain text so that it cannot inject code into the page.
+                            The site also uses a Content Security Policy that restricts which sources of scripts,
+                            styles and network connections the browser will trust.
+                        </p>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Cookies</h2>
-                <p>
-                    This website does not currently use tracking or advertising cookies. Should
-                    this change in future, this policy will be updated accordingly.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Your Rights Under POPIA</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            You have the right to request access to, correction of, or deletion of the
+                            personal information we hold about you. To make such a request, please contact
+                            us using the details on our <a href="contact.html">Contact page</a>.
+                        </p>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Changes to This Policy</h2>
-                <p>
-                    CodeBridge may update this Privacy Policy from time to time. Any changes will
-                    be posted on this page with an updated revision date.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Cookies</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            This website does not currently use tracking or advertising cookies. Should
+                            this change in future, this policy will be updated accordingly.
+                        </p>
+                    </div>
+                </div>
 
-            <article class="privacy-item">
-                <h2>Contact Us</h2>
-                <p>
-                    For any privacy-related questions or requests, please reach out via our
-                    <a href="contact.html">Contact page</a>.
-                </p>
-            </article>
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Changes to This Policy</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            CodeBridge may update this Privacy Policy from time to time. Any changes will
+                            be posted on this page with an updated revision date.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item privacy-item">
+                    <h2>
+                        <button class="accordion-header" type="button" aria-expanded="false">Contact Us</button>
+                    </h2>
+                    <div class="accordion-content">
+                        <p>
+                            For any privacy-related questions or requests, please reach out via our
+                            <a href="contact.html">Contact page</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
 
         </section>
 
@@ -177,6 +252,7 @@
     </footer>
 
 <!-- ***** shared script ***** -->
+<!-- The main JavaScript file is linked here to power the accordion panels. -->
     <script src="js/main.js"></script>
 
 </body>

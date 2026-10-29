@@ -23,25 +23,43 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from, which helps block injected-code attacks. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
-    <!-- Meta description provides search engines with a summary of CodeBridge training bootcamps, including Web Development and Java. -->
-    <meta name="description" content="Explore CodeBridge training programmes in Johannesburg. View our Web Development Bootcamp, Java Programming Fundamentals, and Digital Literacy course curricula.">
+    <!-- Meta description provides search engines with a summary of CodeBridge training bootcamps,
+         including Web Development and Java (kept under 160 characters). -->
+    <meta name="description" content="Explore CodeBridge programmes in Johannesburg: Web Development Bootcamp, Java Programming Fundamentals and Digital Literacy with full weekly curricula.">
     
     <!-- Meta keywords target programme and bootcamp search queries to improve SEO. -->
-    <meta name="keywords" content="CodeBridge programmes, web development bootcamp Johannesburg, Java programming course, digital literacy training, coding classes South Africa">
+    <meta name="keywords" content="CodeBridge programmes, web development bootcamp Johannesburg, Java programming course, digital literacy training, CV writing course, coding classes South Africa">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="Coding &amp; Digital Skills Programmes in Johannesburg | CodeBridge">
+    <meta property="og:description" content="Web Development, Java and Digital Literacy programmes with full week-by-week curricula.">
 
     <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Programmes</title>
+    <title>Coding &amp; Digital Skills Programmes in Johannesburg | CodeBridge</title>
 
    <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the visual appearance of the Programmes page.
      -Using one shared CSS file keeps the branding, typography, colours,
       and layout consistent across the entire website. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for the gallery, lightbox and animations added in Part 3. -->
+    <link rel="stylesheet" href="css/part3.css">
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo in the browser tab,
@@ -51,6 +69,11 @@
 
 </head>
 <body>
+
+<!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo and the primary navigation menu.
      -It appears consistently across every page to strengthen CodeBridge's branding. -->
@@ -94,19 +117,23 @@
                 Every programme below includes a week-by-week curriculum, so you know
                 exactly what you'll be learning before you apply — click
                 &ldquo;View Full Curriculum&rdquo; on any programme to see the full breakdown.
+                You can also visit one of our centres: see <a href="contact.html">directions on the Contact page</a>.
             </p>
 
         </section>
 
 <!-- ***** web development bootcamp ***** -->
-        <article class="programme-article">
+<!-- The id lets other pages link straight to this programme (programmes.html#web-dev). -->
+        <article class="programme-article" id="web-dev">
 
             <h2>Web Development Bootcamp</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/web-dev-bootcamp.png"
+                <img src="images/web-development-bootcamp-learners.png"
                      alt="Learners coding during the Web Development Bootcamp"
-                     width="500">
+                     width="500"
+                     loading="lazy"
+                     decoding="async">
                 <figcaption>
                     Learners building their first websites using HTML, CSS and JavaScript.
                 </figcaption>
@@ -152,20 +179,22 @@
             </details>
 
             <p>
-                <a href="enquiry.html" class="cta-button-small">Apply for this Programme</a>
+                <a href="enquiry.html?type=learner&amp;programme=web-dev" class="cta-button-small">Apply for this Programme</a>
             </p>
 
         </article>
 
  <!-- ***** java programming fundamentals ***** -->
-        <article class="programme-article">
+        <article class="programme-article" id="java">
 
             <h2>Java Programming Fundamentals</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/java-fundamentals.png"
+                <img src="images/java-programming-course-learners.png"
                      alt="Learners working through Java programming exercises"
-                     width="500">
+                     width="500"
+                     loading="lazy"
+                     decoding="async">
                 <figcaption>
                     Students solving programming challenges using Java.
                 </figcaption>
@@ -186,7 +215,7 @@
                     <li><strong>Skill Level:</strong> Intermediate</li>
                     <li><strong>Duration:</strong> 10 Weeks</li>
                     <li><strong>Prerequisites:</strong> Basic computer literacy</li>
-                    <li><strong>Recommended:</strong> Web Development Bootcamp</li>
+                    <li><strong>Recommended:</strong> <a href="#web-dev">Web Development Bootcamp</a></li>
                     <li><strong>Schedule:</strong> Tuesdays &amp; Thursdays (17:00–19:00)</li>
                     <li><strong>Certificate:</strong> Issued upon successful completion</li>
                 </ul>
@@ -214,20 +243,22 @@
             </details>
 
             <p>
-                <a href="enquiry.html" class="cta-button-small">Apply for this Programme</a>
+                <a href="enquiry.html?type=learner&amp;programme=java" class="cta-button-small">Apply for this Programme</a>
             </p>
 
         </article>
 
         <!-- ***** digital literacy and career skills ***** -->
-        <article class="programme-article">
+        <article class="programme-article" id="digital-literacy">
 
             <h2>Digital Literacy &amp; Career Skills</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/digital-literacy.png"
+                <img src="images/digital-literacy-career-skills-class.png"
                      alt="Participants learning digital literacy skills"
-                     width="500">
+                     width="500"
+                     loading="lazy"
+                     decoding="async">
                 <figcaption>
                     Community members developing essential digital and workplace skills.
                 </figcaption>
@@ -269,10 +300,81 @@
             </details>
 
             <p>
-                <a href="enquiry.html" class="cta-button-small">Apply for this Programme</a>
+                <a href="enquiry.html?type=learner&amp;programme=digital-literacy" class="cta-button-small">Apply for this Programme</a>
             </p>
 
         </article>
+
+        <!-- ***** programme gallery with lightbox ***** -->
+<!-- The gallery shows photos from our workshops as a responsive grid.
+     -Clicking (or pressing Enter on) a photo opens it in a lightbox modal that main.js builds.
+     -Inside the lightbox visitors can close with the button or the Esc key, and move
+      between photos with the arrow buttons, the left/right arrow keys, or a swipe on phones.
+     -Each thumbnail is a real <button> so keyboard users can open it. -->
+        <section class="gallery-section">
+
+            <h2>Programme Gallery</h2>
+            <p>Select any photo to view it larger, then use the arrow buttons or your keyboard arrows to browse.</p>
+
+            <div class="gallery">
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/students-coding-workshop-johannesburg.png"
+                             alt="Young students learning to code at a CodeBridge workshop in Johannesburg"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Students learning coding fundamentals at a community workshop.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/codebridge-coding-class-students.png"
+                             alt="Students participating in a coding workshop at CodeBridge"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Students participating in a CodeBridge workshop.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/web-development-bootcamp-learners.png"
+                             alt="Learners coding during the Web Development Bootcamp"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Web Development Bootcamp learners building their first websites.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/java-programming-course-learners.png"
+                             alt="Learners working through Java programming exercises"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Java Programming Fundamentals students solving challenges.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/digital-literacy-career-skills-class.png"
+                             alt="Participants learning digital literacy skills"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Community members developing digital and workplace skills.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <button type="button" class="gallery-thumb">
+                        <img src="images/mapuru-sebata-codebridge-founder.jpg"
+                             alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop"
+                             width="400" height="200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Founder Mapuru Sebata leading a community coding workshop.</figcaption>
+                </figure>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -290,6 +392,8 @@
     </footer>
 
 <!-- ***** shared script ***** -->
+<!-- The main JavaScript file is linked here to power the gallery lightbox
+     and the scroll animations. -->
 <script src="js/main.js"></script>
 
 </body>

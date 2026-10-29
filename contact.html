@@ -16,27 +16,90 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from. This page also trusts unpkg.com (Leaflet files),
+     OpenStreetMap (map tiles) and the OSRM routing service for directions. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://unpkg.com https://*.tile.openstreetmap.org; connect-src 'self' https://router.project-osrm.org https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
-    <meta name="description" content="Contact CodeBridge NPO in Johannesburg. Send general messages, inquire about community coding classes, or view interactive maps with live routing directions to our Alexandra and Diepsloot centres.">
-    <meta name="keywords" content="CodeBridge contact, Johannesburg coding center, Alexandra community center map, Diepsloot coding classes, interactive directions map">
+    <!-- Meta description is kept under 160 characters so search engines show all of it. -->
+    <meta name="description" content="Contact CodeBridge NPO in Johannesburg. Send a message or get live driving directions to our Alexandra and Diepsloot coding centres.">
+    <meta name="keywords" content="CodeBridge contact, Johannesburg coding centre, Alexandra community centre, Diepsloot coding classes, directions to CodeBridge, NPO contact South Africa">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="Contact CodeBridge | Directions to Alexandra &amp; Diepsloot Centres">
+    <meta property="og:description" content="Send us a message or get live driving directions to our Johannesburg centres.">
 
 <!-- ***** page title ***** -->
-    <title>CodeBridge | Contact &amp; Directions</title>
+    <title>Contact CodeBridge | Directions to Alexandra &amp; Diepsloot Centres</title>
+
+    <!-- ***** local seo structured data ***** -->
+<!-- This JSON-LD block tells search engines the organisation's type, contact email and the
+     addresses of both centres, which supports local search results in Johannesburg. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "CodeBridge NPO",
+      "description": "Johannesburg non-profit organisation offering free coding bootcamps and digital skills training for youth.",
+      "email": "info@codebridge.org.za",
+      "areaServed": "Johannesburg, South Africa",
+      "location": [
+        {
+          "@type": "Place",
+          "name": "CodeBridge Alexandra Centre",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "14 Roosevelt Street",
+            "addressLocality": "Alexandra, Johannesburg",
+            "postalCode": "2090",
+            "addressCountry": "ZA"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "CodeBridge Diepsloot Centre",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Extension 1",
+            "addressLocality": "Diepsloot, Johannesburg",
+            "postalCode": "2189",
+            "addressCountry": "ZA"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- ***** shared stylesheet ***** -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for live validation, the map buttons and animations added in Part 3. -->
+    <link rel="stylesheet" href="css/part3.css">
 
     <!-- ***** leaflet css for interactive map ***** -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
     <!-- ***** leaflet routing machine css for live directions ***** -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+<!-- To add an integrity (SRI) hash here, generate it for this exact URL at https://www.srihash.org/
+     and paste it in as integrity="sha384-..." next to crossorigin. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" crossorigin="" />
 
     <!-- ***** favicon ***** -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
+
+    <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- ***** header ***** -->
     <header>
@@ -61,13 +124,17 @@
         <section>
             <h1>Contact Us &amp; Interactive Directions</h1>
             <p>
-                Have a question that isn't covered on our Programmes or Apply/Volunteer pages?
-                Send us a message below, or use our interactive routing map to get exact directions 
-                from Johannesburg Central to either of our community training centres.
+                Have a general question or message for CodeBridge? Send it below. If you want to apply, volunteer or
+                sponsor learners, please use the <a href="enquiry.html">Apply / Volunteer page</a> instead.
+                You can also use our interactive routing map to get driving directions from your current location
+                (or Johannesburg Central if location sharing is off) to either of our community training centres.
             </p>
         </section>
 
         <!-- ***** contact form section ***** -->
+<!-- This form is for GENERAL messages to the organisation. Once every field passes validation,
+     main.js compiles the details into an email and shows a preview. The visitor then presses
+     "Open in my email app" to send it to the address in the action attribute below. -->
         <section class="form-section">
             <h2>Send Us a Message</h2>
             <form id="contact-form" action="mailto:info@codebridge.org.za" method="post" enctype="text/plain" novalidate>
@@ -76,19 +143,19 @@
 
                     <div class="form-group">
                         <label for="name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" minlength="2" maxlength="60" required placeholder="e.g. Sipho Nkosi">
+                        <input type="text" id="name" name="name" minlength="2" maxlength="60" required autocomplete="name" placeholder="e.g. Sipho Nkosi">
                         <span class="error-message" id="name-error" aria-live="polite"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="e.g. sipho@example.com">
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. sipho@example.com">
                         <span class="error-message" id="email-error" aria-live="polite"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone Number <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" pattern="^(\+27|0)[6-8][0-9]{8}$" required placeholder="e.g. 0821234567">
+                        <input type="tel" id="phone" name="phone" pattern="^(\+27|0)[1-8][0-9]{8}$" required autocomplete="tel" placeholder="e.g. 0821234567">
                         <span class="error-message" id="phone-error" aria-live="polite"></span>
                     </div>
 
@@ -113,45 +180,48 @@
                     <div class="form-group">
                         <label for="message">Full Message <span class="required">*</span></label>
                         <textarea id="message" name="message" rows="6" minlength="10" maxlength="1000" required placeholder="Write your full message here..."></textarea>
+                        <p class="char-counter" id="message-counter" aria-live="off"></p>
                         <span class="error-message" id="message-error" aria-live="polite"></span>
                     </div>
                 </fieldset>
 
                 <div id="contact-form-response" class="form-response" aria-live="polite"></div>
-                <button type="submit" id="contact-submit-btn">Compile &amp; Send Message</button>
+                <button type="submit" id="contact-submit-btn">Compile &amp; Preview Email</button>
             </form>
         </section>
 
         <!-- ***** interactive location maps & live directions section ***** -->
         <section class="locations">
             <h2>Interactive Routing Map</h2>
-            <p>Click below to calculate exact turn-by-turn driving directions from Johannesburg Central (Park Station) to our training venues.</p>
+            <p>Choose a centre to calculate turn-by-turn driving directions. The route starts from your live location if you allow it, otherwise from Johannesburg Central (Park Station).</p>
 
             <!-- Route Toggle Buttons -->
             <div class="map-controls">
-                <button type="button" class="map-btn active" id="btn-alexandra">Get Directions to Alexandra Centre</button>
-                <button type="button" class="map-btn" id="btn-diepsloot">Get Directions to Diepsloot Centre</button>
+                <button type="button" class="map-btn active" id="btn-alexandra" aria-pressed="true">Get Directions to Alexandra Centre</button>
+                <button type="button" class="map-btn" id="btn-diepsloot" aria-pressed="false">Get Directions to Diepsloot Centre</button>
             </div>
 
+            <!-- Live status line: location found, route distance and time, or an error message -->
+            <p class="map-status" id="map-status" role="status" aria-live="polite"></p>
+
             <!-- Leaflet Interactive Map Canvas with Routing Container -->
-            <div id="map" style="height: 480px; width: 100%; margin-top: 15px; border-radius: 8px;"></div>
+            <div id="map" role="region" aria-label="Interactive map showing the CodeBridge Alexandra and Diepsloot centres" style="height: 480px; width: 100%; margin-top: 15px; border-radius: 8px;"></div>
 
 <!-- ***** alexandra community centre details ***** -->
             <article class="location-card" style="margin-top: 20px;">
                 <h3>Alexandra Centre</h3>
                 <figure>
-                    <img src="images/map-alexandra.png" 
-                         srcset="images/map-alexandra.png 800w, images/map-alexandra.png 400w" 
-                         sizes="(max-width: 600px) 100vw, 500px" 
-                         alt="Map preview showing the Alexandra Centre location" 
+                    <img src="images/alexandra-centre-map-johannesburg.png" 
+                         alt="Map preview showing the Alexandra Centre location in Johannesburg" 
                          width="500" 
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                     <figcaption>
                         Alexandra Centre — 14 Roosevelt Street, Alexandra, Johannesburg, 2090
                     </figcaption>
                 </figure>
                 <p>
-                    Home of our Web Development Bootcamp and Digital Literacy &amp; Career Skills
+                    Home of our <a href="programmes.html#web-dev">Web Development Bootcamp</a> and <a href="programmes.html#digital-literacy">Digital Literacy &amp; Career Skills</a>
                     programme. Open Saturdays, 08:30–13:30.
                 </p>
             </article>
@@ -160,18 +230,17 @@
             <article class="location-card">
                 <h3>Diepsloot Centre</h3>
                 <figure>
-                    <img src="images/map-diepsloot.png" 
-                         srcset="images/map-diepsloot.png 800w, images/map-diepsloot.png 400w" 
-                         sizes="(max-width: 600px) 100vw, 500px" 
-                         alt="Map preview showing the Diepsloot Centre location" 
+                    <img src="images/diepsloot-centre-map-johannesburg.png" 
+                         alt="Map preview showing the Diepsloot Centre location in Johannesburg" 
                          width="500" 
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                     <figcaption>
                         Diepsloot Centre — Extension 1, Diepsloot, Johannesburg, 2189
                     </figcaption>
                 </figure>
                 <p>
-                    Home of our Java Programming Fundamentals evening classes. Open Tuesdays and
+                    Home of our <a href="programmes.html#java">Java Programming Fundamentals</a> evening classes. Open Tuesdays and
                     Thursdays, 16:30–19:30.
                 </p>
             </article>
@@ -193,7 +262,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <!-- ***** leaflet routing machine script for exact path directions ***** -->
-    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+<!-- Add an integrity (SRI) hash for this URL from https://www.srihash.org/ if you want the same protection as Leaflet above. -->
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js" crossorigin=""></script>
 
     <!-- ***** shared script ***** -->
     <script src="js/main.js"></script>

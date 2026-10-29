@@ -16,19 +16,33 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from. connect-src lists the only servers the AJAX form may talk to
+     (the JSONPlaceholder test service and Formspree). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
-    <!-- Meta description provides search engines with a summary of the application, volunteer, and sponsorship opportunities at CodeBridge. -->
-    <meta name="description" content="Apply for coding programmes, sign up as a volunteer mentor, or submit a sponsorship enquiry at CodeBridge NPO in Johannesburg.">
+    <!-- Meta description provides search engines with a summary of the application, volunteer, and sponsorship opportunities at CodeBridge (kept under 160 characters). -->
+    <meta name="description" content="Apply for a CodeBridge coding programme, volunteer as a mentor or sponsor learners in Johannesburg. Get instant cost, schedule and intake details.">
     
     <!-- Meta keywords target application and volunteer search queries to improve local SEO. -->
-    <meta name="keywords" content="CodeBridge apply, volunteer coding Johannesburg, sponsor coding bootcamps, learner application form, tech volunteer South Africa">
+    <meta name="keywords" content="CodeBridge apply, free coding course application Johannesburg, volunteer coding mentor, sponsor coding bootcamps, learner application form, tech volunteer South Africa">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="Apply, Volunteer or Sponsor | CodeBridge Johannesburg NPO">
+    <meta property="og:description" content="Apply for a free coding programme, mentor learners or sponsor a seat.">
 
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Apply / Volunteer / Sponsor</title>
+    <title>Apply, Volunteer or Sponsor | CodeBridge Johannesburg NPO</title>
 
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
@@ -37,6 +51,10 @@
       -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for live validation, form responses and animations added in Part 3. -->
+    <link rel="stylesheet" href="css/part3.css">
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
@@ -47,6 +65,10 @@
 
 </head>
 <body>
+
+    <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo together with the
@@ -99,17 +121,20 @@
 
         <!-- ***** page introduction ***** -->
         <!-- Explains to the visitor, in plain language, what this page is for
-          and how the form below works, before they start filling it in. -->
+          and how the form below works, before they start filling it in.
+          -This form is for enquiries about programmes, volunteering and sponsorship.
+          For a general message to the organisation, use the <a href="contact.html">Contact page</a>. -->
 
         <section>
 
             <h1>Apply / Volunteer / Sponsor</h1>
 
             <p>
-                Whether you want to join one of our programmes as a learner, give your time as a
+                Whether you want to join one of our <a href="programmes.html">programmes</a> as a learner, give your time as a
                 volunteer, or support CodeBridge as a sponsor, this page is your starting point.
-                Select the enquiry type that applies to you and complete the form below, and a
-                member of the CodeBridge team will be in touch.
+                Select the enquiry type that applies to you and complete the form below. As soon as you
+                submit, you will see the cost, schedule and availability details that match your choices.
+                For a general message instead, please use our <a href="contact.html">Contact page</a>.
             </p>
 
         </section>
@@ -118,17 +143,21 @@
         <!-- A single form covers all three NPO enquiry types (learner
           application / volunteer sign-up / sponsor enquiry), per the Part 1
           brief. Using one form instead of three separate pages keeps the
-          process short and reduces drop-off. -->
+          process short and reduces drop-off.
+          -The action attribute holds the address the data is sent to. main.js sends it
+           with fetch() (AJAX) so the page never reloads. The JSONPlaceholder address is a free
+           test service; replace it with a Formspree address (https://formspree.io/f/YOUR_ID)
+           to receive real submissions by email. -->
 
         <section class="form-section">
 
-            <form id="enquiry-form" action="#" method="post" novalidate>
+            <form id="enquiry-form" action="https://jsonplaceholder.typicode.com/posts" method="post" novalidate>
 
                <!-- ***** enquiry type selection ***** -->
 <!-- This field allows visitors to identify the purpose of their enquiry
      before completing the remainder of the form.
-     -Selecting an enquiry type helps CodeBridge distinguish between
-      learner applications, volunteer registrations, and sponsor enquiries. -->
+     -Selecting an enquiry type shows only the fields that apply to that visitor
+      (learner, volunteer or sponsor) and hides the rest. -->
                 <fieldset>
 
                     <legend>Enquiry Type</legend>
@@ -154,34 +183,34 @@
 
                     <div class="form-group">
                         <label for="full-name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="full-name" name="full-name" required minlength="2" maxlength="60" placeholder="e.g. Thabo Mokoena">
+                        <input type="text" id="full-name" name="full-name" required minlength="2" maxlength="60" autocomplete="name" placeholder="e.g. Thabo Mokoena">
                         <span class="error-message" id="name-error" aria-live="polite"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="contact-number">Contact Number <span class="required">*</span></label>
-                        <input type="tel" id="contact-number" name="contact-number" required pattern="^(\+27|0)[6-8][0-9]{8}$" placeholder="e.g. 0821234567">
+                        <input type="tel" id="contact-number" name="contact-number" required pattern="^(\+27|0)[1-8][0-9]{8}$" autocomplete="tel" placeholder="e.g. 0821234567">
                         <span class="error-message" id="phone-error" aria-live="polite"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="e.g. thabo@example.com">
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. thabo@example.com">
                         <span class="error-message" id="email-error" aria-live="polite"></span>
                     </div>
 
                 </fieldset>
 
               <!-- ***** learner application details ***** -->
-<!-- This section collects additional information that is only required
-     from learner applicants, dynamically managed via JavaScript. -->
-                <fieldset id="learner-fields">
+<!-- Shown only when "Learner Application" is chosen. main.js toggles the hidden and
+     disabled attributes, so hidden fields are never validated or submitted. -->
+                <fieldset id="learner-fields" hidden disabled>
 
                     <legend>Learner Application Details</legend>
 
                     <div class="form-group">
-                        <label for="centre">Preferred Centre</label>
-                        <select id="centre" name="centre">
+                        <label for="centre">Preferred Centre <span class="required">*</span></label>
+                        <select id="centre" name="centre" required>
                             <option value="" disabled selected>-- please choose --</option>
                             <option value="alexandra">Alexandra Centre</option>
                             <option value="diepsloot">Diepsloot Centre</option>
@@ -190,26 +219,97 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="programme">Programme of Interest</label>
-                        <select id="programme" name="programme">
+                        <label for="programme">Programme of Interest <span class="required">*</span></label>
+                        <select id="programme" name="programme" required>
                             <option value="" disabled selected>-- please choose --</option>
-                            <option value="web-dev">Intro to Web Development</option>
-                            <option value="js-fundamentals">Java Programming Fundamentals</option>
-                            <option value="digital-literacy">Digital Literacy &amp; Career Skills Basics</option>
+                            <option value="web-dev">Web Development Bootcamp</option>
+                            <option value="java">Java Programming Fundamentals</option>
+                            <option value="digital-literacy">Digital Literacy &amp; Career Skills</option>
                         </select>
                         <span class="error-message" id="programme-error" aria-live="polite"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="motivation">Short Motivation</label>
+                        <label for="motivation">Short Motivation (optional)</label>
                         <textarea id="motivation" name="motivation" rows="4" minlength="10" maxlength="500" placeholder="Tell us why you want to join CodeBridge..."></textarea>
                         <span class="error-message" id="motivation-error" aria-live="polite"></span>
                     </div>
 
                 </fieldset>
 
+              <!-- ***** volunteer sign-up details ***** -->
+<!-- Shown only when "Volunteer Sign-up" is chosen. The answers are matched against the
+     programme timetables so the response can confirm which classes fit the volunteer. -->
+                <fieldset id="volunteer-fields" hidden disabled>
+
+                    <legend>Volunteer Details</legend>
+
+                    <div class="form-group">
+                        <label for="volunteer-expertise">Area you would like to mentor in <span class="required">*</span></label>
+                        <select id="volunteer-expertise" name="volunteer-expertise" required>
+                            <option value="" disabled selected>-- please choose --</option>
+                            <option value="web-dev">Web Development (HTML, CSS, JavaScript)</option>
+                            <option value="java">Java Programming</option>
+                            <option value="digital-literacy">Digital Literacy &amp; Career Skills</option>
+                        </select>
+                        <span class="error-message" id="expertise-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="volunteer-availability">When are you available? <span class="required">*</span></label>
+                        <select id="volunteer-availability" name="volunteer-availability" required>
+                            <option value="" disabled selected>-- please choose --</option>
+                            <option value="saturday">Saturdays</option>
+                            <option value="weekday">Weekday evenings (Tuesdays &amp; Thursdays)</option>
+                            <option value="both">Both, I am flexible</option>
+                        </select>
+                        <span class="error-message" id="availability-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="volunteer-hours">Hours you can give per month <span class="required">*</span></label>
+                        <input type="number" id="volunteer-hours" name="volunteer-hours" required min="2" max="40" step="1" placeholder="e.g. 8">
+                        <span class="error-message" id="hours-error" aria-live="polite"></span>
+                    </div>
+
+                </fieldset>
+
+              <!-- ***** sponsor enquiry details ***** -->
+<!-- Shown only when "Sponsor Enquiry" is chosen. The programme and number of learners
+     are used to calculate the total cost, which updates live as the sponsor types. -->
+                <fieldset id="sponsor-fields" hidden disabled>
+
+                    <legend>Sponsorship Details</legend>
+
+                    <div class="form-group">
+                        <label for="sponsor-programme">Programme you would like to sponsor <span class="required">*</span></label>
+                        <select id="sponsor-programme" name="sponsor-programme" required>
+                            <option value="" disabled selected>-- please choose --</option>
+                            <option value="web-dev">Web Development Bootcamp</option>
+                            <option value="java">Java Programming Fundamentals</option>
+                            <option value="digital-literacy">Digital Literacy &amp; Career Skills</option>
+                        </select>
+                        <span class="error-message" id="sponsor-programme-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sponsor-learners">Number of learners to sponsor <span class="required">*</span></label>
+                        <input type="number" id="sponsor-learners" name="sponsor-learners" required min="1" max="100" step="1" placeholder="e.g. 5">
+                        <span class="error-message" id="learners-error" aria-live="polite"></span>
+                        <p class="estimate-line" id="sponsor-estimate" aria-live="polite"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sponsor-organisation">Organisation name (optional)</label>
+                        <input type="text" id="sponsor-organisation" name="sponsor-organisation" maxlength="80" autocomplete="organization" placeholder="e.g. Naidoo Hardware">
+                        <span class="error-message" id="organisation-error" aria-live="polite"></span>
+                    </div>
+
+                </fieldset>
+
 <!-- ***** submission response feedback container ***** -->
-<!-- Displays dynamic processing feedback (cost, availability, or success response) upon validation. -->
+<!-- Displays the processed response (cost, availability, intake date or sponsorship total)
+     once the form has been validated and sent. -->
                 <div id="enquiry-form-response" class="form-response" aria-live="polite"></div>
 
 <!-- ***** submit application ***** -->
@@ -234,6 +334,8 @@
     </footer>
 
 <!-- ***** shared script ***** -->
+<!-- The main JavaScript file is linked here to handle the conditional fields, live validation,
+     AJAX submission and the processed response. -->
     <script src="js/main.js"></script>
 
 </body>

@@ -16,20 +16,34 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy limits where scripts, styles, images and network
+     requests may come from. connect-src lists the only servers the AJAX form may talk to. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
     <!-- Meta description provides search engines with a concise summary of the donation page purpose,
-         explaining how financial contributions fund course materials and youth coding bootcamps in Johannesburg. -->
-    <meta name="description" content="Support CodeBridge NPO in Johannesburg. Donate funds to sponsor course materials, laptop access, and youth coding bootcamps to fight youth unemployment.">
+         explaining how financial contributions fund course materials and youth coding bootcamps in Johannesburg
+         (kept under 160 characters). -->
+    <meta name="description" content="Donate to CodeBridge NPO and fund course materials, laptop access and coding bootcamps that help Johannesburg youth fight unemployment.">
     
     <!-- Meta keywords target fundraising and donor search queries to improve local SEO. -->
-    <meta name="keywords" content="Donate CodeBridge, support youth coding Johannesburg, NPO donation, fund coding bootcamps, sponsor a learner South Africa">
+    <meta name="keywords" content="Donate CodeBridge, support youth coding Johannesburg, NPO donation South Africa, fund coding bootcamps, sponsor a learner, laptop access for learners">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="Donate to CodeBridge | Fund Youth Coding Education">
+    <meta property="og:description" content="Your donation funds course materials, laptop access and instructor time for Johannesburg youth.">
 
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Donate</title>
+    <title>Donate to CodeBridge | Fund Youth Coding Education</title>
 
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
@@ -38,6 +52,10 @@
       -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for live validation, form responses and animations added in Part 3. -->
+    <link rel="stylesheet" href="css/part3.css">
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
@@ -48,6 +66,10 @@
 
 </head>
 <body>
+
+    <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo together with the
@@ -108,7 +130,9 @@
                 Youth unemployment in Johannesburg remains one of the biggest barriers young
                 people face in building a future for themselves. Your donation goes directly
                 towards course materials, laptop access, and instructor time — helping more
-                learners complete a programme and walk away with real, job-ready skills.
+                learners complete a <a href="programmes.html">programme</a> and walk away with real, job-ready skills.
+                Learn more <a href="about.html">about CodeBridge</a>, or prefer to cover a whole cohort?
+                <a href="enquiry.html?type=sponsor">Become a sponsor</a>.
             </p>
 
         </section>
@@ -167,12 +191,14 @@
         <!-- ***** donation form ***** -->
 <!-- This form allows supporters to choose a donation amount and
      provide their contact information.
-     -Enhanced with Part 3 JavaScript client-side validation and AJAX asynchronous simulation. -->
+     -main.js validates the form live, then sends it with fetch() (AJAX) to the address in the
+      action attribute, so the page does not reload. The JSONPlaceholder address is a free test
+      service: no money is taken and no real payment gateway is connected. -->
         <section class="form-section">
 
             <h2>Make a Donation</h2>
 
-            <form id="donation-form" action="#" method="post" novalidate>
+            <form id="donation-form" action="https://jsonplaceholder.typicode.com/posts" method="post" novalidate>
 <!-- ***** donation amount ***** -->
 <!-- This fieldset groups together the available donation options.
      -Using radio buttons ensures that donors select only one donation
@@ -209,10 +235,10 @@
                         <!-- ***** custom donation amount ***** -->
 <!-- This input allows donors to enter a donation amount that is not
      listed in the predefined options.
-     -The minimum value helps prevent invalid donation amounts from
-      being entered. -->
+     -Typing here automatically selects the "Other amount" radio button, and main.js checks
+      that the value is a whole number between R10 and R100 000. -->
                         <label for="other-amount">R</label>
-                        <input type="number" id="other-amount" name="other-amount" min="10" placeholder="10+">
+                        <input type="number" id="other-amount" name="other-amount" min="10" max="100000" step="1" inputmode="numeric" placeholder="10+">
                     </div>
                     <span class="error-message" id="amount-error" aria-live="polite"></span>
 
@@ -230,7 +256,7 @@
      communication regarding their contribution. -->
                     <div class="form-group">
                         <label for="donor-name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="donor-name" name="donor-name" required minlength="2" maxlength="60" placeholder="e.g. Lerato Molefe">
+                        <input type="text" id="donor-name" name="donor-name" required minlength="2" maxlength="60" autocomplete="name" placeholder="e.g. Lerato Molefe">
                         <span class="error-message" id="name-error" aria-live="polite"></span>
                     </div>
 
@@ -239,7 +265,7 @@
      receipts, and future communication. -->
                     <div class="form-group">
                         <label for="donor-email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="donor-email" name="donor-email" required placeholder="e.g. lerato@example.com">
+                        <input type="email" id="donor-email" name="donor-email" required autocomplete="email" placeholder="e.g. lerato@example.com">
                         <span class="error-message" id="email-error" aria-live="polite"></span>
                     </div>
 
@@ -249,8 +275,8 @@
                 <div id="donation-form-response" class="form-response" aria-live="polite"></div>
 
 <!-- ***** submit donation ***** -->
-<!-- The submit button sends the donation form for processing. -->
-                <button type="submit" id="donation-submit-btn">Proceed to Secure Payment</button>
+<!-- The submit button sends the donation pledge for processing. -->
+                <button type="submit" id="donation-submit-btn">Submit Donation Pledge</button>
 
             </form>
 
@@ -275,7 +301,7 @@
 
   <!-- ***** shared script ***** -->
 <!-- The main JavaScript file is linked here to handle client-side validation
-     and asynchronous form processing feedback. -->
+     and the asynchronous (AJAX) form submission. -->
     <script src="js/main.js"></script>
 
 </body>

@@ -24,20 +24,36 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** security meta tags ***** -->
+<!-- The Content-Security-Policy tells the browser which sources of scripts, styles,
+     images and network requests are trusted, which blocks most injected-code attacks.
+     -The referrer policy stops the full page address leaking to other websites. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
     <!-- Meta description provides search engines with a concise summary of CodeBridge's mission,
-         bootcamps, and youth empowerment initiatives in Johannesburg. -->
-    <meta name="description" content="CodeBridge is a Johannesburg-based NPO empowering youth through practical coding bootcamps in HTML, CSS, JavaScript, and Java. Apply or volunteer today.">
+         bootcamps, and youth empowerment initiatives in Johannesburg (kept under 160 characters). -->
+    <meta name="description" content="CodeBridge is a Johannesburg NPO empowering youth with free coding bootcamps in HTML, CSS, JavaScript and Java. Apply, volunteer or sponsor today.">
     
     <!-- Meta keywords target primary educational and organizational search queries to improve local SEO. -->
-    <meta name="keywords" content="CodeBridge, Johannesburg coding bootcamps, youth digital skills, learn HTML CSS JavaScript, NPO South Africa, software training">
+    <meta name="keywords" content="CodeBridge, free coding bootcamp Johannesburg, youth digital skills, learn HTML CSS JavaScript, Java course South Africa, NPO Johannesburg, volunteer coding mentor">
+    <meta name="robots" content="index, follow">
+
+    <!-- ***** social media sharing tags (Open Graph) ***** -->
+<!-- These tags control how the page looks when it is shared on social platforms,
+     supporting the off-page SEO goal of promoting the website on social media. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeBridge NPO">
+    <meta property="og:title" content="CodeBridge | Free Coding Bootcamps for Youth in Johannesburg">
+    <meta property="og:description" content="Free coding bootcamps and digital skills training for Johannesburg's youth. Apply, volunteer or sponsor today.">
 
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Home</title>
+    <title>CodeBridge | Free Coding Bootcamps for Youth in Johannesburg</title>
 
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
@@ -46,6 +62,11 @@
       -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** part 3 stylesheet ***** -->
+<!-- Styles for the Part 3 features (search bar, animations, form states, etc.).
+     It loads after style.css so it can refine the existing styles. -->
+    <link rel="stylesheet" href="css/part3.css">
 
    <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
@@ -56,6 +77,11 @@
 
 </head>
 <body>
+
+    <!-- ***** skip link ***** -->
+<!-- Lets keyboard and screen-reader users jump straight past the navigation
+     to the main content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- ***** header ***** -->
     <!-- The header includes the organisation's logo and the main navigation menu.
@@ -125,7 +151,8 @@
         <!-- ***** about snapshot section ***** -->
         <!-- This section gives visitors a quick overview of CodeBridge.
          -It shares a short teaser about the organisation's mission and background 
-         to help new visitors understand who CodeBridge is and what it stands for. -->
+         to help new visitors understand who CodeBridge is and what it stands for.
+         -An internal link leads visitors to the full About Us page. -->
 
         <section class="about-snapshot">
 
@@ -138,56 +165,68 @@
                 Founded in 2022, CodeBridge is a non-profit organisation committed to bridging the digital divide in Johannesburg. 
                 We provide accessible coding bootcamps and digital literacy training to empower unemployed youth with practical, job-ready skills. 
                 Our vision is to create opportunities for young people to thrive in the growing technology sector.
+                <a href="about.html">Read our full story, mission and values.</a>
             </p>
 
         </section>
 
         <!-- ***** programmes snapshot section (Dynamic Content & Search Feature) ***** -->
-        <!-- Enhanced with a dynamic search bar and filter controls to satisfy Part 3 Rubric requirements 
-         for Dynamic Content and Search Features. -->
+        <!-- The programme cards are NOT written in this file. main.js loads them from
+         data/programmes.json with fetch() and builds each card with JavaScript.
+         -Visitors can search by keyword, filter by level and sort the results.
+         -A "no results" message appears when nothing matches the search. -->
 
         <section class="programmes-snapshot">
 
             <h2>Our Programmes</h2>
-            <p>Explore our bootcamps below or use the search feature to find specific courses.</p>
+            <p>Explore our bootcamps below, or search, filter and sort to find the right course. See the <a href="programmes.html">Programmes page</a> for full week-by-week curricula.</p>
 
-            <!-- ***** dynamic search & filter bar ***** -->
-            <div class="search-filter-container" style="margin-bottom: 20px;">
-                <label for="programme-search" class="sr-only">Search Programmes</label>
-                <input type="text" id="programme-search" placeholder="Search programmes by keyword (e.g. Web, Java, Digital)..." style="padding: 10px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px;">
+            <!-- ***** dynamic search, filter & sort bar ***** -->
+            <div class="search-filter-container">
+                <div class="filter-field">
+                    <label for="programme-search">Search programmes</label>
+                    <input type="search" id="programme-search" placeholder="e.g. Web, Java, CV..." autocomplete="off">
+                </div>
+
+                <div class="filter-field">
+                    <label for="programme-level">Level</label>
+                    <select id="programme-level">
+                        <option value="all">All levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label for="programme-sort">Sort by</label>
+                    <select id="programme-sort">
+                        <option value="title-asc">Name (A to Z)</option>
+                        <option value="title-desc">Name (Z to A)</option>
+                        <option value="duration-asc">Shortest duration first</option>
+                        <option value="duration-desc">Longest duration first</option>
+                        <option value="level-asc">Level (beginner first)</option>
+                    </select>
+                </div>
             </div>
 
-            <!-- ***** programme card container ***** -->
-            <div id="programme-cards-container">
-                <!-- ***** programme card: web development bootcamp ***** -->
-                <article class="programme-card" data-title="Web Development Bootcamp" data-keywords="html css javascript web development bootcamp beginner">
-                    <h3>Web Development Bootcamp</h3>
-                    <p>
-                        A beginner-friendly course covering HTML, CSS, and JavaScript. 
-                        Learners build responsive websites and interactive features, 
-                        preparing them for entry-level web developer roles.
-                    </p>
-                </article>
+            <!-- ***** live results count ***** -->
+            <p id="programme-count" class="results-count" aria-live="polite"></p>
 
-                <!-- ***** programme card: java programming fundamentals ***** -->
-                <article class="programme-card" data-title="Java Programming Fundamentals" data-keywords="java programming fundamentals object oriented intermediate software">
-                    <h3>Java Programming Fundamentals</h3>
-                    <p>
-                        An intermediate course focusing on Java syntax, object-oriented programming, 
-                        and problem-solving. Learners gain skills to develop applications 
-                        and prepare for advanced software development pathways.
-                    </p>
-                </article>
-
-                <!-- ***** programme card: digital literacy & career skills ***** -->
-                <article class="programme-card" data-title="Digital Literacy & Career Skills" data-keywords="digital literacy career skills computer cv online safety basic">
-                    <h3>Digital Literacy & Career Skills</h3>
-                    <p>
-                        A short course focusing on essential computer skills, online safety, 
-                        and preparing CVs for tech-related job opportunities.
-                    </p>
-                </article>
+            <!-- ***** programme card container (filled by JavaScript) ***** -->
+            <div id="programme-cards-container" aria-busy="true">
+                <p class="loading-note">Loading programmes...</p>
             </div>
+
+            <!-- ***** no results message ***** -->
+            <div id="programme-no-results" class="no-results" hidden>
+                <p>No programmes match your search. Try a different keyword or clear the filters.</p>
+                <button type="button" id="programme-reset" class="accordion-toolbar-btn">Clear search &amp; filters</button>
+            </div>
+
+            <!-- ***** no-JavaScript fallback ***** -->
+            <noscript>
+                <p>JavaScript is turned off, so the interactive programme list is unavailable. Please visit the <a href="programmes.html">Programmes page</a> to see every course.</p>
+            </noscript>
 
         </section>
 
@@ -222,6 +261,14 @@
                 that open doors to employment. The impact on the community is clear and inspiring." – Ms. Naidoo, Local Business Sponsor
             </blockquote>
 
+            <!-- ***** get involved links ***** -->
+            <!-- Internal links guide visitors from the testimonials to the pages where they can act. -->
+            <p>
+                Want to be part of the story? <a href="enquiry.html?type=learner">Apply as a learner</a>,
+                <a href="enquiry.html?type=volunteer">volunteer as a mentor</a>, or
+                <a href="donate.html">make a donation</a>.
+            </p>
+
         </section>
 
     </main>
@@ -241,8 +288,8 @@
     </footer>
 
    <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is linked here to power dynamic search filtering, form validation, 
-     and navigation toggles across the site. -->
+<!-- The main JavaScript file is linked here to power the dynamic programme list, search,
+     sorting, scroll animations and the back-to-top button across the site. -->
     <script src="js/main.js"></script>
 
 </body>
