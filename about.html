@@ -4,7 +4,7 @@
 <!-- The page begins with the standard HTML5 document structure to ensure
      consistent rendering across modern web browsers.
      -The <head> section stores important information such as the character encoding,
-      responsive viewport settings, page title, stylesheet, and favicon.
+      responsive viewport settings, page title, SEO meta tags, stylesheet, and favicon.
      -Keeping this setup consistent across every page improves accessibility,
       maintainability, and provides a professional user experience. -->
 <head>
@@ -16,19 +16,31 @@
       browsers, operating systems, and devices. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ***** search engine optimisation (seo) meta tags ***** -->
+  <!-- Meta description provides search engines with a concise summary of the page content,
+       improving click-through rates from search results pages. -->
+  <meta name="description" content="Discover the story behind CodeBridge, a Johannesburg-based NPO founded by Mapuru Sebata, empowering youth through practical digital skills and coding bootcamps.">
+  
+  <!-- Meta keywords target relevant search queries related to the organisation's mission,
+       location, and educational programmes. -->
+  <meta name="keywords" content="CodeBridge, About CodeBridge, Mapuru Sebata, Johannesburg NPO, youth coding bootcamp, digital skills training, community programming">
+
   <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
      -A meaningful title also improves search engine optimisation (SEO) and
       makes navigation easier when multiple browser tabs are open. -->
   <title>CodeBridge | About Us</title>
+
   <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet controls the appearance of the entire website.
      -Using one CSS file keeps the branding, typography, colours,
       spacing, and layouts consistent across every page.
-     -Maintaining a shared stylesheet also simplifies future updates
+      -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
   <link rel="stylesheet" href="css/style.css">
+
   <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
      making the website easier to recognise.
@@ -77,7 +89,7 @@
     </nav>
   </header>
 
-  
+ 
  <!-- ***** main content area ***** -->
 <!-- The <main> element contains the unique content found on the About Us page.
      -Separating the primary content from the shared header and footer improves
@@ -111,12 +123,12 @@
         <img src="images/students-coding.png" 
              srcset="images/students-coding.png 800w, images/students-coding.png 400w" 
              sizes="(max-width: 600px) 100vw, 800px" 
-             alt="Young students learning to code" 
+             alt="Young students learning to code at a CodeBridge workshop" 
              loading="lazy" />
         <figcaption><small>Students learning coding fundamentals at a community workshop.</small></figcaption>
       </figure>
 
-    
+     
 
       <p>
         CodeBridge is a fictional non-profit organisation founded in Johannesburg in 2022 by a small team of passionate software engineers. The organisation began as a weekend volunteer initiative, where coding mentors taught basic programming skills to young people at a local community centre in Alexandra.
@@ -173,27 +185,62 @@
     </section>
 
     
-<!-- ***** core values section ***** -->
+<!-- ***** core values section (Interactive Accordion Enhancement) ***** -->
 <!-- This section highlights the principles that guide every programme,
      decision, and community initiative at CodeBridge.
-     -Each value represents the organisation's commitment to providing an
-      inclusive, supportive, and ethical learning environment.
-     -Displaying these values helps visitors understand the culture of the
-      organisation while building trust with learners, volunteers, and donors. -->
+     -Enhanced with interactive accordion elements controlled via JavaScript to 
+      improve user experience and satisfy Part 3 functionality requirements. -->
     <section class="values">
       <h2>Our Values</h2>
+      <p><small>Click on any value below to learn more about our guiding principles.</small></p>
 
-      <ul>
-        <li><strong>Accessibility:</strong> We believe every young person deserves equal access to technology education.</li>
+      <!-- ***** Interactive Accordion List ***** -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <strong>Accessibility:</strong> We believe every young person deserves equal access to technology education.
+          </button>
+          <div class="accordion-content">
+            <p>We actively remove barriers to entry by providing free or subsidized learning materials, flexible scheduling, and community-based workshops across Johannesburg.</p>
+          </div>
+        </div>
       
-        <li><strong>Innovation:</strong> We encourage creativity, curiosity and continuous learning.</li>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <strong>Innovation:</strong> We encourage creativity, curiosity and continuous learning.
+          </button>
+          <div class="accordion-content">
+            <p>Technology evolves rapidly, and we foster a mindset of experimentation, teaching modern frameworks and problem-solving techniques that adapt to industry shifts.</p>
+          </div>
+        </div>
       
-        <li><strong>Community:</strong> We build supportive learning environments where everyone feels welcome.</li>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <strong>Community:</strong> We build supportive learning environments where everyone feels welcome.
+          </button>
+          <div class="accordion-content">
+            <p>Peer collaboration and mentorship are at the core of CodeBridge, creating a safe, inclusive space for learners from diverse backgrounds to thrive together.</p>
+          </div>
+        </div>
         
-        <li><strong>Integrity:</strong> We operate with honesty, transparency and accountability.</li>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <strong>Integrity:</strong> We operate with honesty, transparency and accountability.
+          </button>
+          <div class="accordion-content">
+            <p>We maintain strict ethical standards in how we manage donor funding, partner with community leaders, and support our student body.</p>
+          </div>
+        </div>
         
-        <li><strong>Empowerment:</strong> We help learners develop practical skills that prepare them for future careers.</li>
-      </ul>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <strong>Empowerment:</strong> We help learners develop practical skills that prepare them for future careers.
+          </button>
+          <div class="accordion-content">
+            <p>Our project-based curriculum ensures graduates leave with tangible portfolios and the workplace confidence required to secure employment or freelance opportunities.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
 <!-- ***** team section ***** -->
@@ -201,9 +248,7 @@
      -Presenting the founder helps personalise the organisation and strengthens
       credibility by showing the people behind its mission.
      -Including a professional image, descriptive biography, and role helps
-      visitors connect with the organisation on a more personal level.
-     -As CodeBridge grows, additional team members can easily be added to this
-      section while maintaining the same structure. -->
+      visitors connect with the organisation on a more personal level. -->
     <section class="team">
       <h2>Meet the Team</h2>
 
@@ -234,54 +279,35 @@
     
 
     <!-- ***** why choose codebridge section ***** -->
-<!-- This section explains the unique benefits of joining or supporting
-     CodeBridge.
-     -It highlights the organisation's practical teaching approach,
-      experienced mentors, and career-focused training.
-     -Presenting these advantages helps learners, volunteers, parents,
-      and potential sponsors understand the value offered by CodeBridge.
-     -This directly supports the project's goal of increasing programme
-      applications and community engagement. -->
+<!-- This section explains the unique benefits of joining or supporting CodeBridge. -->
    <section class="why-codebridge">
       <h2>Why Choose CodeBridge?</h2>
 
       <figure>
         <!-- ***** responsive learning environment image ***** -->
-<!-- Visual content showcases learners in a coding workshop.
-     - The inclusion of srcset and sizes optimizes visual asset delivery across mobile, tablet, 
-       and desktop breakpoints without causing layout shifts or excessive data consumption. -->
         <img src="images/coding-class.png" 
              srcset="images/coding-class.png 800w, images/coding-class.png 400w" 
              sizes="(max-width: 600px) 100vw, 480px" 
-             alt="Students participating in a coding workshop" 
+             alt="Students participating in a coding workshop at CodeBridge" 
              width="480" 
              loading="lazy" />
         <figcaption><small>Students participating in a CodeBridge workshop.</small></figcaption>
       </figure>
 
-      
-<!-- ***** practical learning benefit ***** -->
-<!-- Highlights CodeBridge's project-based learning approach, showing that
-     learners gain real coding experience through practical activities rather
-     than relying only on theoretical knowledge. -->
       <article>
         <h3>Practical Learning</h3>
         <p>
           Our programmes focus on hands-on projects that help learners build practical coding experience instead of only learning theory.
         </p>
       </article>
-<!-- ***** experienced mentors benefit ***** -->
-<!-- Explains the value of learning from passionate volunteers who provide
-     guidance, encouragement, and real-world knowledge throughout each programme. -->
+
       <article>
         <h3>Experienced Mentors</h3>
         <p>
           Learners receive guidance from passionate volunteers who are committed to helping young people succeed in technology.
         </p>
       </article>
-<!-- ***** career preparation benefit ***** -->
-<!-- Demonstrates how CodeBridge prepares learners for future employment by
-     developing practical digital skills, confidence, and workplace readiness. -->
+
       <article>
         <h3>Career Preparation</h3>
         <p>
@@ -292,46 +318,23 @@
 
   </main>
 
-  
+ 
 <!-- ***** footer ***** -->
-<!-- The footer provides consistent information that appears across every page.
-     -It includes copyright information together with quick navigation links
-      that help visitors access important pages from anywhere on the website.
-     -Keeping the footer consistent improves usability and contributes to a
-      professional website structure.
-     -Placeholder links for Donate and Privacy Policy will be fully implemented
-      during the CSS and JavaScript phases of the project. -->
+<!-- The footer provides consistent information that appears across every page. -->
   <footer>
     <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
     <nav>
-       <!-- ***** Footer Navigation Links ***** -->
-        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
-
-            <!-- ***** Contact Link ***** -->
-            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
-
-            <!-- ***** Donate Link ****** -->
-            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
-
-            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
-
         </ul>
     </nav>
   </footer>
+
   <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is linked here and included on every page.
-     -It handles interactive features like form validation, navigation toggles,
-     and other dynamic behaviours that improve the website's usability.
-     -Keeping the JavaScript in an external file separates behaviour from
-     the HTML structure and makes the code easier to maintain.
-     -Placing the script near the bottom allows the HTML content to be
-     parsed before the script is executed, helping reduce interruptions
-     to page loading.
-     -This setup supports a user-friendly and maintainable website. -->
+<!-- The main JavaScript file is linked here to power the interactive accordion elements
+     and other dynamic behaviors across the site. -->
   <script src="js/main.js"></script>
 </body>
 </html>
