@@ -1,0 +1,20 @@
+# =====================================================================
+# ROBOTS.TXT - SEARCH ENGINE CRAWLER CONFIGURATION
+# =====================================================================
+# This file instructs web search engine crawlers (like Googlebot, Bingbot)
+# on which pages and directories of the CodeBridge website are allowed
+# or restricted from being indexed.
+# =====================================================================
+
+# Apply instructions to all web crawlers and robots across the internet
+User-agent: *
+
+# Allow search engine crawlers to fully access and index the entire website structure
+Allow: /
+
+# ---------------------------------------------------------------------
+# SITEMAP DECLARATION
+# ---------------------------------------------------------------------
+# Directs search engine crawlers straight to the sitemap XML file 
+# to ensure efficient discovery and indexing of all site pages.
+Sitemap: https://codebridge.org.za/sitemap.xml

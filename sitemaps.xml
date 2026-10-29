@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================== -->
+<!-- SITEMAP.XML - WEBSITE STRUCTURE INDEX FOR SEARCH ENGINES              -->
+<!-- ===================================================================== -->
+<!-- This XML sitemap provides search engines with a structured map of all   -->
+<!-- public URLs on the CodeBridge website, including last modification      -->
+<!-- dates, change frequencies, and relative priorities to optimize SEO.   -->
+<!-- ===================================================================== -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- ***** Home Page URL Entry ***** -->
+    <!-- The primary landing page for CodeBridge, holding the highest priority. -->
+    <url>
+        <loc>https://codebridge.org.za/index.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- ***** About Us Page URL Entry ***** -->
+    <!-- Introduces CodeBridge's history, mission, vision, values, and team. -->
+    <url>
+        <loc>https://codebridge.org.za/about.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ***** Programmes Page URL Entry ***** -->
+    <!-- Details the coding bootcamps, schedules, and full weekly curricula. -->
+    <url>
+        <loc>https://codebridge.org.za/programmes.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- ***** Apply / Volunteer / Sponsor Form URL Entry ***** -->
+    <!-- The multi-purpose conversion form for prospective learners, volunteers, and sponsors. -->
+    <url>
+        <loc>https://codebridge.org.za/enquiry.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- ***** Contact Page URL Entry ***** -->
+    <!-- Contains contact details, email compilation form, and interactive Leaflet routing maps. -->
+    <url>
+        <loc>https://codebridge.org.za/contact.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ***** Donate Page URL Entry ***** -->
+    <!-- Fundraising impact summary table and secure payment form gateway. -->
+    <url>
+        <loc>https://codebridge.org.za/donate.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ***** Privacy Policy Page URL Entry ***** -->
+    <!-- POPIA compliance data protection and user rights policy documentation. -->
+    <url>
+        <loc>https://codebridge.org.za/privacy.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
