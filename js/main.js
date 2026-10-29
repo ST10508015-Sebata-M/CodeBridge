@@ -5,9 +5,9 @@
  * This script handles all interactive behaviors across the website, including:
  * 1. Interactive Accordions (About Us & Privacy Policy pages)
  * 2. Image Gallery Lightbox Modal (For program & workshop images)
- * 3. Leaflet.js Interactive Mapping & Routing (Contact page)
+ * 3. Leaflet.js Interactive Mapping & Live Geolocation Routing (Contact page)
  * 4. Dynamic Content Search, Filtering & Sorting (Homepage programmes)
- * 5. Robust Client-Side Form Validation, Error Handling & Async Feedback 
+ * 5. Advanced, User-Friendly Client-Side Form Validation & Async Feedback 
  *    (Enquiry, Contact, and Donate forms)
  * =====================================================================
  */
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     /* ==========================================================
        1. INTERACTIVE ACCORDIONS (about.html & privacy.html)
        ================================================---------- */
-    // Handles collapsible content sections to improve user experience
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     
     if (accordionHeaders.length > 0) {
@@ -43,9 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* ==========================================================
-       2. IMAGE GALLERY LIGHTBOX MODAL (programmes.html / snapshot images)
+       2. IMAGE GALLERY LIGHTBOX MODAL (programmes.html / images)
        ================================================---------- */
-    // Creates a dynamic modal popup when users click on gallery/figure images
     const galleryImages = document.querySelectorAll('figure img');
     
     if (galleryImages.length > 0) {
@@ -83,54 +81,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* ==========================================================
-       3. LEAFLET.JS INTERACTIVE MAP & LIVE ROUTING (contact.html)
+       3. LEAFLET.JS INTERACTIVE MAP & LIVE GEOLOCATION ROUTING (contact.html)
        ================================================---------- */
-    // Powers the map canvas and calculates live turn-by-turn routing directions
     const mapElement = document.getElementById('map');
     if (mapElement && typeof L !== 'undefined') {
-        // Initialize map centered around Johannesburg region
+        // Initialize map centered around Johannesburg region as fallback
         var map = L.map('map').setView([-26.1076, 28.0567], 11);
 
-        // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // Define start location (Johannesburg Central / Park Station) and destinations
-        var startPoint = L.latLng(-26.1952, 28.0436);
         var alexandraPoint = L.latLng(-26.1042, 28.1005); // Alexandra Centre
         var diepslootPoint = L.latLng(-26.4250, 28.0122); // Diepsloot Centre
 
-        // Default routing control pointing to Alexandra Centre
-        var routingControl = L.Routing.control({
-            waypoints: [startPoint, alexandraPoint],
-            routeWhileDragging: false,
-            lineOptions: {
-                styles: [{ color: '#0066cc', weight: 6, opacity: 0.8 }]
-            },
-            createMarker: function(i, wp, nWps) {
-                if (i === 0) {
-                    return L.marker(wp.latLng).bindPopup("<b>Starting Point:</b> Johannesburg Central (Park Station)");
-                } else {
-                    return L.marker(wp.latLng).bindPopup("<b>Destination:</b> CodeBridge Training Centre");
-                }
-            }
-        }).addTo(map);
+        let userLatLng = null;
+        let routingControl = null;
 
-        // Button interactive toggles for routing destinations
+        // Function to draw route from user's live location to destination
+        function updateRoute(destinationLatLng) {
+            if (!userLatLng) return;
+
+            if (routingControl) {
+                map.removeControl(routingControl);
+            }
+
+            routingControl = L.Routing.control({
+                waypoints: [userLatLng, destinationLatLng],
+                routeWhileDragging: false,
+                lineOptions: {
+                    styles: [{ color: '#0066cc', weight: 6, opacity: 0.8 }]
+                },
+                createMarker: function(i, wp, nWps) {
+                    if (i === 0) {
+                        return L.marker(wp.latLng).bindPopup("<b>Your Live Location</b>").openPopup();
+                    } else {
+                        return L.marker(wp.latLng).bindPopup("<b>CodeBridge Training Centre</b>");
+                    }
+                }
+            }).addTo(map);
+        }
+
+        // Request browser live geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+                map.setView(userLatLng, 13);
+                updateRoute(alexandraPoint);
+            }, function(error) {
+                console.warn("Geolocation access denied or unavailable. Falling back to Johannesburg Central.");
+                userLatLng = L.latLng(-26.1952, 28.0436);
+                updateRoute(alexandraPoint);
+            }, { timeout: 10000 });
+        } else {
+            userLatLng = L.latLng(-26.1952, 28.0436);
+            updateRoute(alexandraPoint);
+        }
+
+        // Campus Toggle Buttons
         const btnAlexandra = document.getElementById('btn-alexandra');
         const btnDiepsloot = document.getElementById('btn-diepsloot');
 
         if (btnAlexandra && btnDiepsloot) {
             btnAlexandra.addEventListener('click', function() {
-                routingControl.setWaypoints([startPoint, alexandraPoint]);
+                if (userLatLng) updateRoute(alexandraPoint);
                 btnAlexandra.classList.add('active');
                 btnDiepsloot.classList.remove('active');
             });
 
             btnDiepsloot.addEventListener('click', function() {
-                routingControl.setWaypoints([startPoint, diepslootPoint]);
+                if (userLatLng) updateRoute(diepslootPoint);
                 btnDiepsloot.classList.add('active');
                 btnAlexandra.classList.remove('active');
             });
@@ -141,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
     /* ==========================================================
        4. DYNAMIC CONTENT SEARCH & FILTERING (index.html)
        ================================================---------- */
-    // Real-time keyword filtering for training programmes
     const programmeSearch = document.getElementById('programme-search');
     if (programmeSearch) {
         programmeSearch.addEventListener('input', function() {
@@ -164,26 +184,88 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* ==========================================================
-       5. FORM VALIDATION & ASYNCHRONOUS AJAX FEEDBACK
+       5. ADVANCED, USER-FRIENDLY FORM VALIDATION & AJAX FEEDBACK
        ================================================---------- */
 
-    // Utility function to display validation errors
     function showError(inputElement, errorElement, message) {
         inputElement.classList.add('input-error');
         if (errorElement) {
             errorElement.textContent = message;
             errorElement.style.color = '#d9534f';
             errorElement.style.fontSize = '0.85rem';
+            errorElement.style.marginTop = '4px';
+            errorElement.style.display = 'block';
         }
     }
 
-    // Utility function to clear validation errors
     function clearError(inputElement, errorElement) {
         inputElement.classList.remove('input-error');
         if (errorElement) {
             errorElement.textContent = '';
+            errorElement.style.display = 'none';
         }
     }
+
+    /**
+     * Granular and user-friendly email validator with specific guidance messages.
+     */
+    function validateEmail(emailInput, errorElement) {
+        const val = emailInput.value.trim();
+        if (val === '') {
+            showError(emailInput, errorElement, 'Error: Email address is required so we can send your confirmation receipt.');
+            return false;
+        }
+        if (!val.includes('@')) {
+            showError(emailInput, errorElement, 'Error: Your email address is missing the "@" symbol (e.g., yourname@example.com). Please check it.');
+            return false;
+        }
+        if (!val.includes('.')) {
+            showError(emailInput, errorElement, 'Error: Your email address is missing a valid domain extension (e.g., .co.za or .com).');
+            return false;
+        }
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(val)) {
+            showError(emailInput, errorElement, 'Error: This email format appears invalid. Please ensure there are no typos or stray spaces.');
+            return false;
+        }
+        clearError(emailInput, errorElement);
+        return true;
+    }
+
+    /**
+     * Granular and user-friendly phone validator (enforcing the <= 10 digits rule for local numbers).
+     */
+    function validatePhone(phoneInput, errorElement) {
+        const val = phoneInput.value.trim();
+        if (val === '') {
+            showError(phoneInput, errorElement, 'Error: Contact number is required in case we need to reach you urgently.');
+            return false;
+        }
+
+        // Clean spaces and hyphens to inspect digits
+        const cleanVal = val.replace(/[\s-]/g, '');
+
+        // Check if phone number digits are greater than 10 (excluding international +27 prefix)
+        if (!cleanVal.startsWith('+27') && cleanVal.length > 10) {
+            showError(phoneInput, errorElement, 'Error: Phone number is greater than 10 digits! Standard South African numbers must be exactly 10 digits (e.g., 0821234567). Please shorten or correct it.');
+            return false;
+        }
+
+        if (cleanVal.startsWith('+27') && cleanVal.length > 12) {
+            showError(phoneInput, errorElement, 'Error: International phone number is too long. Please ensure it follows the correct format.');
+            return false;
+        }
+
+        const phoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
+        if (!phoneRegex.test(cleanVal)) {
+            showError(phoneInput, errorElement, 'Error: Please enter a valid South African mobile number starting with 06, 07, or 08 (total 10 digits).');
+            return false;
+        }
+
+        clearError(phoneInput, errorElement);
+        return true;
+    }
+
 
     // A. Contact Form Validation & Email Compilation (contact.html)
     const contactForm = document.getElementById('contact-form');
@@ -200,51 +282,52 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message');
             const responseDiv = document.getElementById('contact-form-response');
 
-            // Name validation
-            if (!name.value.trim() || name.value.trim().length < 2) {
-                showError(name, document.getElementById('name-error'), 'Please enter a valid full name (at least 2 characters).');
+            // Name Validation
+            if (!name.value.trim()) {
+                showError(name, document.getElementById('name-error'), 'Error: Full name is required.');
+                isValid = false;
+            } else if (name.value.trim().length < 2) {
+                showError(name, document.getElementById('name-error'), 'Error: Name is too short. Please enter at least 2 characters.');
                 isValid = false;
             } else {
                 clearError(name, document.getElementById('name-error'));
             }
 
-            // Email validation regex
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value.trim())) {
-                showError(email, document.getElementById('email-error'), 'Please enter a valid email address.');
+            // Email Validation
+            if (!validateEmail(email, document.getElementById('email-error'))) {
                 isValid = false;
-            } else {
-                clearError(email, document.getElementById('email-error'));
             }
 
-            // South African Phone Number validation regex
-            const phoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
-            if (!phoneRegex.test(phone.value.trim())) {
-                showError(phone, document.getElementById('phone-error'), 'Please enter a valid SA phone number (e.g. 0821234567).');
+            // Phone Validation (> 10 digits check included)
+            if (!validatePhone(phone, document.getElementById('phone-error'))) {
                 isValid = false;
-            } else {
-                clearError(phone, document.getElementById('phone-error'));
             }
 
-            // Message Type validation
+            // Message Type Validation
             if (!msgType.value) {
-                showError(msgType, document.getElementById('type-error'), 'Please select a message type.');
+                showError(msgType, document.getElementById('type-error'), 'Error: Please select what your message is about from the dropdown list.');
                 isValid = false;
             } else {
                 clearError(msgType, document.getElementById('type-error'));
             }
 
-            // Subject validation
-            if (!subject.value.trim() || subject.value.trim().length < 5) {
-                showError(subject, document.getElementById('subject-error'), 'Subject must be at least 5 characters long.');
+            // Subject Validation
+            if (!subject.value.trim()) {
+                showError(subject, document.getElementById('subject-error'), 'Error: Subject line is required so we know how to direct your message.');
+                isValid = false;
+            } else if (subject.value.trim().length < 5) {
+                showError(subject, document.getElementById('subject-error'), 'Error: Subject is a bit too brief. Please enter at least 5 characters.');
                 isValid = false;
             } else {
                 clearError(subject, document.getElementById('subject-error'));
             }
 
-            // Message body validation
-            if (!message.value.trim() || message.value.trim().length < 10) {
-                showError(message, document.getElementById('message-error'), 'Message must be at least 10 characters long.');
+            // Message Body Validation
+            if (!message.value.trim()) {
+                showError(message, document.getElementById('message-error'), 'Error: Message content cannot be blank. Tell us how we can help.');
+                isValid = false;
+            } else if (message.value.trim().length < 10) {
+                showError(message, document.getElementById('message-error'), 'Error: Please provide a bit more detail (at least 10 characters required).');
                 isValid = false;
             } else {
                 clearError(message, document.getElementById('message-error'));
@@ -253,9 +336,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isValid) {
                 responseDiv.className = 'form-response success';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #dff0d8; color: #3c763d; border-radius: 4px;';
-                responseDiv.innerHTML = '<strong>Success!</strong> Input validated successfully. Compiling your email client...';
+                responseDiv.innerHTML = '<strong>Validation Successful:</strong> All fields verified. Opening your email client to send message...';
                 
-                // Simulate asynchronous delay before launching mailto client
                 setTimeout(function() {
                     const mailtoLink = `mailto:info@codebridge.org.za?subject=${encodeURIComponent(subject.value)}&body=${encodeURIComponent("Name: " + name.value + "\nEmail: " + email.value + "\nPhone: " + phone.value + "\nType: " + msgType.value + "\n\nMessage:\n" + message.value)}`;
                     window.location.href = mailtoLink;
@@ -263,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 responseDiv.className = 'form-response error';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #f2dede; color: #a94442; border-radius: 4px;';
-                responseDiv.innerHTML = '<strong>Validation Error:</strong> Please check the highlighted fields above.';
+                responseDiv.innerHTML = '<strong>Please Fix Errors:</strong> We noticed a few items that need correction above. Please review the guidance provided.';
             }
         });
     }
@@ -282,54 +364,45 @@ document.addEventListener('DOMContentLoaded', function() {
             const responseDiv = document.getElementById('enquiry-form-response');
 
             if (!type.value) {
-                showError(type, document.getElementById('type-error'), 'Please select an enquiry type.');
+                showError(type, document.getElementById('type-error'), 'Error: Please select whether you are applying as a learner, volunteer, or sponsor.');
                 isValid = false;
             } else {
                 clearError(type, document.getElementById('type-error'));
             }
 
             if (!fullName.value.trim() || fullName.value.trim().length < 2) {
-                showError(fullName, document.getElementById('name-error'), 'Please enter a valid full name.');
+                showError(fullName, document.getElementById('name-error'), 'Error: Please enter your full name (at least 2 characters).');
                 isValid = false;
             } else {
                 clearError(fullName, document.getElementById('name-error'));
             }
 
-            const phoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
-            if (!phoneRegex.test(phone.value.trim())) {
-                showError(phone, document.getElementById('phone-error'), 'Please enter a valid SA contact number.');
+            if (!validatePhone(phone, document.getElementById('phone-error'))) {
                 isValid = false;
-            } else {
-                clearError(phone, document.getElementById('phone-error'));
             }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value.trim())) {
-                showError(email, document.getElementById('email-error'), 'Please enter a valid email address.');
+            if (!validateEmail(email, document.getElementById('email-error'))) {
                 isValid = false;
-            } else {
-                clearError(email, document.getElementById('email-error'));
             }
 
             if (isValid) {
                 responseDiv.className = 'form-response success';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #dff0d8; color: #3c763d; border-radius: 4px;';
                 
-                // Dynamic feedback response based on selection (Rubric: Enquiry Process Response)
                 let responseMsg = '';
                 if (type.value === 'learner') {
-                    responseMsg = '<strong>Application Received!</strong> Tuition is 100% free for qualifying youth. Next cohort availability opens next month. Our admissions team will contact you within 48 hours.';
+                    responseMsg = '<strong>Application Received:</strong> Tuition is 100% free for qualifying youth. Next cohort availability opens next month. Our admissions team will contact you within 48 hours.';
                 } else if (type.value === 'volunteer') {
-                    responseMsg = '<strong>Thank You for Volunteering!</strong> Mentor onboarding sessions run every Saturday. We will email your mentor schedule and training pack shortly.';
+                    responseMsg = '<strong>Thank You for Volunteering:</strong> Mentor onboarding sessions run every Saturday. We will email your mentor schedule and training pack shortly.';
                 } else {
-                    responseMsg = '<strong>Sponsorship Enquiry Received!</strong> Thank you for supporting CodeBridge. Our partnership director will reach out with our impact prospectus.';
+                    responseMsg = '<strong>Sponsorship Enquiry Received:</strong> Thank you for supporting CodeBridge. Our partnership director will reach out with our impact prospectus.';
                 }
 
                 responseDiv.innerHTML = responseMsg;
             } else {
                 responseDiv.className = 'form-response error';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #f2dede; color: #a94442; border-radius: 4px;';
-                responseDiv.innerHTML = '<strong>Error:</strong> Please correct the required fields highlighted above.';
+                responseDiv.innerHTML = '<strong>Please Review:</strong> Some fields require your attention. Please check the guidance notes above.';
             }
         });
     }
@@ -352,35 +425,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (!amountSelected) {
-                showError(document.getElementById('amount-other'), document.getElementById('amount-error'), 'Please select or enter a donation amount.');
+                showError(document.getElementById('amount-other'), document.getElementById('amount-error'), 'Error: Please select one of the donation amounts or enter a custom amount.');
                 isValid = false;
             } else {
                 clearError(document.getElementById('amount-other'), document.getElementById('amount-error'));
             }
 
             if (!name.value.trim() || name.value.trim().length < 2) {
-                showError(name, document.getElementById('name-error'), 'Please enter your full name.');
+                showError(name, document.getElementById('name-error'), 'Error: Please enter your full name for your donor acknowledgement receipt.');
                 isValid = false;
             } else {
                 clearError(name, document.getElementById('name-error'));
             }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value.trim())) {
-                showError(email, document.getElementById('email-error'), 'Please enter a valid email address.');
+            if (!validateEmail(email, document.getElementById('email-error'))) {
                 isValid = false;
-            } else {
-                clearError(email, document.getElementById('email-error'));
             }
 
             if (isValid) {
                 responseDiv.className = 'form-response success';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #dff0d8; color: #3c763d; border-radius: 4px;';
-                responseDiv.innerHTML = '<strong>Processing Payment...</strong> Redirecting you securely to PayFast / SnapScan gateway...';
+                responseDiv.innerHTML = '<strong>Processing Payment:</strong> Redirecting you securely to PayFast / SnapScan gateway...';
             } else {
                 responseDiv.className = 'form-response error';
                 responseDiv.style.cssText = 'padding: 12px; margin-top: 15px; background: #f2dede; color: #a94442; border-radius: 4px;';
-                responseDiv.innerHTML = '<strong>Validation Error:</strong> Please complete all required donation details.';
+                responseDiv.innerHTML = '<strong>Form Incomplete:</strong> Please select an amount and verify your contact details.';
             }
         });
     }
