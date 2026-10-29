@@ -15,6 +15,15 @@
      -This improves readability, accessibility, and the overall user experience
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ***** search engine optimisation (seo) meta tags ***** -->
+    <!-- Meta description provides search engines with a concise summary of contact channels,
+         community centre locations, and operational hours for CodeBridge in Johannesburg. -->
+    <meta name="description" content="Contact CodeBridge NPO in Johannesburg. Send general messages, inquire about community coding classes, or view interactive maps of our Alexandra and Diepsloot centres.">
+    
+    <!-- Meta keywords target localized contact search queries to improve local SEO. -->
+    <meta name="keywords" content="CodeBridge contact, Johannesburg coding center, Alexandra community center map, Diepsloot coding classes, contact CodeBridge">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
@@ -26,9 +35,13 @@
 <!-- This stylesheet controls the appearance of the entire website.
      -Using one CSS file keeps the branding, typography, colours,
       spacing, and layouts consistent across every page.
-     -Maintaining a shared stylesheet also simplifies future updates
+      -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ***** leaflet css for interactive map ***** -->
+    <!-- Leaflet open-source mapping library CSS enables responsive, interactive map rendering. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo inside the browser tab,
@@ -115,17 +128,13 @@
       not covered elsewhere on the website.
      -Providing an online contact form improves accessibility and
       encourages communication between the organisation and the community. -->
-        <section>
+        <section class="form-section">
 
             <h2>Send Us a Message</h2>
 <!-- ***** contact form ***** -->
-<!-- This form collects essential information needed to respond to
-     visitor enquiries.
-     -Required fields help ensure that enough information is provided
-      before the form can be submitted.
-     -Client-side validation and enhanced interactivity will be
-      implemented during Part 3 using JavaScript. -->
-            <form action="#" method="post">
+<!-- Form action uses mailto: recipient as specified in Part 4 requirements, while JS handles 
+     client-side validation and asynchronous processing feedback. -->
+            <form id="contact-form" action="mailto:info@codebridge.org.za" method="post" enctype="text/plain" novalidate>
 <!-- ***** enquiry information ***** -->
 <!-- The fieldset groups all contact-related input fields together,
      making the form easier to understand and improving accessibility.
@@ -133,85 +142,105 @@
       for both users and assistive technologies. -->
                 <fieldset>
 
-                    <legend>Your Message</legend>
+                    <legend>Your Message Details</legend>
+
 <!-- ***** visitor name ***** -->
-<!-- Collects the visitor's name so CodeBridge can personalise
-     responses and identify who submitted the enquiry. -->
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+<!-- Collects the visitor's full name with HTML5 length validation attributes. -->
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" minlength="2" maxlength="60" required placeholder="e.g. Sipho Nkosi">
+                        <span class="error-message" id="name-error" aria-live="polite"></span>
+                    </div>
 
 <!-- ***** visitor email ***** -->
-<!-- Collects the visitor's email address so the organisation can
-     respond to the enquiry.
-     -Using the email input type also provides basic browser validation
-      for correctly formatted email addresses. -->
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+<!-- Collects the visitor's email address with regex pattern validation. -->
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="e.g. sipho@example.com">
+                        <span class="error-message" id="email-error" aria-live="polite"></span>
+                    </div>
+
+<!-- ***** visitor contact number ***** -->
+<!-- Collects phone contact details formatted for South African phone structures. -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" pattern="^(\+27|0)[6-8][0-9]{8}$" required placeholder="e.g. 0821234567">
+                        <span class="error-message" id="phone-error" aria-live="polite"></span>
+                    </div>
+
+<!-- ***** message category select ***** -->
+<!-- Select element specifying the exact nature/type of general communication being sent. -->
+                    <div class="form-group">
+                        <label for="message-type">Message Type <span class="required">*</span></label>
+                        <select id="message-type" name="message-type" required>
+                            <option value="" disabled selected>-- Select Message Type --</option>
+                            <option value="General Query">General Query</option>
+                            <option value="Community Partnership">Community Partnership</option>
+                            <option value="Media & Press">Media &amp; Press</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                        <span class="error-message" id="type-error" aria-live="polite"></span>
+                    </div>
+
+<!-- ***** message subject ***** -->
+<!-- Subject line input for clear email compilation. -->
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" minlength="5" maxlength="100" required placeholder="Brief subject line">
+                        <span class="error-message" id="subject-error" aria-live="polite"></span>
+                    </div>
 
 <!-- ***** enquiry message ***** -->
-<!-- Allows visitors to describe their questions or concerns in detail.
-     -Providing a larger text area gives users enough space to explain
-      their enquiry clearly. -->
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+<!-- Textarea allowing full message composition. -->
+                    <div class="form-group">
+                        <label for="message">Full Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" minlength="10" maxlength="1000" required placeholder="Write your full message here..."></textarea>
+                        <span class="error-message" id="message-error" aria-live="polite"></span>
+                    </div>
 
                 </fieldset>
 
+<!-- ***** submission response feedback container ***** -->
+                <div id="contact-form-response" class="form-response" aria-live="polite"></div>
+
 <!-- ***** submit button ***** -->
-<!-- The submit button sends the completed contact form for processing.
-     -Positioning the button below all required fields makes the form
-      simple and intuitive to complete. -->
-                <button type="submit">Send</button>
+                <button type="submit" id="contact-submit-btn">Compile &amp; Send Message</button>
 
             </form>
 
         </section>
 
-       <!-- ***** community centre locations ***** -->
-<!-- This section introduces the physical locations where CodeBridge
-     delivers its training programmes.
-     -Providing more than one location demonstrates the organisation's
-      community presence and helps visitors choose the most convenient
-      training centre.
-     -Including location information supports learners who may wish to
-      visit a centre before applying. -->
+        <!-- ***** interactive location maps section ***** -->
+<!-- Integrates Leaflet.js interactive maps to fulfill Rubric Item: Interactive Maps. -->
+        <section class="locations">
 
-<!-- The project brief requires the Contact page to display multiple
-     operating locations.
-     -Presenting both community centres improves accessibility and
-      provides learners with clear information about where programmes
-      are delivered. -->
-         <section class="locations">
+            <h2>Our Interactive Locations</h2>
+            <p>Click on a centre location below to focus the interactive map on that venue.</p>
 
-            <h2>Our Locations</h2>
+            <!-- Map Location Control Buttons -->
+            <div class="map-controls">
+                <button type="button" class="map-btn active" id="btn-alexandra">Focus Alexandra Centre</button>
+                <button type="button" class="map-btn" id="btn-diepsloot">Focus Diepsloot Centre</button>
+            </div>
+
+            <!-- Leaflet Interactive Map Canvas -->
+            <div id="map" style="height: 400px; width: 100%; margin-top: 15px; border-radius: 8px;"></div>
+
 <!-- ***** alexandra community centre ***** -->
-<!-- This article provides information about CodeBridge's Alexandra
-     training centre.
-     -It includes the centre's location, supporting image, and the
-      programmes delivered at this venue.
-     -Displaying this information helps visitors identify the most
-      suitable learning location. -->
-            <article>
+            <article class="location-card">
 
                 <h3>Alexandra Centre</h3>
-<!-- ***** location image ***** -->
-<!-- The map image provides visitors with a visual reference for the
-     Alexandra community centre.
-     -Using srcset and sizes enables responsive asset loading across mobile and desktop viewports. -->
                 <figure>
                     <img src="images/map-alexandra.png" 
                          srcset="images/map-alexandra.png 800w, images/map-alexandra.png 400w" 
                          sizes="(max-width: 600px) 100vw, 500px" 
-                         alt="Map showing the Alexandra Centre location" 
+                         alt="Map preview showing the Alexandra Centre location" 
                          width="500" 
                          loading="lazy">
                     <figcaption>
                         Alexandra Centre — 14 Roosevelt Street, Alexandra, Johannesburg, 2090
                     </figcaption>
                 </figure>
-<!-- ***** centre information ***** -->
-<!-- This paragraph summarises the programmes offered at the Alexandra
-     centre together with its operating days and opening hours. -->
                 <p>
                     Home of our Web Development Bootcamp and Digital Literacy &amp; Career Skills
                     programme. Open Saturdays, 08:30–13:30.
@@ -220,31 +249,20 @@
             </article>
 
 <!-- ***** diepsloot community centre ***** -->
-<!-- This article introduces CodeBridge's Diepsloot training centre.
-     -It provides location details together with information about
-      the programmes delivered at this venue.
-     -Displaying multiple centres demonstrates the organisation's
-      wider community reach. -->
-            <article>
+            <article class="location-card">
 
                 <h3>Diepsloot Centre</h3>
-<!-- ***** location image ***** -->
-<!-- The map image helps visitors identify the Diepsloot training centre.
-     -Using srcset and sizes enables responsive asset loading across mobile and desktop viewports. -->
                 <figure>
                     <img src="images/map-diepsloot.png" 
                          srcset="images/map-diepsloot.png 800w, images/map-diepsloot.png 400w" 
                          sizes="(max-width: 600px) 100vw, 500px" 
-                         alt="Map showing the Diepsloot Centre location" 
+                         alt="Map preview showing the Diepsloot Centre location" 
                          width="500" 
                          loading="lazy">
                     <figcaption>
                         Diepsloot Centre — Extension 1, Diepsloot, Johannesburg, 2189
                     </figcaption>
                 </figure>
-<!-- ***** centre information ***** -->
-<!-- This paragraph outlines the programmes available at the Diepsloot
-     centre together with its operating days and opening hours. -->
                 <p>
                     Home of our Java Programming Fundamentals evening classes. Open Tuesdays and
                     Thursdays, 16:30–19:30.
@@ -256,46 +274,22 @@
 
     </main>
 
-   <!-- ***** footer ***** -->
-<!-- The footer provides consistent information that appears across
-     every page of the website.
-     -It includes copyright information together with quick navigation
-      links that allow visitors to easily access important pages.
-     -Maintaining a consistent footer improves usability and contributes
-      to a professional website structure. -->
+    <!-- ***** footer ***** -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
- <!-- ***** Footer Navigation Links ***** -->
-        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
-
-            <!-- ***** Contact Link ***** -->
-            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
-
-            <!-- ***** Donate Link ****** -->
-            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
-
-            <!--***** Privacy Policy Link ***** -->
-            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
-
         </ul>
 
     </footer>
 
-   <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is linked here and included on every page.
-     -It handles interactive features like form validation, navigation toggles,
-      and other dynamic behaviours that improve the website's usability.
-     -Keeping the JavaScript in an external file separates behaviour from
-      the HTML structure and makes the code easier to maintain.
-     -Placing the script near the bottom allows the HTML content to be
-      parsed before the script is executed, helping reduce interruptions
-      to page loading.
-     -This setup supports a user-friendly and maintainable website. -->
+    <!-- ***** leaflet map library script ***** -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- ***** shared script ***** -->
     <script src="js/main.js"></script>
 
 </body>
