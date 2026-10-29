@@ -16,6 +16,13 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** search engine optimisation (seo) meta tags ***** -->
+    <!-- Meta description provides search engines with a summary of CodeBridge's privacy policy and POPIA compliance. -->
+    <meta name="description" content="Read the CodeBridge NPO Privacy Policy. Learn how we collect, protect, and handle your personal data under South Africa's POPIA legislation.">
+    
+    <!-- Meta keywords target privacy and legal compliance search queries to improve SEO. -->
+    <meta name="keywords" content="CodeBridge privacy policy, POPIA compliance South Africa, data protection NPO, personal information security, CodeBridge legal">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
@@ -26,17 +33,12 @@
     <!-- ***** shared stylesheet ***** -->
 <!-- This stylesheet provides the visual appearance of the Privacy Policy page.
      -Using one shared CSS file keeps the branding, colours, typography, and
-      layout consistent across the entire website.
-     -Maintaining a single stylesheet also makes future updates easier and
-      supports a professional, user-friendly design. -->
+      layout consistent across the entire website. -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- ***** favicon ***** -->
 <!-- The favicon displays the CodeBridge logo in the browser tab,
-     helping users easily identify the website when multiple tabs
-     are open.
-     -Using the same favicon throughout the website strengthens
-      the organisation's branding and creates a more professional appearance. -->
+     helping users easily identify the website when multiple tabs are open. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
@@ -44,27 +46,15 @@
 
   <!-- ***** header ***** -->
 <!-- The header contains the organisation's logo and the primary navigation menu.
-     -It appears consistently across every page to strengthen CodeBridge's branding
-      and provide visitors with a familiar browsing experience.
-     -Using the same header throughout the website improves usability and allows
-      users to navigate between pages without confusion. -->
+     -It appears consistently across every page to strengthen CodeBridge's branding. -->
     <header>
 <!-- ***** organisation logo ***** -->
-<!-- The CodeBridge logo provides a visual identity for the organisation.
-     -Displaying the logo on every page reinforces the brand and helps
-      visitors immediately recognise the website.
-     -Alternative text improves accessibility for screen readers. -->
+<!-- The CodeBridge logo provides a visual identity for the organisation. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
 <!-- ***** main navigation menu ***** -->
-<!-- The navigation menu provides visitors with quick access to the website's
-     core pages including Home, About Us, Programmes, Apply / Volunteer,
-     and Contact.
-     -Keeping the navigation consistent across the website improves user
-      experience and helps visitors quickly find the information they need.
-     -This supports the project's objective of increasing programme applications,
-      volunteer registrations, and general enquiries. -->
+<!-- The navigation menu provides visitors with quick access to the website's core pages. -->
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -78,21 +68,9 @@
     </header>
 
 <!-- ***** main content area ***** -->
-<!-- The <main> element contains the unique content of the Privacy Policy page.
-     -Separating the main content from the shared header and footer improves
-      accessibility and helps assistive technologies identify the page's
-      primary information.
-     -This page explains how CodeBridge collects, stores, protects, and uses
-      personal information, helping build trust and demonstrate compliance
-      with privacy legislation. -->
+<!-- The <main> element contains the unique content of the Privacy Policy page. -->
     <main id="main-content">
 <!-- ***** privacy policy introduction ***** -->
-<!-- This introductory section explains the purpose of the Privacy Policy
-     and informs visitors that CodeBridge processes personal information
-     responsibly.
-     -It also references South Africa's Protection of Personal Information
-      Act (POPIA), demonstrating the organisation's commitment to protecting
-      user privacy and handling information lawfully. -->
         <section>
 
             <h1>Privacy Policy</h1>
@@ -105,178 +83,101 @@
 
         </section>
 
-        <section>
-            <!-- ***** information collection section ***** -->
-<!-- This section explains the types of personal information that may be
-     collected through the website.
-     -Listing the information collected helps visitors understand exactly
-      what details are requested when applying for programmes, volunteering,
-      donating, or making enquiries.
-     -Being transparent about data collection helps build trust and supports
-      compliance with privacy regulations. -->
-            <h2>Information We Collect</h2>
-            <ul>
-                <li>Full name and contact details (phone number and email address)</li>
-                <li>Learner application details (preferred centre, programme of interest, motivation)</li>
-                <li>Volunteer sign-up details (area of expertise, availability)</li>
-                <li>Sponsor/donor enquiry details (organisation name, contribution type)</li>
-                <li>Messages submitted through our Contact form</li>
-                <li>Donor name and email address for donation receipts</li>
-            </ul>
-        </section>
+        <!-- ***** interactive policy sections (Accordion Enhancement) ***** -->
+        <section class="privacy-content">
 
-        <section>
-            <!-- ***** information usage section ***** -->
-<!-- This section explains how the information collected from visitors is used.
-     -It reassures users that their personal information is processed only
-      for legitimate organisational purposes such as responding to enquiries,
-      processing applications, coordinating volunteers, and managing donations.
-     -Clearly explaining data usage promotes transparency and accountability. -->
-            <h2>How We Use Your Information</h2>
-            <p>
-                We use the information you provide to process programme applications, respond
-                to enquiries, coordinate volunteer involvement, issue donation receipts, and
-                keep you informed about CodeBridge's programmes and impact. We do not use your
-                information for any purpose beyond what you submitted it for.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>Information We Collect</h2>
+                <ul>
+                    <li>Full name and contact details (phone number and email address)</li>
+                    <li>Learner application details (preferred centre, programme of interest, motivation)</li>
+                    <li>Volunteer sign-up details (area of expertise, availability)</li>
+                    <li>Sponsor/donor enquiry details (organisation name, contribution type)</li>
+                    <li>Messages submitted through our Contact form</li>
+                    <li>Donor name and email address for donation receipts</li>
+                </ul>
+            </article>
 
-        <section>
-            <!-- ***** information sharing section ***** -->
-<!-- This section explains whether personal information is shared with
-     external organisations.
-     -It reassures visitors that CodeBridge does not sell or rent personal
-      information and only shares limited information when necessary and
-      with appropriate consent.
-     -This helps establish confidence in the organisation's commitment to
-      protecting user privacy. -->
-            <h2>Sharing of Information</h2>
-            <p>
-                CodeBridge does not sell or rent personal information to third parties. Limited
-                information may be shared with programme partners or sponsors strictly for
-                reporting on programme outcomes, and only with your consent.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>How We Use Your Information</h2>
+                <p>
+                    We use the information you provide to process programme applications, respond
+                    to enquiries, coordinate volunteer involvement, issue donation receipts, and
+                    keep you informed about CodeBridge's programmes and impact. We do not use your
+                    information for any purpose beyond what you submitted it for.
+                </p>
+            </article>
 
-        <section>
-            <!-- ***** data security section ***** -->
-<!-- This section outlines the measures used to protect personal information
-     submitted through the website.
-     -It highlights secure connections and input validation techniques that
-      help reduce security risks and protect user data from unauthorised access
-      or malicious submissions.
-     -Providing this information reassures visitors that their information
-      is handled responsibly. -->
-            <h2>Data Security</h2>
-            <p>
-                All information submitted through this site is transmitted over a secure
-                (HTTPS) connection. Form inputs are validated and sanitised to prevent
-                malformed or malicious submissions.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>Sharing of Information</h2>
+                <p>
+                    CodeBridge does not sell or rent personal information to third parties. Limited
+                    information may be shared with programme partners or sponsors strictly for
+                    reporting on programme outcomes, and only with your consent.
+                </p>
+            </article>
 
-        <section>
-            <!-- ***** user rights section ***** -->
-<!-- This section informs visitors of their rights under South Africa's
-     Protection of Personal Information Act (POPIA).
-     -It explains that users may request access to, correction of, or deletion
-      of their personal information.
-     -Providing this information demonstrates CodeBridge's commitment to
-      transparency and legal compliance. -->
-            <h2>Your Rights Under POPIA</h2>
-            <p>
-                You have the right to request access to, correction of, or deletion of the
-                personal information we hold about you. To make such a request, please contact
-                us using the details on our Contact page.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>Data Security</h2>
+                <p>
+                    All information submitted through this site is transmitted over a secure
+                    (HTTPS) connection. Form inputs are validated and sanitised to prevent
+                    malformed or malicious submissions.
+                </p>
+            </article>
 
-        <section>
-            <!-- ***** cookies section ***** -->
-<!-- This section explains the website's current use of cookies.
-     -It informs visitors that tracking and advertising cookies are not
-      currently used while also stating that the policy will be updated
-      if this changes in the future.
-     -Providing this information helps maintain transparency regarding
-      website functionality and user privacy. -->
-            <h2>Cookies</h2>
-            <p>
-                This website does not currently use tracking or advertising cookies. Should
-                this change in future, this policy will be updated accordingly.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>Your Rights Under POPIA</h2>
+                <p>
+                    You have the right to request access to, correction of, or deletion of the
+                    personal information we hold about you. To make such a request, please contact
+                    us using the details on our Contact page.
+                </p>
+            </article>
 
-        <section>
-            <!-- ***** policy updates section ***** -->
-<!-- This section explains that the Privacy Policy may be updated whenever
-     changes are made to the organisation's privacy practices or legal
-     requirements.
-     -Displaying revision information helps visitors identify the most
-      current version of the policy and encourages them to review future
-      updates when necessary. -->
-            <h2>Changes to This Policy</h2>
-            <p>
-                CodeBridge may update this Privacy Policy from time to time. Any changes will
-                be posted on this page with an updated revision date.
-            </p>
-        </section>
+            <article class="privacy-item">
+                <h2>Cookies</h2>
+                <p>
+                    This website does not currently use tracking or advertising cookies. Should
+                    this change in future, this policy will be updated accordingly.
+                </p>
+            </article>
 
-        <section>
-            <!-- ***** privacy contact section ***** -->
-<!-- This section provides visitors with a way to ask questions or submit
-     requests relating to their personal information.
-     -Directing users to the Contact page makes it easy for them to exercise
-      their privacy rights or obtain additional information regarding
-      CodeBridge's privacy practices. -->
-            <h2>Contact Us</h2>
-            <p>
-                For any privacy-related questions or requests, please reach out via our
-                <a href="contact.html">Contact page</a>.
-            </p>
+            <article class="privacy-item">
+                <h2>Changes to This Policy</h2>
+                <p>
+                    CodeBridge may update this Privacy Policy from time to time. Any changes will
+                    be posted on this page with an updated revision date.
+                </p>
+            </article>
+
+            <article class="privacy-item">
+                <h2>Contact Us</h2>
+                <p>
+                    For any privacy-related questions or requests, please reach out via our
+                    <a href="contact.html">Contact page</a>.
+                </p>
+            </article>
+
         </section>
 
     </main>
 
    <!-- ***** footer ***** -->
-<!-- The footer provides consistent information that appears across every page.
-     -It includes copyright information together with quick navigation links
-      that help visitors access important pages from anywhere on the website.
-     -Keeping the footer consistent improves usability, reinforces the
-      website's structure, and contributes to a professional appearance. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All rights reserved.</p>
 
          <!-- ***** Footer Navigation Links ***** -->
-        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
         <ul>
-
-            <!-- ***** Contact Link ***** -->
-            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
-
-            <!-- ***** Donate Link ****** -->
-            <!-- Encourages visitors to contribute financially, supporting sustainability of CodeBridge programmes. -->
             <li><a href="donate.html">Donate</a></li>
-
-            <!--***** Privacy Policy Link ***** -->
-            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
-            <li><a href="privacy.html">Privacy Policy</a></li>
-
+            <li><a href="privacy.html" aria-current="page">Privacy Policy</a></li>
         </ul>
     </footer>
 
 <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is linked here and included on every page.
-     -It handles interactive features like form validation, navigation toggles,
-      and other dynamic behaviours that improve the website's usability.
-     -Keeping the JavaScript in an external file separates behaviour from
-      the HTML structure and makes the code easier to maintain.
-     -Placing the script near the bottom allows the HTML content to be
-      parsed before the script is executed, helping reduce interruptions
-      to page loading.
-     -This setup supports a user-friendly and maintainable website. -->
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
