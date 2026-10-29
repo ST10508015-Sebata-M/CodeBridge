@@ -17,159 +17,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
-    <!-- Meta description provides search engines with a concise summary of contact channels,
-         community centre locations, and operational hours for CodeBridge in Johannesburg. -->
-    <meta name="description" content="Contact CodeBridge NPO in Johannesburg. Send general messages, inquire about community coding classes, or view interactive maps of our Alexandra and Diepsloot centres.">
-    
-    <!-- Meta keywords target localized contact search queries to improve local SEO. -->
-    <meta name="keywords" content="CodeBridge contact, Johannesburg coding center, Alexandra community center map, Diepsloot coding classes, contact CodeBridge">
+    <meta name="description" content="Contact CodeBridge NPO in Johannesburg. Send general messages, inquire about community coding classes, or view interactive maps with live routing directions to our Alexandra and Diepsloot centres.">
+    <meta name="keywords" content="CodeBridge contact, Johannesburg coding center, Alexandra community center map, Diepsloot coding classes, interactive directions map">
 
 <!-- ***** page title ***** -->
-<!-- The page title appears in the browser tab and helps visitors identify
-     the current page.
-     -A meaningful title also improves search engine optimisation (SEO) and
-      makes navigation easier when multiple browser tabs are open. -->
-    <title>CodeBridge | Contact</title>
+    <title>CodeBridge | Contact &amp; Directions</title>
 
     <!-- ***** shared stylesheet ***** -->
-<!-- This stylesheet controls the appearance of the entire website.
-     -Using one CSS file keeps the branding, typography, colours,
-      spacing, and layouts consistent across every page.
-      -Maintaining a shared stylesheet also simplifies future updates
-      and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- ***** leaflet css for interactive map ***** -->
-    <!-- Leaflet open-source mapping library CSS enables responsive, interactive map rendering. -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
+    <!-- ***** leaflet routing machine css for live directions ***** -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
     <!-- ***** favicon ***** -->
-<!-- The favicon displays the CodeBridge logo inside the browser tab,
-     making the website easier to recognise.
-     -Using the same favicon throughout the website strengthens
-      CodeBridge's branding and provides a professional appearance. -->
     <link rel="icon" type="image/png" href="images/CodeBridge.png">
 
 </head>
 <body>
 
     <!-- ***** header ***** -->
-<!-- The header contains the organisation's logo together with the
-     primary navigation menu.
-     -It appears consistently across every page to strengthen
-      CodeBridge's branding and provide visitors with a familiar
-      browsing experience.
-     -Keeping the header consistent improves navigation and overall
-      usability. -->
     <header>
-<!-- ***** organisation logo ***** -->
-<!-- The CodeBridge logo provides a visual identity for the organisation.
-     -Displaying the logo on every page reinforces the brand and helps
-      visitors immediately recognise the website.
-     -Alternative text improves accessibility for screen readers. -->
         <div class="logo">
             <img src="images/CodeBridge.png" alt="CodeBridge Logo" width="50" height="50">
         </div>
- <!-- ***** main navigation menu ***** -->
-<!-- The navigation menu provides visitors with quick access to the
-     website's core pages including Home, About Us, Programmes,
-     Apply / Volunteer, and Contact.
-     -Keeping the navigation consistent across every page improves
-      usability and makes browsing the website straightforward.
-     -This supports the project's objective of increasing programme
-      applications, volunteer registrations, and enquiries. -->
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="enquiry.html">Apply / Volunteer</a></li>
-                <!-- ***** active page indicator ***** -->
-<!-- The aria-current attribute clearly signals to screen readers and assistive tech 
-     which page the user is currently visiting within the main site navigation. -->
                 <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
   <!-- ***** main content area ***** -->
-<!-- The <main> element contains the unique content of the Contact page.
-     -Separating the primary content from the shared header and footer
-      improves accessibility and helps assistive technologies identify
-      the page's most important information.
-     -This page provides visitors with multiple ways to communicate with
-      CodeBridge and access its community centres. -->
     <main id="main-content">
 
        <!-- ***** contact page introduction ***** -->
-<!-- This introductory section welcomes visitors and explains how they
-     can get in touch with CodeBridge.
-     -It encourages users to submit enquiries while also informing them
-      of the expected response time.
-     -Providing this information creates realistic expectations and helps
-      build trust with potential learners, volunteers, and donors. -->
         <section>
-
-            <h1>Contact Us</h1>
-
+            <h1>Contact Us &amp; Interactive Directions</h1>
             <p>
                 Have a question that isn't covered on our Programmes or Apply/Volunteer pages?
-                Send us a message below, or visit us in person at either of our two community
-                centres. We aim to respond to every enquiry within two working days.
+                Send us a message below, or use our interactive routing map to get exact directions 
+                from Johannesburg Central to either of our community training centres.
             </p>
-
         </section>
 
         <!-- ***** contact form section ***** -->
-<!-- This section provides visitors with an easy way to communicate
-     directly with CodeBridge.
-     -The contact form allows users to submit general enquiries that are
-      not covered elsewhere on the website.
-     -Providing an online contact form improves accessibility and
-      encourages communication between the organisation and the community. -->
         <section class="form-section">
-
             <h2>Send Us a Message</h2>
-<!-- ***** contact form ***** -->
-<!-- Form action uses mailto: recipient as specified in Part 4 requirements, while JS handles 
-     client-side validation and asynchronous processing feedback. -->
             <form id="contact-form" action="mailto:info@codebridge.org.za" method="post" enctype="text/plain" novalidate>
-<!-- ***** enquiry information ***** -->
-<!-- The fieldset groups all contact-related input fields together,
-     making the form easier to understand and improving accessibility.
-     -The legend clearly identifies the purpose of this group of inputs
-      for both users and assistive technologies. -->
                 <fieldset>
-
                     <legend>Your Message Details</legend>
 
-<!-- ***** visitor name ***** -->
-<!-- Collects the visitor's full name with HTML5 length validation attributes. -->
                     <div class="form-group">
                         <label for="name">Full Name <span class="required">*</span></label>
                         <input type="text" id="name" name="name" minlength="2" maxlength="60" required placeholder="e.g. Sipho Nkosi">
                         <span class="error-message" id="name-error" aria-live="polite"></span>
                     </div>
 
-<!-- ***** visitor email ***** -->
-<!-- Collects the visitor's email address with regex pattern validation. -->
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="e.g. sipho@example.com">
                         <span class="error-message" id="email-error" aria-live="polite"></span>
                     </div>
 
-<!-- ***** visitor contact number ***** -->
-<!-- Collects phone contact details formatted for South African phone structures. -->
                     <div class="form-group">
                         <label for="phone">Phone Number <span class="required">*</span></label>
                         <input type="tel" id="phone" name="phone" pattern="^(\+27|0)[6-8][0-9]{8}$" required placeholder="e.g. 0821234567">
                         <span class="error-message" id="phone-error" aria-live="polite"></span>
                     </div>
 
-<!-- ***** message category select ***** -->
-<!-- Select element specifying the exact nature/type of general communication being sent. -->
                     <div class="form-group">
                         <label for="message-type">Message Type <span class="required">*</span></label>
                         <select id="message-type" name="message-type" required>
@@ -182,53 +104,40 @@
                         <span class="error-message" id="type-error" aria-live="polite"></span>
                     </div>
 
-<!-- ***** message subject ***** -->
-<!-- Subject line input for clear email compilation. -->
                     <div class="form-group">
                         <label for="subject">Subject <span class="required">*</span></label>
                         <input type="text" id="subject" name="subject" minlength="5" maxlength="100" required placeholder="Brief subject line">
                         <span class="error-message" id="subject-error" aria-live="polite"></span>
                     </div>
 
-<!-- ***** enquiry message ***** -->
-<!-- Textarea allowing full message composition. -->
                     <div class="form-group">
                         <label for="message">Full Message <span class="required">*</span></label>
                         <textarea id="message" name="message" rows="6" minlength="10" maxlength="1000" required placeholder="Write your full message here..."></textarea>
                         <span class="error-message" id="message-error" aria-live="polite"></span>
                     </div>
-
                 </fieldset>
 
-<!-- ***** submission response feedback container ***** -->
                 <div id="contact-form-response" class="form-response" aria-live="polite"></div>
-
-<!-- ***** submit button ***** -->
                 <button type="submit" id="contact-submit-btn">Compile &amp; Send Message</button>
-
             </form>
-
         </section>
 
-        <!-- ***** interactive location maps section ***** -->
-<!-- Integrates Leaflet.js interactive maps to fulfill Rubric Item: Interactive Maps. -->
+        <!-- ***** interactive location maps & live directions section ***** -->
         <section class="locations">
+            <h2>Interactive Routing Map</h2>
+            <p>Click below to calculate exact turn-by-turn driving directions from Johannesburg Central (Park Station) to our training venues.</p>
 
-            <h2>Our Interactive Locations</h2>
-            <p>Click on a centre location below to focus the interactive map on that venue.</p>
-
-            <!-- Map Location Control Buttons -->
+            <!-- Route Toggle Buttons -->
             <div class="map-controls">
-                <button type="button" class="map-btn active" id="btn-alexandra">Focus Alexandra Centre</button>
-                <button type="button" class="map-btn" id="btn-diepsloot">Focus Diepsloot Centre</button>
+                <button type="button" class="map-btn active" id="btn-alexandra">Get Directions to Alexandra Centre</button>
+                <button type="button" class="map-btn" id="btn-diepsloot">Get Directions to Diepsloot Centre</button>
             </div>
 
-            <!-- Leaflet Interactive Map Canvas -->
-            <div id="map" style="height: 400px; width: 100%; margin-top: 15px; border-radius: 8px;"></div>
+            <!-- Leaflet Interactive Map Canvas with Routing Container -->
+            <div id="map" style="height: 480px; width: 100%; margin-top: 15px; border-radius: 8px;"></div>
 
-<!-- ***** alexandra community centre ***** -->
-            <article class="location-card">
-
+<!-- ***** alexandra community centre details ***** -->
+            <article class="location-card" style="margin-top: 20px;">
                 <h3>Alexandra Centre</h3>
                 <figure>
                     <img src="images/map-alexandra.png" 
@@ -245,12 +154,10 @@
                     Home of our Web Development Bootcamp and Digital Literacy &amp; Career Skills
                     programme. Open Saturdays, 08:30–13:30.
                 </p>
-
             </article>
 
-<!-- ***** diepsloot community centre ***** -->
+<!-- ***** diepsloot community centre details ***** -->
             <article class="location-card">
-
                 <h3>Diepsloot Centre</h3>
                 <figure>
                     <img src="images/map-diepsloot.png" 
@@ -267,27 +174,26 @@
                     Home of our Java Programming Fundamentals evening classes. Open Tuesdays and
                     Thursdays, 16:30–19:30.
                 </p>
-
             </article>
-
         </section>
 
     </main>
 
     <!-- ***** footer ***** -->
     <footer>
-
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
         <ul>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="donate.html">Donate</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
-
     </footer>
 
     <!-- ***** leaflet map library script ***** -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- ***** leaflet routing machine script for exact path directions ***** -->
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 
     <!-- ***** shared script ***** -->
     <script src="js/main.js"></script>

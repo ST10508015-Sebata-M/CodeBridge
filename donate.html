@@ -16,6 +16,14 @@
       on mobile devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ***** search engine optimisation (seo) meta tags ***** -->
+    <!-- Meta description provides search engines with a concise summary of the donation page purpose,
+         explaining how financial contributions fund course materials and youth coding bootcamps in Johannesburg. -->
+    <meta name="description" content="Support CodeBridge NPO in Johannesburg. Donate funds to sponsor course materials, laptop access, and youth coding bootcamps to fight youth unemployment.">
+    
+    <!-- Meta keywords target fundraising and donor search queries to improve local SEO. -->
+    <meta name="keywords" content="Donate CodeBridge, support youth coding Johannesburg, NPO donation, fund coding bootcamps, sponsor a learner South Africa">
+
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
      the current page.
@@ -27,7 +35,7 @@
 <!-- This stylesheet controls the appearance of the entire website.
      -Using one CSS file keeps the branding, typography, colours,
       spacing, and layouts consistent across every page.
-     -Maintaining a shared stylesheet also simplifies future updates
+      -Maintaining a shared stylesheet also simplifies future updates
       and improves website maintainability. -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -159,15 +167,13 @@
         <!-- ***** donation form ***** -->
 <!-- This form allows supporters to choose a donation amount and
      provide their contact information.
-     -A secure payment gateway such as PayFast or SnapScan will be
-      integrated during Part 3 using JavaScript and server-side
-      processing. -->
-        <section>
+     -Enhanced with Part 3 JavaScript client-side validation and AJAX asynchronous simulation. -->
+        <section class="form-section">
 
             <h2>Make a Donation</h2>
 
-            <form action="#" method="post">
- <!-- ***** donation amount ***** -->
+            <form id="donation-form" action="#" method="post" novalidate>
+<!-- ***** donation amount ***** -->
 <!-- This fieldset groups together the available donation options.
      -Using radio buttons ensures that donors select only one donation
       amount before submitting the form. -->
@@ -177,27 +183,27 @@
 <!-- ***** predefined donation options ***** -->
 <!-- These radio buttons provide commonly selected donation amounts,
      allowing supporters to make a contribution quickly and easily. -->
-                    <div>
+                    <div class="form-group-radio">
                         <input type="radio" id="amount-100" name="amount" value="100">
                         <label for="amount-100">R100</label>
                     </div>
 
-                    <div>
+                    <div class="form-group-radio">
                         <input type="radio" id="amount-250" name="amount" value="250">
                         <label for="amount-250">R250</label>
                     </div>
 
-                    <div>
+                    <div class="form-group-radio">
                         <input type="radio" id="amount-500" name="amount" value="500">
                         <label for="amount-500">R500</label>
                     </div>
 
-                    <div>
+                    <div class="form-group-radio">
                         <input type="radio" id="amount-1000" name="amount" value="1000">
                         <label for="amount-1000">R1000</label>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <input type="radio" id="amount-other" name="amount" value="other">
                         <label for="amount-other">Other amount:</label>
                         <!-- ***** custom donation amount ***** -->
@@ -206,8 +212,9 @@
      -The minimum value helps prevent invalid donation amounts from
       being entered. -->
                         <label for="other-amount">R</label>
-                        <input type="number" id="other-amount" name="other-amount" min="10">
+                        <input type="number" id="other-amount" name="other-amount" min="10" placeholder="10+">
                     </div>
+                    <span class="error-message" id="amount-error" aria-live="polite"></span>
 
                 </fieldset>
 
@@ -221,34 +228,29 @@
 <!-- ***** donor name ***** -->
 <!-- Collects the donor's full name for identification and future
      communication regarding their contribution. -->
-                    <label for="donor-name">Full Name</label>
-                    <input type="text" id="donor-name" name="donor-name" required>
+                    <div class="form-group">
+                        <label for="donor-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="donor-name" name="donor-name" required minlength="2" maxlength="60" placeholder="e.g. Lerato Molefe">
+                        <span class="error-message" id="name-error" aria-live="polite"></span>
+                    </div>
 
 <!-- ***** donor email ***** -->
 <!-- Collects the donor's email address for donation confirmations,
-     receipts, and future communication.
-     -Using the email input type provides basic browser validation. -->
-                    <label for="donor-email">Email Address</label>
-                    <input type="email" id="donor-email" name="donor-email" required>
+     receipts, and future communication. -->
+                    <div class="form-group">
+                        <label for="donor-email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="donor-email" name="donor-email" required placeholder="e.g. lerato@example.com">
+                        <span class="error-message" id="email-error" aria-live="polite"></span>
+                    </div>
 
                 </fieldset>
 
-<!-- ***** payment information ***** -->
-<!-- This message informs donors that online payment processing has
-     not yet been implemented.
-     -Future integration with a secure payment gateway will be
-      completed during Part 3 of the project. -->
-                <p>
-                    You will be redirected to a secure payment provider (e.g. PayFast or
-                    SnapScan) to complete your donation. Online payment processing will be
-                    integrated in Part 3.
-                </p>
+<!-- ***** submission response feedback container ***** -->
+                <div id="donation-form-response" class="form-response" aria-live="polite"></div>
+
 <!-- ***** submit donation ***** -->
-<!-- The submit button sends the donation form for processing.
-     -Although payment functionality has not yet been implemented, the
-      button demonstrates the intended user interface for future
-      development. -->
-                <button type="submit">Donate Now</button>
+<!-- The submit button sends the donation form for processing. -->
+                <button type="submit" id="donation-submit-btn">Proceed to Secure Payment</button>
 
             </form>
 
@@ -258,43 +260,22 @@
 
   <!-- ***** footer ***** -->
 <!-- The footer appears consistently across every page and provides
-     copyright information together with quick navigation links.
-     -Maintaining a consistent footer improves usability, reinforces
-      the website structure, and allows visitors to quickly access
-      important pages from anywhere on the site. -->
+     copyright information together with quick navigation links. -->
     <footer>
 
         <p>&copy; 2026 CodeBridge NPO. All Rights Reserved.</p>
- <!-- ***** Footer Navigation Links ***** -->
-        <!-- Provides quick access to key pages and actions, reinforcing usability and accessibility. -->
+        <!-- ***** Footer Navigation Links ***** -->
         <ul>
-
-            <!-- ***** Contact Link ***** -->
-            <!-- Directs visitors to the contact page for enquiries, supporting communication with learners, donors, and volunteers. -->
             <li><a href="contact.html">Contact</a></li>
-
-            <!-- ***** Donate Link ****** -->
-            <!-- Directs visitors to the donation page to support CodeBridge's initiatives. -->
             <li><a href="donate.html" aria-current="page">Donate</a></li>
-
-            <!--***** Privacy Policy Link ***** -->
-            <!-- Privacy policy page link demonstrating compliance and professionalism. -->
             <li><a href="privacy.html">Privacy Policy</a></li>
-
         </ul>
 
     </footer>
 
   <!-- ***** shared script ***** -->
-<!-- The main JavaScript file is linked here and included on every page.
-     -It handles interactive features like form validation, navigation toggles,
-      and other dynamic behaviours that improve the website's usability.
-     -Keeping the JavaScript in an external file separates behaviour from
-      the HTML structure and makes the code easier to maintain.
-     -Placing the script near the bottom allows the HTML content to be
-      parsed before the script is executed, helping reduce interruptions
-      to page loading.
-     -This setup supports a user-friendly and maintainable website. -->
+<!-- The main JavaScript file is linked here to handle client-side validation
+     and asynchronous form processing feedback. -->
     <script src="js/main.js"></script>
 
 </body>
