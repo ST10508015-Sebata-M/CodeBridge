@@ -54,8 +54,8 @@ This repository contains the multi-page website built across the three PoE proje
   - Built responsive `@media` query breakpoints (900px tablet, 600px mobile).  
   - Optimized images using responsive techniques and fluid sizing constraints (`max-width: 100%`).  
 
-- **Part 3: JavaScript Interactivity (Upcoming)**  
-  - Integration of dynamic quiz engines, embedded video tutorials, and interactive form feedback mechanisms.  
+- **Part 3: JavaScript Interactivity (Completed)**  
+  - Integration of interactive accordions, dynamic search/filter features, Leaflet.js maps with live OSRM routing, and robust client-side form validation.  
 
 ---
 
@@ -118,118 +118,86 @@ The website has been tested using browser developer tools across multiple standa
 
 ---
 
-
 # Changelog
 For full details, see [CHANGELOG.md](./CHANGELOG.md)
---- 
-
+---  
 
 # References
- # CSS & Web Standards Documentation (Part 2 References)
- #
- # Google, n.d. Google Fonts. [online] Available at: https://fonts.google.com/ [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. CSS flexible box layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. CSS Grid Layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. CSS scroll-driven animations. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations # [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. Responsive images. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. Using CSS custom properties (variables). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties [Accessed 15 September 2026].
-#
-# Mozilla Corporation, n.d. Using media queries. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries [Accessed 15 September 2026].
 
-# 
+## Part 3 References (JavaScript, Maps & Form Validation)
+Ecma International, 2023. The JSON data interchange standard (ECMA-404). [online] Available at: [https://www.ecma-international.org/publications-and-standards/standards/ecma-404/](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/) [Accessed 30 October 2026].
 
-# \### Websites & Web Development Context (Part 1 References)
+Leaflet Contributors, 2024. Leaflet — a JavaScript library for interactive maps. [online] Available at: [https://leafletjs.com/](https://leafletjs.com/) [Accessed 29 October 2026].
 
-# 
+Mozilla Developer Network (MDN), 2026. Client-side form validation. [online] Available at: [https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) [Accessed 30 October 2026].
 
-# Afrihost, 2026. Web hosting South Africa. \[online] Available at: [https://www.afrihost.com](https://www.afrihost.com) \[Accessed 6 August 2026].
+Mozilla Developer Network (MDN), 2026. Regular expressions — JavaScript Guide. [online] Available at: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) [Accessed 30 October 2026].
 
-# 
+Mozilla Developer Network (MDN), 2026. Using the Fetch API. [online] Available at: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) [Accessed 30 October 2026].
 
-# Baymard Institute, 2025. Cart Abandonment Rate Statistics (meta-analysis of 49 studies). \[online] Available at: [https://baymard.com/lists/cart-abandonment-rate](https://baymard.com/lists/cart-abandonment-rate) \[Accessed 7 August 2026].
+Open Source Routing Machine (OSRM), 2023. OSRM routing engine and API documentation. [online] Available at: [http://project-osrm.org/](http://project-osrm.org/) [Accessed 29 October 2026].
 
-# 
+OpenStreetMap Contributors, 2024. OpenStreetMap: the free wiki world map. [online] Available at: [https://www.openstreetmap.org/](https://www.openstreetmap.org/) [Accessed 29 October 2026].
 
-# Google Fonts, 2026. Poppins, Open Sans and Bebas Neue font families. \[online] Available at: [https://fonts.google.com](https://fonts.google.com) \[Accessed 6 August 2026].
+World Wide Web Consortium (W3C), 2024. HTML5 specification: Forms, inputs, and validation attributes. [online] Available at: [https://html.spec.whatwg.org/multipage/forms.html](https://html.spec.whatwg.org/multipage/forms.html) [Accessed 30 October 2026].
 
-# 
+World Wide Web Consortium (W3C), 2025. WAI-ARIA authoring practices guide: Accessible rich internet applications. [online] Available at: [https://www.w3.org/WAI/ARIA/apg/](https://www.w3.org/WAI/ARIA/apg/) [Accessed 30 October 2026].
 
-# Information Regulator South Africa, 2026. Information Regulator (South Africa). \[online] Available at: [https://inforegulator.org.za/](https://inforegulator.org.za/) \[Accessed 13 August 2026].
+## CSS & Web Standards Documentation (Part 2 References)
+Google, n.d. Google Fonts. [online] Available at: https://fonts.google.com/ [Accessed 15 September 2026].
 
-# 
+Mozilla Corporation, n.d. CSS flexible box layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout [Accessed 15 September 2026].
 
-# Nielsen Norman Group, 2020. Wireframing: The First Step in Building an Intuitive Product. \[online] Available at: [https://www.nngroup.com/articles/wireframing/](https://www.nngroup.com/articles/wireframing/) \[Accessed 6 August 2026].
+Mozilla Corporation, n.d. CSS Grid Layout. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout [Accessed 15 September 2026].
 
-# 
+Mozilla Corporation, n.d. CSS scroll-driven animations. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations [Accessed 15 September 2026].
 
-# Ozow, 2026. Instant EFT payments for South African e-commerce. \[online] Available at: [https://ozow.com](https://ozow.com) \[Accessed 6 August 2026].
+Mozilla Corporation, n.d. Responsive images. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images [Accessed 15 September 2026].
 
-# 
+Mozilla Corporation, n.d. Using CSS custom properties (variables). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties [Accessed 15 September 2026].
 
-# PayFast, 2026. Online payments for South African businesses. \[online] Available at: [https://www.payfast.co.za](https://www.payfast.co.za) \[Accessed 6 August 2026].
+Mozilla Corporation, n.d. Using media queries. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries [Accessed 15 September 2026].
 
-# 
+## Websites & Web Development Context (Part 1 References)
+Afrihost, 2026. Web hosting South Africa. [online] Available at: https://www.afrihost.com [Accessed 6 August 2026].
 
-# PayFast, 2026. Secure Online Payment Gateway in South Africa. \[online] Available at: [https://payfast.io/](https://payfast.io/) \[Accessed 13 August 2026].
+Baymard Institute, 2025. Cart Abandonment Rate Statistics (meta-analysis of 49 studies). [online] Available at: https://baymard.com/lists/cart-abandonment-rate [Accessed 7 August 2026].
 
-# 
+Google Fonts, 2026. Poppins, Open Sans and Bebas Neue font families. [online] Available at: https://fonts.google.com [Accessed 6 August 2026].
 
-# Reach for a Dream, 2026. About us and get-involved pathways. \[online] Available at: [https://reachforadream.org.za](https://reachforadream.org.za) \[Accessed 6 August 2026].
+Information Regulator South Africa, 2026. Information Regulator (South Africa). [online] Available at: https://inforegulator.org.za/ [Accessed 13 August 2026].
 
-# 
+Nielsen Norman Group, 2020. Wireframing: The First Step in Building an Intuitive Product. [online] Available at: https://www.nngroup.com/articles/wireframing/ [Accessed 6 August 2026].
 
-# SnapScan, 2026. Mobile payment solutions provider in South Africa. \[online] Available at: [https://www.snapscan.co.za/](https://www.snapscan.co.za/) \[Accessed 13 August 2026].
+Ozow, 2026. Instant EFT payments for South African e-commerce. [online] Available at: https://ozow.com [Accessed 6 August 2026].
 
-# 
+PayFast, 2026. Online payments for South African businesses. [online] Available at: https://www.payfast.co.za [Accessed 6 August 2026].
 
-# Sneaker Lab, 2026. Online store and drop-release format. \[online] Available at: [https://sneakerlab.co.za](https://sneakerlab.co.za) \[Accessed 6 August 2026].
+PayFast, 2026. Secure Online Payment Gateway in South Africa. [online] Available at: https://payfast.io/ [Accessed 13 August 2026].
 
-# 
+Reach for a Dream, 2026. About us and get-involved pathways. [online] Available at: https://reachforadream.org.za [Accessed 6 August 2026].
 
-# Statistics South Africa, 2026. South Africa's Youth and the Labour Market in Q1 2026. \[online] Available at: [https://www.statssa.gov.za/?p=19526](https://www.statssa.gov.za/?p=19526) \[Accessed 7 August 2026].
+SnapScan, 2026. Mobile payment solutions provider in South Africa. [online] Available at: https://www.snapscan.co.za/ [Accessed 13 August 2026].
 
-# 
+Sneaker Lab, 2026. Online store and drop-release format. [online] Available at: https://sneakerlab.co.za [Accessed 6 August 2026].
 
-# Unsplash, 2026. Free high-resolution images. \[online] Available at: [https://unsplash.com](https://unsplash.com) \[Accessed 6 August 2026].
+Statistics South Africa, 2026. South Africa's Youth and the Labour Market in Q1 2026. [online] Available at: https://www.statssa.gov.za/?p=19526 [Accessed 7 August 2026].
 
-# 
+Unsplash, 2026. Free high-resolution images. [online] Available at: https://unsplash.com [Accessed 6 August 2026].
 
-# W3C, 2023. Web Content Accessibility Guidelines (WCAG) 2.2. \[online] Available at: [https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/) \[Accessed 7 August 2026].
+W3C, 2023. Web Content Accessibility Guidelines (WCAG) 2.2. [online] Available at: https://www.w3.org/TR/WCAG22/ [Accessed 7 August 2026].
 
-# 
+W3Schools, 2026. HTML details Tag. [online] Available at: https://www.w3schools.com/tags/tag_details.asp [Accessed 13 August 2026].
 
-# W3Schools, 2026. HTML details Tag. \[online] Available at: [https://www.w3schools.com/tags/tag\\\_details.asp](https://www.w3schools.com/tags/tag\\\\_details.asp) \[Accessed 13 August 2026].
+## Images
+App Inventor, n.d. Kids participating in a coding workshop. [electronic image] Available at: https://appinventor.mit.edu/explore/sites/explore.appinventor.mit.edu/files/blog/google-women-in-tech-3.jpg [Accessed 13 August 2026].
 
-# 
+Blogger, 2018. Student Computer Network 2018. [electronic print] Available at: https://2.bp.blogspot.com/-WTqkbEejsQI/W2xKh6_xbNI/AAAAAAAArJc/gHdpI4l_l2wZa_puejrPWbR7XrCRFZHGgCLcBGAs/w1200-h630-p-k-no-nu/Student-Computer-Network-2018.xl.jpg [Accessed 13 August 2026].
 
-# \### Images
+Delapouite, n.d. Japanese bridge. [electronic image] Available at: https://game-icons.net/1x1/delapouite/japanese-bridge.html [Accessed 12 August 2026].
 
-# 
+Framablog, n.d. One Laptop Per Child. [electronic image] Available at: https://framablog.org/public/_img/flickr/one-laptop-per-child1_cc-by.jpg [Accessed 12 August 2026].
 
-# App Inventor, n.d. Kids participating in a coding workshop. \[electronic image] Available at: [https://appinventor.mit.edu/explore/sites/explore.appinventor.mit.edu/files/blog/google-women-in-tech-3.jpg](https://appinventor.mit.edu/explore/sites/explore.appinventor.mit.edu/files/blog/google-women-in-tech-3.jpg) \[Accessed 13 August 2026].
+GroundUp, 2015. Gauteng School. [electronic print] Available at: https://www.groundup.org.za/media/versions/images/photographers/Benita+Enoch/Gauteng+School-20150211-BenitaEnoch_large.jpg [Accessed 13 August 2026].
 
-# 
-
-# Blogger, 2018. Student Computer Network 2018. \[electronic print] Available at: [https://2.bp.blogspot.com/-WTqkbEejsQI/W2xKh6\\\_xbNI/AAAAAAAArJc/gHdpI4l\\\_l2wZa\\\_puejrPWbR7XrCRFZHGgCLcBGAs/w1200-h630-p-k-no-nu/Student-Computer-Network-2018.xl.jpg](https://2.bp.blogspot.com/-WTqkbEejsQI/W2xKh6\\\\_xbNI/AAAAAAAArJc/gHdpI4l\\\\_l2wZa\\\\_puejrPWbR7XrCRFZHGgCLcBGAs/w1200-h630-p-k-no-nu/Student-Computer-Network-2018.xl.jpg) \[Accessed 13 August 2026].
-
-# 
-
-# Delapouite, n.d. Japanese bridge. \[electronic image] Available at: [https://game-icons.net/1x1/delapouite/japanese-bridge.html](https://game-icons.net/1x1/delapouite/japanese-bridge.html) \[Accessed 12 August 2026].
-
-# 
-
-# Framablog, n.d. One Laptop Per Child. \[electronic image] Available at: [https://framablog.org/public/\\\_img/flickr/one-laptop-per-child1\\\_cc-by.jpg](https://framablog.org/public/\\\\_img/flickr/one-laptop-per-child1\\\\_cc-by.jpg) \[Accessed 12 August 2026].
-
-# 
-
-# GroundUp, 2015. Gauteng School. \[electronic print] Available at: [https://www.groundup.org.za/media/versions/images/photographers/Benita+Enoch/Gauteng+School-20150211-BenitaEnoch\\\_large.jpg](https://www.groundup.org.za/media/versions/images/photographers/Benita+Enoch/Gauteng+School-20150211-BenitaEnoch\\\\_large.jpg) \[Accessed 13 August 2026].
-
-# 
-
-# OpenWise Learning, n.d. Kids coding workshop. \[electronic image] Available at: [https://www.openwiselearning.org/wordpress/wp-content/uploads/2016/07/IMG\\\_0064.jpg](https://www.openwiselearning.org/wordpress/wp-content/uploads/2016/07/IMG\\\\_0064.jpg) \[Accessed 13 August 2026].
-
+OpenWise Learning, n.d. Kids coding workshop. [electronic image] Available at: https://www.openwiselearning.org/wordpress/wp-content/uploads/2016/07/IMG_0064.jpg [Accessed 13 August 2026].
