@@ -17,7 +17,7 @@
       browsers, operating systems, and devices. -->
     <meta charset="UTF-8">
 
-     <!-- ***** responsive viewport ***** -->
+      <!-- ***** responsive viewport ***** -->
 <!-- The viewport meta tag ensures that the webpage automatically scales to fit
      different screen sizes, including desktops, tablets, and smartphones.
      -This improves readability, accessibility, and the overall user experience
@@ -28,7 +28,7 @@
 <!-- The Content-Security-Policy tells the browser which sources of scripts, styles,
      images and network requests are trusted, which blocks most injected-code attacks.
      -The referrer policy stops the full page address leaking to other websites. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
@@ -40,13 +40,15 @@
     <meta name="keywords" content="CodeBridge, free coding bootcamp Johannesburg, youth digital skills, learn HTML CSS JavaScript, Java course South Africa, NPO Johannesburg, volunteer coding mentor">
     <meta name="robots" content="index, follow">
 
-    <!-- ***** social media sharing tags (Open Graph) ***** -->
-<!-- These tags control how the page looks when it is shared on social platforms,
-     supporting the off-page SEO goal of promoting the website on social media. -->
+    <!-- ***** canonical link & social media sharing tags (Open Graph) ***** -->
+    <link rel="canonical" href="https://st10508015-sebata-m.github.io/CodeBridge/index.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CodeBridge NPO">
     <meta property="og:title" content="CodeBridge | Free Coding Bootcamps for Youth in Johannesburg">
     <meta property="og:description" content="Free coding bootcamps and digital skills training for Johannesburg's youth. Apply, volunteer or sponsor today.">
+    <meta property="og:url" content="https://st10508015-sebata-m.github.io/CodeBridge/index.html">
+    <meta property="og:image" content="https://st10508015-sebata-m.github.io/CodeBridge/images/codebridge-coding-class-students.png">
+    <meta property="og:image:alt" content="Students participating in a coding workshop at CodeBridge">
 
 <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify

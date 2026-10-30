@@ -1,6 +1,6 @@
 /* =====================================================================
    style.css
-   CodeBridge — external stylesheet (Part 2)
+   CodeBridge — external stylesheet (Part 2, updated in Part 3)
    Linked from every page via <link rel="stylesheet" href="css/style.css">
    so all branding, typography, colour and layout stay consistent
    site-wide from one file. Replaces the Part 1 placeholder reset.
@@ -17,6 +17,8 @@
    IBM Plex Mono is used only where the content is literally code-
    adjacent (curriculum weeks, form legends, nav) — a monospace face
    is thematically justified here rather than decorative.
+   (Each page's Content-Security-Policy allows fonts.googleapis.com
+   and fonts.gstatic.com so these fonts are able to load.)
    ===================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
@@ -120,6 +122,14 @@ hr {
    legacy line breaks are hidden rather than left doubling up spacing. */
 br {
     display: none;
+}
+
+/* PART 3 FIX: the HTML "hidden" attribute is used by the JavaScript for the
+   lightbox, the no-results box, the back-to-top button and the conditional
+   enquiry fieldsets. Any CSS "display" value would override it, so this
+   rule guarantees that hidden elements are always really hidden. */
+[hidden] {
+    display: none !important;
 }
 
 a {
@@ -414,8 +424,16 @@ footer a:focus {
     margin-top: var(--space-2);
 }
 
-/* ---- programme snapshot cards (home page) ---- */
+/* ---- programme snapshot cards (home page) ----
+   PART 3 FIX: the section now holds a heading, intro text, the search
+   bar, a results count and the card container, so the section itself is
+   a normal block. Only the container that JavaScript fills with cards
+   is a grid. */
 .programmes-snapshot {
+    display: block;
+}
+
+#programme-cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3);
@@ -699,7 +717,7 @@ tbody tr:hover {
         --step-3: 2rem;
     }
 
-    .programmes-snapshot {
+    #programme-cards-container {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -742,7 +760,7 @@ tbody tr:hover {
         clip-path: polygon(0 0, 100% 0, 100% 96%, 50% 100%, 0 96%);
     }
 
-    .programmes-snapshot {
+    #programme-cards-container {
         grid-template-columns: 1fr;
     }
 
@@ -769,58 +787,17 @@ tbody tr:hover {
 
 
 /* =====================================================================
-   7. SCROLL-DRIVEN REVEAL ANIMATIONS (progressive enhancement)
-   Native CSS scroll-timelines — no JavaScript, no external library.
-   Each section fades and rises into place as it enters the viewport,
-   tied to the element's own position on the page rather than to
-   scroll speed, so it can't stutter or feel laggy on slow scrolls.
+   7. ANIMATION NOTE (PART 3)
+   The scroll-reveal animation is now handled by JavaScript in main.js
+   (IntersectionObserver adds the "reveal" and "visible" classes, styled
+   in part3.css). The old CSS-only reveal was removed so the two
+   effects no longer run on the same elements at the same time. The
+   header condense animation in section 3 stays CSS-only.
 
-   Wrapped in @supports so browsers that don't yet implement
-   animation-timeline (Safari, older Firefox) just show the content
-   normally, fully visible, with no animation and no layout impact —
-   this can never hide content from anyone.
+   Accessibility: anyone with reduced-motion set at the OS level gets
+   the content immediately, with no animation at all.
    ===================================================================== */
 
-@keyframes reveal-up {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@supports (animation-timeline: view()) {
-
-    main > section,
-    main > article,
-    .testimonials blockquote,
-    .team-member,
-    .programme-card {
-        animation: reveal-up linear both;
-        animation-timeline: view();
-        /* animation plays out as the element crosses from just below
-           the viewport to about a third of the way up it, so it has
-           finished settling well before it reaches eye level */
-        animation-range: entry 0% cover 35%;
-    }
-
-    /* a small stagger across the three programme cards reads as one
-       deliberate sequence rather than three separate elements
-       animating in perfect, robotic unison */
-    .programme-card:nth-of-type(2) {
-        animation-range: entry 5% cover 40%;
-    }
-
-    .programme-card:nth-of-type(3) {
-        animation-range: entry 10% cover 45%;
-    }
-}
-
-/* accessibility: anyone with reduced-motion set at the OS level gets
-   the content immediately, with no animation at all */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-   <!-- ***** character encoding ***** -->
+    <!-- ***** character encoding ***** -->
 <!-- UTF-8 character encoding allows the webpage to correctly display letters,
      symbols, punctuation marks, and special characters.
      -Using UTF-8 ensures that the website appears consistently across different
@@ -20,7 +20,7 @@
 <!-- The Content-Security-Policy limits where scripts, styles, images and network
      requests may come from. This page also trusts unpkg.com (Leaflet files),
      OpenStreetMap (map tiles) and the OSRM routing service for directions. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://unpkg.com https://*.tile.openstreetmap.org; connect-src 'self' https://router.project-osrm.org https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' mailto:; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://unpkg.com https://*.tile.openstreetmap.org; connect-src 'self' https://router.project-osrm.org https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
@@ -29,11 +29,15 @@
     <meta name="keywords" content="CodeBridge contact, Johannesburg coding centre, Alexandra community centre, Diepsloot coding classes, directions to CodeBridge, NPO contact South Africa">
     <meta name="robots" content="index, follow">
 
-    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <!-- ***** canonical link & social media sharing tags (Open Graph) ***** -->
+    <link rel="canonical" href="https://st10508015-sebata-m.github.io/CodeBridge/contact.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CodeBridge NPO">
     <meta property="og:title" content="Contact CodeBridge | Directions to Alexandra &amp; Diepsloot Centres">
     <meta property="og:description" content="Send us a message or get live driving directions to our Johannesburg centres.">
+    <meta property="og:url" content="https://st10508015-sebata-m.github.io/CodeBridge/contact.html">
+    <meta property="og:image" content="https://st10508015-sebata-m.github.io/CodeBridge/images/students-coding.png">
+    <meta property="og:image:alt" content="Young students learning to code at a CodeBridge workshop in Johannesburg">
 
 <!-- ***** page title ***** -->
     <title>Contact CodeBridge | Directions to Alexandra &amp; Diepsloot Centres</title>
@@ -211,8 +215,8 @@
             <article class="location-card" style="margin-top: 20px;">
                 <h3>Alexandra Centre</h3>
                 <figure>
-                    <img src="images/alexandra-centre-map-johannesburg.png" 
-                         alt="Map preview showing the Alexandra Centre location in Johannesburg" 
+                    <img src="images/students-coding.png" 
+                         alt="Students learning at the Alexandra Centre workshop" 
                          width="500" 
                          loading="lazy"
                          decoding="async">
@@ -230,8 +234,8 @@
             <article class="location-card">
                 <h3>Diepsloot Centre</h3>
                 <figure>
-                    <img src="images/diepsloot-centre-map-johannesburg.png" 
-                         alt="Map preview showing the Diepsloot Centre location in Johannesburg" 
+                    <img src="images/coding-class.png" 
+                         alt="Students participating in a coding workshop at Diepsloot Centre" 
                          width="500" 
                          loading="lazy"
                          decoding="async">

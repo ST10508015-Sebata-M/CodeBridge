@@ -19,4 +19,4 @@ Allow: /
 # ---------------------------------------------------------------------
 # Directs search engine crawlers straight to the sitemap XML file 
 # to ensure efficient discovery and indexing of all site pages.
-Sitemap: https://st10508015-sebata-m.github.io/CodeBridge/
+Sitemap: https://st10508015-sebata-m.github.io/CodeBridge/sitemap.xml

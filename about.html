@@ -20,7 +20,7 @@
   <!-- ***** security meta tags ***** -->
 <!-- The Content-Security-Policy limits where scripts, styles, images and network
      requests may come from, which helps block injected-code attacks. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- ***** search engine optimisation (seo) meta tags ***** -->
@@ -33,11 +33,15 @@
   <meta name="keywords" content="About CodeBridge, Mapuru Sebata, Johannesburg NPO, youth coding bootcamp, digital skills training, community programming, NPO mission and values">
   <meta name="robots" content="index, follow">
 
-  <!-- ***** social media sharing tags (Open Graph) ***** -->
+  <!-- ***** canonical link & social media sharing tags (Open Graph) ***** -->
+  <link rel="canonical" href="https://st10508015-sebata-m.github.io/CodeBridge/about.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CodeBridge NPO">
   <meta property="og:title" content="About CodeBridge | Youth Coding NPO in Johannesburg">
   <meta property="og:description" content="Our story, mission, values and the people behind CodeBridge.">
+  <meta property="og:url" content="https://st10508015-sebata-m.github.io/CodeBridge/about.html">
+  <meta property="og:image" content="https://st10508015-sebata-m.github.io/CodeBridge/images/coding-class.png">
+  <meta property="og:image:alt" content="Students participating in a coding workshop at CodeBridge">
 
   <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
@@ -137,12 +141,12 @@
       <h2>Our Story</h2>
 
      <!-- ***** story image ***** -->
-<!-- The image uses a descriptive file name (students-coding-workshop-johannesburg.png) and
+<!-- The image uses a descriptive file name (students-coding.png) and
      descriptive alt text, which helps image search and screen-reader users.
      -Width and height attributes reserve space so the page does not jump while loading,
       and lazy loading speeds up the first page view. -->
       <figure>
-        <img src="images/students-coding-workshop-johannesburg.png" 
+        <img src="images/students-coding.png" 
              alt="Young students learning to code at a CodeBridge workshop in Johannesburg" 
              width="800" 
              height="450"
@@ -166,7 +170,7 @@
       </p>
     </section>
 
-    
+   
 
    <!-- ***** mission and vision section ***** -->
 <!-- This section explains CodeBridge's purpose and long-term aspirations.
@@ -207,7 +211,7 @@
       </article>
     </section>
 
-    
+   
 <!-- ***** core values section (Interactive Accordion Enhancement) ***** -->
 <!-- This section highlights the principles that guide every programme,
      decision, and community initiative at CodeBridge.
@@ -278,10 +282,10 @@
 
       <article class="team-member">
        <!-- ***** founder profile image ***** -->
-<!-- The file name (mapuru-sebata-codebridge-founder.jpg) and the alt text both describe
+<!-- The file name (mapuru.jpg) and the alt text both describe
      the image, which supports image SEO and accessibility. -->
         <figure>
-          <img src="images/mapuru-sebata-codebridge-founder.jpg" 
+          <img src="images/mapuru.jpg" 
                alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop" 
                width="320" 
                loading="lazy"
@@ -299,7 +303,7 @@
       </article>
     </section>
 
-    
+   
 
     <!-- ***** why choose codebridge section ***** -->
 <!-- This section explains the unique benefits of joining or supporting CodeBridge. -->
@@ -308,7 +312,7 @@
 
       <figure>
         <!-- ***** learning environment image ***** -->
-        <img src="images/codebridge-coding-class-students.png" 
+        <img src="images/coding-class.png" 
              alt="Students participating in a coding workshop at CodeBridge" 
              width="480" 
              loading="lazy"

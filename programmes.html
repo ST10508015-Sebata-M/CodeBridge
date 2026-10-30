@@ -26,7 +26,7 @@
     <!-- ***** security meta tags ***** -->
 <!-- The Content-Security-Policy limits where scripts, styles, images and network
      requests may come from, which helps block injected-code attacks. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://jsonplaceholder.typicode.com https://formspree.io; form-action 'self' https://jsonplaceholder.typicode.com https://formspree.io mailto:; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- ***** search engine optimisation (seo) meta tags ***** -->
@@ -38,11 +38,15 @@
     <meta name="keywords" content="CodeBridge programmes, web development bootcamp Johannesburg, Java programming course, digital literacy training, CV writing course, coding classes South Africa">
     <meta name="robots" content="index, follow">
 
-    <!-- ***** social media sharing tags (Open Graph) ***** -->
+    <!-- ***** canonical link & social media sharing tags (Open Graph) ***** -->
+    <link rel="canonical" href="https://st10508015-sebata-m.github.io/CodeBridge/programmes.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CodeBridge NPO">
     <meta property="og:title" content="Coding &amp; Digital Skills Programmes in Johannesburg | CodeBridge">
     <meta property="og:description" content="Web Development, Java and Digital Literacy programmes with full week-by-week curricula.">
+    <meta property="og:url" content="https://st10508015-sebata-m.github.io/CodeBridge/programmes.html">
+    <meta property="og:image" content="https://st10508015-sebata-m.github.io/CodeBridge/images/web-dev-bootcamp.png">
+    <meta property="og:image:alt" content="Learners coding during the Web Development Bootcamp">
 
     <!-- ***** page title ***** -->
 <!-- The page title appears in the browser tab and helps visitors identify
@@ -129,7 +133,7 @@
             <h2>Web Development Bootcamp</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/web-development-bootcamp-learners.png"
+                <img src="images/web-dev-bootcamp.png"
                      alt="Learners coding during the Web Development Bootcamp"
                      width="500"
                      loading="lazy"
@@ -190,7 +194,7 @@
             <h2>Java Programming Fundamentals</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/java-programming-course-learners.png"
+                <img src="images/java-fundamentals.png"
                      alt="Learners working through Java programming exercises"
                      width="500"
                      loading="lazy"
@@ -254,7 +258,7 @@
             <h2>Digital Literacy &amp; Career Skills</h2>
             <!-- ***** programme image ***** -->
             <figure>
-                <img src="images/digital-literacy-career-skills-class.png"
+                <img src="images/digital-literacy.png"
                      alt="Participants learning digital literacy skills"
                      width="500"
                      loading="lazy"
@@ -320,7 +324,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/students-coding-workshop-johannesburg.png"
+                        <img src="images/students-coding.png"
                              alt="Young students learning to code at a CodeBridge workshop in Johannesburg"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>
@@ -329,7 +333,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/codebridge-coding-class-students.png"
+                        <img src="images/coding-class.png"
                              alt="Students participating in a coding workshop at CodeBridge"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>
@@ -338,7 +342,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/web-development-bootcamp-learners.png"
+                        <img src="images/web-dev-bootcamp.png"
                              alt="Learners coding during the Web Development Bootcamp"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>
@@ -347,7 +351,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/java-programming-course-learners.png"
+                        <img src="images/java-fundamentals.png"
                              alt="Learners working through Java programming exercises"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>
@@ -356,7 +360,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/digital-literacy-career-skills-class.png"
+                        <img src="images/digital-literacy.png"
                              alt="Participants learning digital literacy skills"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>
@@ -365,7 +369,7 @@
 
                 <figure class="gallery-item">
                     <button type="button" class="gallery-thumb">
-                        <img src="images/mapuru-sebata-codebridge-founder.jpg"
+                        <img src="images/mapuru.jpg"
                              alt="Mapuru Sebata, Founder and Programme Director, leading a community coding workshop"
                              width="400" height="200" loading="lazy" decoding="async">
                     </button>

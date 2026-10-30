@@ -968,7 +968,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    /* ==========================================================
+        /* ==========================================================
        8. DONATION FORM: VALIDATION & AJAX (donate.html)
        ========================================================== */
     function initDonationForm() {
@@ -984,6 +984,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const nameField = bindField('donor-name', 'name-error', Validators.fullName);
         const emailField = bindField('donor-email', 'email-error', Validators.email);
+
+        /**
+         * Impact tiers. These MUST match the "How Your Donation Helps" table
+         * on donate.html:
+         *   R100   = course materials for one learner for a week
+         *   R250   = laptop access for one learner for a month
+         *   R500   = one learner's full Digital Literacy & Career Skills programme
+         *   R1000+ = a full seat on the Web Development Bootcamp
+         */
+        function describeImpact(amount) {
+            function plural(n, singular, pluralForm) { return n + ' ' + (n === 1 ? singular : pluralForm); }
+
+            if (amount >= 1000) {
+                const seats = Math.floor(amount / 1000);
+                return 'helps fund ' + plural(seats, 'full seat', 'full seats') + ' on the Web Development Bootcamp (R1 000 per seat)';
+            }
+            if (amount >= 500) {
+                const learners = Math.floor(amount / 500);
+                return 'sponsors ' + plural(learners, 'learner', 'learners') + ' through the full Digital Literacy &amp; Career Skills programme';
+            }
+            if (amount >= 250) {
+                const months = Math.floor(amount / 250);
+                return 'covers laptop access for one learner for ' + plural(months, 'month', 'months');
+            }
+            if (amount >= 100) {
+                const weeks = Math.floor(amount / 100);
+                return 'covers course materials for one learner for ' + plural(weeks, 'week', 'weeks');
+            }
+            return 'goes towards course materials and laptop access for our learners';
+        }
 
         /** Returns { amount } when valid, or { error } with a helpful message. */
         function readAmount() {
@@ -1037,15 +1067,9 @@ document.addEventListener('DOMContentLoaded', function () {
             setBusy(submitButton, true, 'Sending...');
 
             submitAsync(form, { donorName: donorName, donorEmail: donorEmail, amount: amount }).then(function () {
-                const weeks = Math.floor(amount / 100);
-                const programmesFunded = Math.floor(amount / 500);
-                let impact = 'covers course materials for ' + weeks + ' learner-week' + (weeks === 1 ? '' : 's');
-                if (programmesFunded >= 1) {
-                    impact += ', or sponsors ' + programmesFunded + ' learner' + (programmesFunded === 1 ? '' : 's') + ' through the full Digital Literacy &amp; Career Skills programme';
-                }
                 showResponse(responseDiv, 'success',
                     '<strong>Thank you, ' + escapeHTML(donorName.split(' ')[0]) + '!</strong>' +
-                    '<p>Your pledge of ' + formatRand(amount) + ' ' + impact + '.</p>' +
+                    '<p>Your pledge of ' + formatRand(amount) + ' ' + describeImpact(amount) + '.</p>' +
                     '<p>A donor acknowledgement will be sent to ' + escapeHTML(donorEmail) + '.</p>' +
                     '<p class="response-note">Demonstration site: CodeBridge is fictional, so no money is taken and no payment gateway is connected.</p>');
                 resetFormState(form);
@@ -1057,7 +1081,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
 
     /* ==========================================================
        9. SCROLL REVEAL ANIMATION & BACK-TO-TOP BUTTON
