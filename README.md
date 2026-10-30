@@ -16,7 +16,7 @@ This repository contains the multi-page website built across the three PoE proje
 
 - **Part 1:** Semantic HTML5 structure and content layout.  
 - **Part 2:** CSS3 styling, design tokens, external stylesheet architecture, and multi-device responsive design.  
-- **Part 3:** Client-side JavaScript interactivity, dynamic quizzes, and media functionality (Planned).  
+- **Part 3:** Client-side JavaScript interactivity, dynamic quizzes, and media functionality.  
 
 ---
 
